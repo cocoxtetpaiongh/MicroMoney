@@ -1,0 +1,18 @@
+////
+////  Staging.xcconfig
+////  MicroMoney
+////
+////  Created by Coco Xtet Pai on 12/3/17.
+////  Copyright © 2017 Coco Xtet Pai. All rights reserved.
+////
+//
+IS_APP_NAME = MicreMoney Staging
+IS_APP_VERSION = 1.0
+IS_APP_BUNDLE_ID = com.cocoxtetpai.MicroMoneyStaging
+//
+//BACKEND_URL = http:\/\/api.intensifystudio.com/staging
+//CONSUMER_KEY = ck_a57e4fa2e14c12f400371cf2951ec3dea5_staging
+//CONSUMER_SECRET = cs_c847caa35ce1041e9c69d239141f13f63bb22b_staging
+//
+////IS_APP_ICON = AppIconStaging
+//

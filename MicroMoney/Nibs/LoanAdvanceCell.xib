@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LoanAdvanceCell" customModule="MicroMoney" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money will be sent immediately after approval" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPs-0f-cbK">
+                        <rect key="frame" x="10" y="93.5" width="180" height="27"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                        <color key="textColor" red="0.63936221599578857" green="0.63943594694137573" blue="0.63931965827941895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="TZz-jg-Xob">
+                        <rect key="frame" x="66.5" y="16.5" width="67" height="67"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="TZz-jg-Xob" secondAttribute="height" id="4DY-h3-ox6"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="yPs-0f-cbK" firstAttribute="top" secondItem="TZz-jg-Xob" secondAttribute="bottom" constant="10" id="7bi-Sz-eGB"/>
+                <constraint firstAttribute="trailing" secondItem="yPs-0f-cbK" secondAttribute="trailing" constant="10" id="A1C-cE-FXU"/>
+                <constraint firstItem="yPs-0f-cbK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="EKd-xi-vAN"/>
+                <constraint firstItem="TZz-jg-Xob" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Eay-K6-0of"/>
+                <constraint firstItem="TZz-jg-Xob" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="1/2" id="ZrS-fd-SUp"/>
+                <constraint firstItem="TZz-jg-Xob" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1/3" id="mDb-LG-SC9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="image" destination="TZz-jg-Xob" id="h7W-eA-dDI"/>
+                <outlet property="label" destination="yPs-0f-cbK" id="5Zh-NK-nAy"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="eye" width="82" height="69"/>
+    </resources>
+</document>
