@@ -34,7 +34,9 @@ class HomeViewController: UIViewController {
         repayAmountView.layer.cornerRadius = 10
         repayDateView.layer.cornerRadius = 10
         
-        countryTextField.delegate = self 
+        countryTextField.delegate = self
+        nameTextField.delegate = self
+        phoneNumberTextField.delegate = self
     }
     
     @IBAction func menubuttonPressed(_ seneder: UIButton) {
@@ -44,6 +46,13 @@ class HomeViewController: UIViewController {
         present(menuVC, animated: false, completion: nil)
     }
 
+    @IBAction func applyButtonPressed(_ sender: UIButton) {
+        
+        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PersonalInfoVC") as! PersonalInfoVC
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
 }
 
 extension HomeViewController: MenuDelegate {

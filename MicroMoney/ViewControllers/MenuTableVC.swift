@@ -47,6 +47,18 @@ class MenuTableVC: UIViewController {
         
         dismissAction()
     }
+    
+    @objc func handleGesture(_ recognizer: UITapGestureRecognizer) {
+        
+        if let view = recognizer.view {
+            
+            dismiss(animated: false, completion: {
+                
+                self.delegate?.didSelectMenu(at: view.tag)
+            })
+            
+        }
+    }
 
 }
 
@@ -59,6 +71,11 @@ extension MenuTableVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuCell
         cell.label.text = titles[indexPath.row]
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+        cell.label.addGestureRecognizer(gesture)
+        cell.label.isUserInteractionEnabled = true
+        cell.label.tag = indexPath.row
         return cell
     }
 }
@@ -68,10 +85,10 @@ extension MenuTableVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO:
         
-        dismiss(animated: false, completion: {
-            
-            self.delegate?.didSelectMenu(at: indexPath.row)
-        })
+//        dismiss(animated: false, completion: {
+//
+//            self.delegate?.didSelectMenu(at: indexPath.row)
+//        })
         
 //        delegate?.didSelectMenu(at: indexPath.row)
 //        dismissAction()
