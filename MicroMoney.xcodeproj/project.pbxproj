@@ -32,6 +32,8 @@
 		2DAA25951FE2DA93006D7DEB /* GettingMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA25941FE2DA93006D7DEB /* GettingMoneyVC.swift */; };
 		2DAA25971FE2DAA2006D7DEB /* DocumentScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA25961FE2DAA2006D7DEB /* DocumentScanVC.swift */; };
 		2DAA25991FE2DAB8006D7DEB /* FinishedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAA25981FE2DAB8006D7DEB /* FinishedVC.swift */; };
+		2DCCA2B21FE4CDD4002F40E7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA2B11FE4CDD4002F40E7 /* APIConstants.swift */; };
+		2DCCA2B41FE4CDE1002F40E7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA2B31FE4CDE1002F40E7 /* APIManager.swift */; };
 		8364191B6DB85D19595EC247 /* Pods_MicroMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A868F5C77F0E3F251E344B49 /* Pods_MicroMoney.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		2DAA25941FE2DA93006D7DEB /* GettingMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingMoneyVC.swift; sourceTree = "<group>"; };
 		2DAA25961FE2DAA2006D7DEB /* DocumentScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScanVC.swift; sourceTree = "<group>"; };
 		2DAA25981FE2DAB8006D7DEB /* FinishedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedVC.swift; sourceTree = "<group>"; };
+		2DCCA2B11FE4CDD4002F40E7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		2DCCA2B31FE4CDE1002F40E7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A868F5C77F0E3F251E344B49 /* Pods_MicroMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MicroMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C663F31E7DD6A39D180FA7FB /* Pods-MicroMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		D30BEBA0FCB6A7391B599FCA /* Pods-MicroMoney.stagin.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroMoney.stagin.xcconfig"; path = "Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney.stagin.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		2D43DE4E1FD2505000DA9818 /* MicroMoney */ = {
 			isa = PBXGroup;
 			children = (
+				2DCCA2B01FE4CDBC002F40E7 /* API */,
 				2DAA258C1FE2D30C006D7DEB /* Loan Steps */,
 				2DA1E2AD1FD7A62000D5B73F /* Nibs */,
 				2D43DE4F1FD2505000DA9818 /* AppDelegate.swift */,
@@ -170,6 +175,15 @@
 				2DAA25981FE2DAB8006D7DEB /* FinishedVC.swift */,
 			);
 			path = "Loan Steps";
+			sourceTree = "<group>";
+		};
+		2DCCA2B01FE4CDBC002F40E7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2DCCA2B11FE4CDD4002F40E7 /* APIConstants.swift */,
+				2DCCA2B31FE4CDE1002F40E7 /* APIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		635A2F34459387FFC4642392 /* Pods */ = {
@@ -273,10 +287,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -328,12 +346,14 @@
 				2DAA25951FE2DA93006D7DEB /* GettingMoneyVC.swift in Sources */,
 				2DAA25911FE2DA50006D7DEB /* EmploymentInfoVC.swift in Sources */,
 				2D43DE521FD2505000DA9818 /* ViewController.swift in Sources */,
+				2DCCA2B21FE4CDD4002F40E7 /* APIConstants.swift in Sources */,
 				2DA1E2B61FD7A78200D5B73F /* LoanAdvanceCell.swift in Sources */,
 				2DA1E2BF1FD83E1600D5B73F /* Extensions.swift in Sources */,
 				2D1D5E4C1FD5B80A0065EA76 /* HomeCell.swift in Sources */,
 				2DA1E2C41FD84CAC00D5B73F /* MenuCell.swift in Sources */,
 				2DAA25931FE2DA83006D7DEB /* AdditionalInfoVC.swift in Sources */,
 				2DA1E2C91FD8577300D5B73F /* WebViewController.swift in Sources */,
+				2DCCA2B41FE4CDE1002F40E7 /* APIManager.swift in Sources */,
 				2DAA258F1FE2D34B006D7DEB /* PersonalInfoVC.swift in Sources */,
 				2DAA25971FE2DAA2006D7DEB /* DocumentScanVC.swift in Sources */,
 				2DA1E2C61FD850B300D5B73F /* HomeViewController.swift in Sources */,
