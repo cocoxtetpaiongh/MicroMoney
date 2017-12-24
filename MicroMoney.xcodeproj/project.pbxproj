@@ -12,8 +12,27 @@
 		2D43DE501FD2505000DA9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43DE4F1FD2505000DA9818 /* AppDelegate.swift */; };
 		2D43DE521FD2505000DA9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43DE511FD2505000DA9818 /* ViewController.swift */; };
 		2D43DE551FD2505000DA9818 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D43DE531FD2505000DA9818 /* Main.storyboard */; };
-		2D43DE571FD2505000DA9818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D43DE561FD2505000DA9818 /* Assets.xcassets */; };
 		2D43DE5A1FD2505000DA9818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D43DE581FD2505000DA9818 /* LaunchScreen.storyboard */; };
+		2D886F1B1FE67FF40078631D /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F1A1FE67FF40078631D /* DesignableSlider.swift */; };
+		2D886F1D1FE682C30078631D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D886F1C1FE682C20078631D /* Assets.xcassets */; };
+		2D886F201FE690870078631D /* AboutMicroMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F1F1FE690870078631D /* AboutMicroMoney.swift */; };
+		2D886F221FE690F90078631D /* FinancialLiteracy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F211FE690F90078631D /* FinancialLiteracy.swift */; };
+		2D886F241FE691170078631D /* ApplyOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F231FE691170078631D /* ApplyOnline.swift */; };
+		2D886F261FE691270078631D /* Prolongation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F251FE691270078631D /* Prolongation.swift */; };
+		2D886F281FE6914D0078631D /* CashRepayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F271FE6914D0078631D /* CashRepayment.swift */; };
+		2D886F2A1FE691590078631D /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F291FE691590078631D /* FAQs.swift */; };
+		2D886F2C1FE6916C0078631D /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F2B1FE6916C0078631D /* ContactUs.swift */; };
+		2D886F2E1FE691830078631D /* Carrers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F2D1FE691830078631D /* Carrers.swift */; };
+		2D886F301FE6918E0078631D /* TokenSale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F2F1FE6918E0078631D /* TokenSale.swift */; };
+		2D886F321FE691A50078631D /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D886F311FE691A50078631D /* Info.storyboard */; };
+		2D886F371FE6B36B0078631D /* AboutFirstSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F351FE6B36B0078631D /* AboutFirstSectionCell.swift */; };
+		2D886F381FE6B36B0078631D /* AboutFirstSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D886F361FE6B36B0078631D /* AboutFirstSectionCell.xib */; };
+		2D886F3B1FE6B3840078631D /* AboutSecondSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F391FE6B3840078631D /* AboutSecondSectionCell.swift */; };
+		2D886F3C1FE6B3840078631D /* AboutSecondSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D886F3A1FE6B3840078631D /* AboutSecondSectionCell.xib */; };
+		2D886F3F1FE6B3990078631D /* AboutThirdSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F3D1FE6B3990078631D /* AboutThirdSectionCell.swift */; };
+		2D886F401FE6B3990078631D /* AboutThirdSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D886F3E1FE6B3990078631D /* AboutThirdSectionCell.xib */; };
+		2D99D9541FEFC45600827F62 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99D9531FEFC45600827F62 /* User.swift */; };
+		2D99D9561FF0069D00827F62 /* Utlities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99D9551FF0069D00827F62 /* Utlities.swift */; };
 		2DA1E2B01FD7A72200D5B73F /* LoanStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E2AE1FD7A72200D5B73F /* LoanStepCell.swift */; };
 		2DA1E2B11FD7A72200D5B73F /* LoanStepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA1E2AF1FD7A72200D5B73F /* LoanStepCell.xib */; };
 		2DA1E2B61FD7A78200D5B73F /* LoanAdvanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E2B41FD7A78200D5B73F /* LoanAdvanceCell.swift */; };
@@ -45,9 +64,28 @@
 		2D43DE4F1FD2505000DA9818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D43DE511FD2505000DA9818 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D43DE541FD2505000DA9818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2D43DE561FD2505000DA9818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D43DE591FD2505000DA9818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D43DE5B1FD2505000DA9818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D886F1A1FE67FF40078631D /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
+		2D886F1C1FE682C20078631D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D886F1F1FE690870078631D /* AboutMicroMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMicroMoney.swift; sourceTree = "<group>"; };
+		2D886F211FE690F90078631D /* FinancialLiteracy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialLiteracy.swift; sourceTree = "<group>"; };
+		2D886F231FE691170078631D /* ApplyOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyOnline.swift; sourceTree = "<group>"; };
+		2D886F251FE691270078631D /* Prolongation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prolongation.swift; sourceTree = "<group>"; };
+		2D886F271FE6914D0078631D /* CashRepayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRepayment.swift; sourceTree = "<group>"; };
+		2D886F291FE691590078631D /* FAQs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
+		2D886F2B1FE6916C0078631D /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		2D886F2D1FE691830078631D /* Carrers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrers.swift; sourceTree = "<group>"; };
+		2D886F2F1FE6918E0078631D /* TokenSale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenSale.swift; sourceTree = "<group>"; };
+		2D886F311FE691A50078631D /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		2D886F351FE6B36B0078631D /* AboutFirstSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutFirstSectionCell.swift; sourceTree = "<group>"; };
+		2D886F361FE6B36B0078631D /* AboutFirstSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutFirstSectionCell.xib; sourceTree = "<group>"; };
+		2D886F391FE6B3840078631D /* AboutSecondSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSecondSectionCell.swift; sourceTree = "<group>"; };
+		2D886F3A1FE6B3840078631D /* AboutSecondSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutSecondSectionCell.xib; sourceTree = "<group>"; };
+		2D886F3D1FE6B3990078631D /* AboutThirdSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThirdSectionCell.swift; sourceTree = "<group>"; };
+		2D886F3E1FE6B3990078631D /* AboutThirdSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutThirdSectionCell.xib; sourceTree = "<group>"; };
+		2D99D9531FEFC45600827F62 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D99D9551FF0069D00827F62 /* Utlities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utlities.swift; sourceTree = "<group>"; };
 		2DA1E2AE1FD7A72200D5B73F /* LoanStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanStepCell.swift; sourceTree = "<group>"; };
 		2DA1E2AF1FD7A72200D5B73F /* LoanStepCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoanStepCell.xib; sourceTree = "<group>"; };
 		2DA1E2B41FD7A78200D5B73F /* LoanAdvanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanAdvanceCell.swift; sourceTree = "<group>"; };
@@ -115,19 +153,85 @@
 		2D43DE4E1FD2505000DA9818 /* MicroMoney */ = {
 			isa = PBXGroup;
 			children = (
+				2D43DE5B1FD2505000DA9818 /* Info.plist */,
+				2D886F191FE67FD50078631D /* UI */,
+				2D886F181FE67FA90078631D /* Models */,
+				2D886F171FE67F6B0078631D /* Resource */,
 				2DCCA2B01FE4CDBC002F40E7 /* API */,
 				2DAA258C1FE2D30C006D7DEB /* Loan Steps */,
 				2DA1E2AD1FD7A62000D5B73F /* Nibs */,
-				2D43DE4F1FD2505000DA9818 /* AppDelegate.swift */,
 				2DA1E2C71FD850BC00D5B73F /* ViewControllers */,
-				2D43DE531FD2505000DA9818 /* Main.storyboard */,
-				2D43DE561FD2505000DA9818 /* Assets.xcassets */,
-				2D43DE581FD2505000DA9818 /* LaunchScreen.storyboard */,
-				2D43DE5B1FD2505000DA9818 /* Info.plist */,
 				2D1D5E4E1FD5B8150065EA76 /* Xibs */,
-				2DA1E2BE1FD83E1600D5B73F /* Extensions.swift */,
 			);
 			path = MicroMoney;
+			sourceTree = "<group>";
+		};
+		2D886F171FE67F6B0078631D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2D43DE4F1FD2505000DA9818 /* AppDelegate.swift */,
+				2D43DE531FD2505000DA9818 /* Main.storyboard */,
+				2D43DE581FD2505000DA9818 /* LaunchScreen.storyboard */,
+				2D886F1C1FE682C20078631D /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2D886F181FE67FA90078631D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DA1E2BE1FD83E1600D5B73F /* Extensions.swift */,
+				2D99D9531FEFC45600827F62 /* User.swift */,
+				2D99D9551FF0069D00827F62 /* Utlities.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2D886F191FE67FD50078631D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2D886F1A1FE67FF40078631D /* DesignableSlider.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2D886F1E1FE690660078631D /* InfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				2D886F331FE6B2F20078631D /* Xibs */,
+				2D886F1F1FE690870078631D /* AboutMicroMoney.swift */,
+				2D886F211FE690F90078631D /* FinancialLiteracy.swift */,
+				2D886F231FE691170078631D /* ApplyOnline.swift */,
+				2D886F251FE691270078631D /* Prolongation.swift */,
+				2D886F271FE6914D0078631D /* CashRepayment.swift */,
+				2D886F291FE691590078631D /* FAQs.swift */,
+				2D886F2B1FE6916C0078631D /* ContactUs.swift */,
+				2D886F2D1FE691830078631D /* Carrers.swift */,
+				2D886F2F1FE6918E0078631D /* TokenSale.swift */,
+				2D886F311FE691A50078631D /* Info.storyboard */,
+			);
+			path = InfoVCs;
+			sourceTree = "<group>";
+		};
+		2D886F331FE6B2F20078631D /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				2D886F341FE6B2FA0078631D /* AboutMicroMoney */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		2D886F341FE6B2FA0078631D /* AboutMicroMoney */ = {
+			isa = PBXGroup;
+			children = (
+				2D886F351FE6B36B0078631D /* AboutFirstSectionCell.swift */,
+				2D886F361FE6B36B0078631D /* AboutFirstSectionCell.xib */,
+				2D886F391FE6B3840078631D /* AboutSecondSectionCell.swift */,
+				2D886F3A1FE6B3840078631D /* AboutSecondSectionCell.xib */,
+				2D886F3D1FE6B3990078631D /* AboutThirdSectionCell.swift */,
+				2D886F3E1FE6B3990078631D /* AboutThirdSectionCell.xib */,
+			);
+			path = AboutMicroMoney;
 			sourceTree = "<group>";
 		};
 		2DA1E2AD1FD7A62000D5B73F /* Nibs */ = {
@@ -155,6 +259,7 @@
 		2DA1E2C71FD850BC00D5B73F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2D886F1E1FE690660078631D /* InfoVCs */,
 				2D43DE511FD2505000DA9818 /* ViewController.swift */,
 				2DA1E2B81FD7AC1C00D5B73F /* InfoViewController.swift */,
 				2DA1E2C51FD850B300D5B73F /* HomeViewController.swift */,
@@ -266,11 +371,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D886F401FE6B3990078631D /* AboutThirdSectionCell.xib in Resources */,
 				2DA1E2B71FD7A78200D5B73F /* LoanAdvanceCell.xib in Resources */,
 				2D43DE5A1FD2505000DA9818 /* LaunchScreen.storyboard in Resources */,
+				2D886F381FE6B36B0078631D /* AboutFirstSectionCell.xib in Resources */,
+				2D886F321FE691A50078631D /* Info.storyboard in Resources */,
 				2DA1E2BD1FD7FC1A00D5B73F /* LoanHeaderView.xib in Resources */,
-				2D43DE571FD2505000DA9818 /* Assets.xcassets in Resources */,
+				2D886F3C1FE6B3840078631D /* AboutSecondSectionCell.xib in Resources */,
 				2D1D5E4D1FD5B80A0065EA76 /* HomeCell.xib in Resources */,
+				2D886F1D1FE682C30078631D /* Assets.xcassets in Resources */,
 				2DA1E2B11FD7A72200D5B73F /* LoanStepCell.xib in Resources */,
 				2D43DE551FD2505000DA9818 /* Main.storyboard in Resources */,
 			);
@@ -341,12 +450,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D886F261FE691270078631D /* Prolongation.swift in Sources */,
 				2DA1E2BC1FD7FC1A00D5B73F /* LoanHeaderView.swift in Sources */,
 				2DA1E2C11FD84B6400D5B73F /* MenuTableVC.swift in Sources */,
+				2D886F3B1FE6B3840078631D /* AboutSecondSectionCell.swift in Sources */,
 				2DAA25951FE2DA93006D7DEB /* GettingMoneyVC.swift in Sources */,
 				2DAA25911FE2DA50006D7DEB /* EmploymentInfoVC.swift in Sources */,
 				2D43DE521FD2505000DA9818 /* ViewController.swift in Sources */,
+				2D886F201FE690870078631D /* AboutMicroMoney.swift in Sources */,
 				2DCCA2B21FE4CDD4002F40E7 /* APIConstants.swift in Sources */,
+				2D886F2E1FE691830078631D /* Carrers.swift in Sources */,
 				2DA1E2B61FD7A78200D5B73F /* LoanAdvanceCell.swift in Sources */,
 				2DA1E2BF1FD83E1600D5B73F /* Extensions.swift in Sources */,
 				2D1D5E4C1FD5B80A0065EA76 /* HomeCell.swift in Sources */,
@@ -355,12 +468,23 @@
 				2DA1E2C91FD8577300D5B73F /* WebViewController.swift in Sources */,
 				2DCCA2B41FE4CDE1002F40E7 /* APIManager.swift in Sources */,
 				2DAA258F1FE2D34B006D7DEB /* PersonalInfoVC.swift in Sources */,
+				2D886F281FE6914D0078631D /* CashRepayment.swift in Sources */,
 				2DAA25971FE2DAA2006D7DEB /* DocumentScanVC.swift in Sources */,
+				2D886F2C1FE6916C0078631D /* ContactUs.swift in Sources */,
 				2DA1E2C61FD850B300D5B73F /* HomeViewController.swift in Sources */,
+				2D886F221FE690F90078631D /* FinancialLiteracy.swift in Sources */,
 				2DAA25991FE2DAB8006D7DEB /* FinishedVC.swift in Sources */,
+				2D99D9541FEFC45600827F62 /* User.swift in Sources */,
+				2D886F371FE6B36B0078631D /* AboutFirstSectionCell.swift in Sources */,
 				2D43DE501FD2505000DA9818 /* AppDelegate.swift in Sources */,
 				2DA1E2B91FD7AC1C00D5B73F /* InfoViewController.swift in Sources */,
+				2D886F1B1FE67FF40078631D /* DesignableSlider.swift in Sources */,
+				2D99D9561FF0069D00827F62 /* Utlities.swift in Sources */,
 				2DA1E2B01FD7A72200D5B73F /* LoanStepCell.swift in Sources */,
+				2D886F2A1FE691590078631D /* FAQs.swift in Sources */,
+				2D886F301FE6918E0078631D /* TokenSale.swift in Sources */,
+				2D886F3F1FE6B3990078631D /* AboutThirdSectionCell.swift in Sources */,
+				2D886F241FE691170078631D /* ApplyOnline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

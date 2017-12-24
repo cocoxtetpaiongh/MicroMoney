@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--About Micro Money-->
+        <scene sceneID="Hg8-Sp-gj5">
+            <objects>
+                <viewController id="cdM-Ql-89v" customClass="AboutMicroMoney" customModule="MicroMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lvx-5A-aZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9j9-Sx-I4S">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rw-bN-lhI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9rw-bN-lhI" firstAttribute="leading" secondItem="9j9-Sx-I4S" secondAttribute="leading" id="A5g-UL-z3r"/>
+                                    <constraint firstAttribute="bottom" secondItem="9rw-bN-lhI" secondAttribute="bottom" id="VLQ-VK-RBZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9rw-bN-lhI" secondAttribute="trailing" id="Zou-cA-BAz"/>
+                                    <constraint firstItem="9rw-bN-lhI" firstAttribute="centerX" secondItem="9j9-Sx-I4S" secondAttribute="centerX" id="fye-SJ-2Xp"/>
+                                    <constraint firstItem="9rw-bN-lhI" firstAttribute="top" secondItem="9j9-Sx-I4S" secondAttribute="top" id="seQ-xs-p3I"/>
+                                    <constraint firstItem="9rw-bN-lhI" firstAttribute="centerY" secondItem="9j9-Sx-I4S" secondAttribute="centerY" id="xVZ-tc-9ON"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9rw-bN-lhI" firstAttribute="width" secondItem="Lvx-5A-aZ3" secondAttribute="width" id="ZtS-kd-oZb"/>
+                            <constraint firstItem="h17-G2-wqS" firstAttribute="trailing" secondItem="9j9-Sx-I4S" secondAttribute="trailing" id="ax4-DB-fPl"/>
+                            <constraint firstItem="h17-G2-wqS" firstAttribute="bottom" secondItem="9j9-Sx-I4S" secondAttribute="bottom" id="pca-ez-Hov"/>
+                            <constraint firstItem="9j9-Sx-I4S" firstAttribute="leading" secondItem="h17-G2-wqS" secondAttribute="leading" id="tkx-pK-hUw"/>
+                            <constraint firstItem="9j9-Sx-I4S" firstAttribute="top" secondItem="Lvx-5A-aZ3" secondAttribute="top" id="zAb-le-I1z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h17-G2-wqS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsA-WA-kOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="26.53673163418291"/>
+        </scene>
+        <!--About Micro Money-->
+        <scene sceneID="2Us-e0-9iZ">
+            <objects>
+                <viewController storyboardIdentifier="AboutMicroMoney" id="417-LT-C6x" customClass="AboutMicroMoney" customModule="MicroMoney" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7G-0L-0fJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8cc-bB-4Tp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="0RW-Ta-HRP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Micromoney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTM-KI-0O5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="cTM-KI-0O5" secondAttribute="height" multiplier="5" id="u5H-7e-l38"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18w-qh-IvF">
+                                            <rect key="frame" x="0.0" y="75" width="375" height="300"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <string key="text">Micro-money is a company focused on micro-financing in the money lending industry and we aim to provide the best professional solution to your financial needs.
+
+We provide premium financial services to your everyday needs without any collateral requirements. Easy approval procedures with the shortest processing time will make the loan application simple and fast.
+
+Micro-money offers an innovative approach to consumer Online Cash Advance products, which allows us to adapt to your varying needs.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="cTM-KI-0O5" secondAttribute="trailing" id="Kx3-4q-9Cg"/>
+                                        <constraint firstItem="18w-qh-IvF" firstAttribute="top" secondItem="cTM-KI-0O5" secondAttribute="bottom" id="MdL-Ls-aS3"/>
+                                        <constraint firstItem="cTM-KI-0O5" firstAttribute="width" secondItem="0RW-Ta-HRP" secondAttribute="width" id="UDu-WL-eTv"/>
+                                        <constraint firstItem="cTM-KI-0O5" firstAttribute="leading" secondItem="0RW-Ta-HRP" secondAttribute="leading" id="cNK-Ws-Dm0"/>
+                                        <constraint firstItem="cTM-KI-0O5" firstAttribute="top" secondItem="0RW-Ta-HRP" secondAttribute="top" id="dE7-UE-Xfd"/>
+                                        <constraint firstAttribute="bottom" secondItem="18w-qh-IvF" secondAttribute="bottom" id="nVd-7a-K4h"/>
+                                        <constraint firstAttribute="trailing" secondItem="18w-qh-IvF" secondAttribute="trailing" id="svQ-Dg-WLn"/>
+                                        <constraint firstItem="18w-qh-IvF" firstAttribute="leading" secondItem="0RW-Ta-HRP" secondAttribute="leading" id="wMW-gk-y1b"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pgA-GH-FrS">
+                                        <rect key="frame" x="0.0" y="403" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pgA-GH-FrS" id="jsv-k0-O8b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8cc-bB-4Tp" firstAttribute="top" secondItem="d7G-0L-0fJ" secondAttribute="top" id="0Ip-aF-d4a"/>
+                            <constraint firstItem="8cc-bB-4Tp" firstAttribute="leading" secondItem="veb-qi-tLK" secondAttribute="leading" id="21B-1B-DHo"/>
+                            <constraint firstItem="veb-qi-tLK" firstAttribute="bottom" secondItem="8cc-bB-4Tp" secondAttribute="bottom" id="4Eb-uh-UOf"/>
+                            <constraint firstItem="veb-qi-tLK" firstAttribute="trailing" secondItem="8cc-bB-4Tp" secondAttribute="trailing" id="Z5V-DQ-sl3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="veb-qi-tLK"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8cc-bB-4Tp" id="MpV-8T-W3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfv-Ql-Nai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="27"/>
+        </scene>
+    </scenes>
+</document>

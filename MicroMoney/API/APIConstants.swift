@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct APIConstants {
+    
+    static let baseURL = "109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadCollection"
+    
+    static let nationality = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrNationalityCollection"
+    
+    static let gender = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/GenderCollection"
+    
+    static let payment = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UserPaySystemCollection"
+}

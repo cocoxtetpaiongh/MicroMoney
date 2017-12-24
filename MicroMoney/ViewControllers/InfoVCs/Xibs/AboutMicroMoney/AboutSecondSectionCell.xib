@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutSecondSectionCell" id="KGk-i7-Jjw" customClass="AboutSecondSectionCell" customModule="MicroMoney" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-mN-wiv">
+                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aE-Pb-CG3">
+                                <rect key="frame" x="8.5" y="4" width="8.5" height="17"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.67000000000000004" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8aE-Pb-CG3" firstAttribute="centerY" secondItem="qc8-mN-wiv" secondAttribute="centerY" id="8xn-AC-rTV"/>
+                            <constraint firstItem="8aE-Pb-CG3" firstAttribute="centerX" secondItem="qc8-mN-wiv" secondAttribute="centerX" id="Ac0-oR-Zhy"/>
+                            <constraint firstAttribute="height" constant="25" id="E6J-z2-ZHe"/>
+                            <constraint firstAttribute="width" constant="25" id="qdV-PK-faP"/>
+                        </constraints>
+                    </view>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-D7-IzO">
+                        <rect key="frame" x="0.0" y="25" width="320" height="294.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <string key="text">We provide solutions for emergency financial needs. We give Cash Advance which can be acquired through online, not loan. (We are helping people who need money urgently before the salary)</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9Pa-D7-IzO" secondAttribute="trailing" id="Tpt-6b-Ehn"/>
+                    <constraint firstItem="9Pa-D7-IzO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="W6z-lW-BtK"/>
+                    <constraint firstItem="qc8-mN-wiv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="inH-Ip-Sao"/>
+                    <constraint firstItem="qc8-mN-wiv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kur-qo-p7B"/>
+                    <constraint firstAttribute="bottom" secondItem="9Pa-D7-IzO" secondAttribute="bottom" id="kzY-2L-6GA"/>
+                    <constraint firstItem="9Pa-D7-IzO" firstAttribute="top" secondItem="qc8-mN-wiv" secondAttribute="bottom" id="zez-6S-XFj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="9Pa-D7-IzO" id="eC9-Ri-I5B"/>
+                <outlet property="numberLabel" destination="8aE-Pb-CG3" id="NML-Fc-drZ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
