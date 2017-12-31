@@ -52,30 +52,41 @@ class Utlities: NSObject {
             let loading = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
             
 //            let loading = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            
+            loading.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            
             loading.color = UIColor.blue
             loading.activityIndicatorViewStyle = .whiteLarge
             loading.tag = TagConstants.loadingTag
             loading.tintColor = UIColor.blue
             loading.hidesWhenStopped = true
+//            loading.backgroundColor = UIColor.black
             
-            loading.center = background.center
-//            loading.center.x = view.center.x
-//            loading.center.y = view.center.y
+//            loading.center = background.center
+            loading.center.x = view.center.x
+            loading.center.y = view.center.y
             
-            background.addSubview(loading)
+//            background.addSubview(loading)
             
             background.tag = TagConstants.loadingBackGround
             
             view.addSubview(background)
+            view.addSubview(loading)
             loading.startAnimating()
             view.isUserInteractionEnabled = false
 
         } else {
             
-            if let loading = view.viewWithTag(TagConstants.loadingBackGround) {
+            if let loading = view.viewWithTag(TagConstants.loadingTag) {
                 
                 loading.removeFromSuperview()
             }
+            
+            if let backGround = view.viewWithTag(TagConstants.loadingBackGround) {
+                
+                backGround.removeFromSuperview()
+            }
+            
             view.isUserInteractionEnabled = true
         }
         

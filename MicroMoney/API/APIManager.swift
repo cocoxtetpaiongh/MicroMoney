@@ -30,6 +30,57 @@ class APIManager {
     
     static let share = APIManager()
     
+    
+    // MARK: Create Lead
+    func createLead(completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: "\(APIConstants.collection)") else {
+            return
+        }
+        
+        let user = UserInfo.user
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        let paramaters: [String: Any] = ["Email": user.Email ?? "",
+                                         "CityId": user.CityId ?? "",
+                                         "UsrBirthDate": user.UsrMMPersonalID ?? "",
+                                         "GenderId": user.GenderId ?? "",
+                                         "MobilePhone": user.MobilePhone ?? "",
+                                         "Contact": user.Contact ?? "",
+                                         "UsrMoneyAmount": user.UsrMoneyAmount ?? "",
+                                         "UsrTerm": user.UsrTerm ?? "",
+                                         "UsrNationalityId": user.UsrNationalityId ?? "",
+                                         "CountryId": user.CountryId ?? "",
+                                         "Account": user.Account ?? "",
+                                         "UsrAccountName": user.UsrAccountName ?? "",
+                                         "UsrSalaryAmount": user.UsrSalaryAmount ?? "",
+                                         "UsrMMPersonalID": user.UsrMMPersonalID ?? "",
+                                         "UsrPaySystemAccount": user.UsrPaySystemAccount ?? "",
+                                         "UsrPaySystemId": user.UsrPaySystemId ?? "",
+                                         "UsrOccupation": user.UsrOccupation ?? "",
+                                         "RegisterMethodId": user.RegisterMethodId ?? ""]
+        
+
+        Alamofire.request(url, method: .post, parameters: paramaters, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
+            
+            print(dataRsponse.response)
+            print(dataRsponse.result.description)
+            
+            if let json = dataRsponse.value {
+                
+                completion(json, .Success)
+                
+            } else {
+                
+                completion(JSON.null, .Error)
+            }
+        }
+
+    }
+    
     func applyLoan(with parameter: Parameter? = nil, completion: @escaping (JSON, NetworkStatus) -> Void) {
         
         guard let url = URL(string: "109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadCollection") else {
@@ -74,7 +125,9 @@ class APIManager {
     
     func getPaymentList(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
-        guard let url = URL(string: APIConstants.payment) else {
+        let filter = "$select=Id,Name"
+        
+        guard let url = URL(string: "\(APIConstants.payment)") else {
             return
         }
         
@@ -82,7 +135,10 @@ class APIManager {
                                          "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
                                          "Accept": "application/json;odata=verbose"]
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        let parameters: [String: Any] = ["$select": "Id,Name",
+                                         "$filter": "UsrBranch/Id eq guid'7ffcfa45-b517-441c-86f0-808eaab4dd11'"]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -275,4 +331,39 @@ class APIManager {
 //        }
 
     }
+    
+    func register(completion: @escaping (JSON, NetworkStatus) -> ()) {
+        
+        guard let url = URL(string: "\(APIConstants.register)") else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        let paramaters: [String: Any] = ["$filter": "Name eq 'iOS app'",
+                                         "$select": "Id,Name"]
+        
+        Alamofire.request(url, method: .get, parameters: paramaters, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
+            
+            print(dataRsponse.response)
+            print(dataRsponse.result.description)
+            
+            if let json = dataRsponse.value {
+                
+                completion(json, .Success)
+                
+            } else {
+                
+                completion(JSON.null, .Error)
+            }
+        }
+
+    }
 }
+
+
+
+
+

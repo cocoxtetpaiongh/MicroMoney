@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class DocumentScanVC: UIViewController {
     
@@ -18,7 +19,88 @@ class DocumentScanVC: UIViewController {
         super.viewDidLoad()
 
         addGestures()
+        register()
         // Do any additional setup after loading the view.
+    }
+    
+    func register() {
+        
+        APIManager.share.register { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                let results = data["results"]
+                
+                for value in results.arrayValue {
+                    
+                    let id = value["Id"].stringValue
+                    
+                    print(id)
+                    
+                    UserInfo.user.RegisterMethodId = id
+                    
+                    self.createUser()
+                }
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+
+        }
+    }
+    
+    func createUser() {
+        
+        APIManager.share.createLead { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                let results = data["results"]
+                
+                for value in results.arrayValue {
+                    
+                    let id = value["Id"].stringValue
+                    
+                    print(id)
+                    
+                    UserInfo.user.RegisterMethodId = id
+                }
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
     }
     
     func addGestures() {

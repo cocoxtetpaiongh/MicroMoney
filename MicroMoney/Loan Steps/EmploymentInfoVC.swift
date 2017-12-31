@@ -50,11 +50,47 @@ class EmploymentInfoVC: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    func validate() {
+        
+        guard companyNameTextField.text != "" else {
+            Utlities.showAlert(with: "No Company Name", "Enter your company name", "OK", self)
+            companyNameTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard companyNumberTextField.text != "" else {
+            Utlities.showAlert(with: "No Company's Phone Number", "Enter your company's phone number", "OK", self)
+            companyNumberTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard incomTextField.text != "" else {
+            Utlities.showAlert(with: "No Imcome Added", "Enter your income", "OK", self)
+            incomTextField.becomeFirstResponder()
+            return
+        }
+
+        UserInfo.user.UsrOccupation = socialStatusTextField.text
+        UserInfo.user.Account = companyNumberTextField.text
+        UserInfo.user.UsrAccountName = companyNameTextField.text
+        UserInfo.user.UsrSalaryAmount = Double(incomTextField.text!) 
+        // coworker name
+        // coworker number
+        
+        gotoNextVC()
+    }
+    
+    func gotoNextVC() {
         
         let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GettingMoneyVC") as! GettingMoneyVC
         
         navigationController?.pushViewController(nextVC, animated: true)
+
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        validate()
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {

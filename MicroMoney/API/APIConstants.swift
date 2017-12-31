@@ -16,5 +16,9 @@ struct APIConstants {
     
     static let gender = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/GenderCollection"
     
-    static let payment = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UserPaySystemCollection"
+    static let payment = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrPaySystemCollection"
+    
+    static let register = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadRegisterMethodCollection" //?$filter=Name eq 'iOS app'&$select=Id,Name"
+    
+    static let collection = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadCollection"
 }

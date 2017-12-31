@@ -39,11 +39,15 @@ class FinishedVC: UIViewController {
 //        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinishedVC") as! FinishedVC
 //
 //        navigationController?.pushViewController(nextVC, animated: true)
+        
+        navigationController?.popToRootViewController(animated: true)
+
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 
 

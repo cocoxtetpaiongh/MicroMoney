@@ -21,13 +21,15 @@ class GettingMoneyVC: UIViewController {
     @IBOutlet weak var iDTextField: UITextField!
 
     var paymentSystemList = [String]()
-    
+    var paymentSystemIDs = [String]()
+
     var paymentPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        getPaymentList()
     }
     
     func setupUI() {
@@ -35,6 +37,10 @@ class GettingMoneyVC: UIViewController {
         paymentTextField.delegate = self
         accountNumberTextField.delegate = self
         iDTextField.delegate = self
+        
+        paymentTextField.inputView = paymentPicker
+        
+        paymentPicker.delegate = self
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         self.view.addGestureRecognizer(gesture)
@@ -48,11 +54,48 @@ class GettingMoneyVC: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    func validate() {
+        
+        guard paymentTextField.text != "" else {
+            
+            Utlities.showAlert(with: "Empty Payment Stage", "Pick your payment state", "OK", self)
+            
+            paymentTextField.becomeFirstResponder()
+            return
+        }
+        guard accountNumberTextField.text != "" else {
+            
+            Utlities.showAlert(with: "Empty Account Number", "Enter your account number", "OK", self)
+            
+            accountNumberTextField.becomeFirstResponder()
+            return
+        }
+        guard iDTextField.text != "" else {
+            
+            Utlities.showAlert(with: "Empty ID/Passport", "Enter your passport number", "OK", self)
+            
+            iDTextField.becomeFirstResponder()
+            return
+        }
+        
+        UserInfo.user.UsrPaySystemId = paymentTextField.text
+        UserInfo.user.UsrPaySystemAccount = accountNumberTextField.text
+        UserInfo.user.UsrMMPersonalID = iDTextField.text
+
+        gotoNextVC()
+    }
+    
+    func gotoNextVC() {
         
         let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DocumentScanVC") as! DocumentScanVC
         
         navigationController?.pushViewController(nextVC, animated: true)
+
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        validate()
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -105,7 +148,9 @@ extension GettingMoneyVC {
         for payment in result.arrayValue {
             
             let account = payment["Name"].stringValue
+            let id = payment["Id"].stringValue
             
+            paymentSystemIDs.append(id)
             paymentSystemList.append(account)
         }
         

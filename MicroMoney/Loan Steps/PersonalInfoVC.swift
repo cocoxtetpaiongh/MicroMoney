@@ -25,18 +25,20 @@ class PersonalInfoVC: UIViewController {
     @IBOutlet weak var nationalTextField: UITextField!
     
     var countryList = [String]()
+    var countryIDs = [String]()
     
     var birthdayPicker = UIDatePicker()
     var genderPicker = UIPickerView()
     var countryPicker = UIPickerView()
     
     var genderTypes = ["", "Male", "Female"]
+    var genderIDs = ["", ""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-        
+        getGenderList()
         getCountryList()
     }
     
@@ -70,6 +72,10 @@ class PersonalInfoVC: UIViewController {
 
         birthdayPicker.minimumDate = component
         
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        birthdayTextField.text = dateFormatter.string(from: Date())
+
         birthdayPicker.datePickerMode = .date
         birthdayPicker.addTarget(self, action: #selector(self.dateChange(_:)), for: .valueChanged)
         
@@ -82,18 +88,66 @@ class PersonalInfoVC: UIViewController {
     
     @objc func dateChange(_ sender: UIDatePicker) {
         
-        let dateFormatter = DateFormatter()
+        var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
 //        dateFormatter.dateStyle = .long
         birthdayTextField.text = dateFormatter.string(from: sender.date)
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        UserInfo.user.UsrBirthDate = dateFormatter.string(from: sender.date)
     }
 
+    func validate() {
+        
+        guard emailTextField.text != "" else {
+            Utlities.showAlert(with: "Email is Empty", "Enter your email", "OK", self)
+            emailTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard cityTextField.text != "" else {
+            Utlities.showAlert(with: "City is Empty", "Enter your town", "OK", self)
+            cityTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard birthdayTextField.text != "" else {
+            Utlities.showAlert(with: "Birthday is Empty", "Pick your birthdate", "OK", self)
+            birthdayTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard genderTextField.text != "" else {
+            Utlities.showAlert(with: "Gender is Empty", "Chose Your Gender", "OK", self)
+            genderTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard nationalTextField.text != "" else {
+            Utlities.showAlert(with: "Nationality is Empty", "Chose your nationality", "OK", self)
+            nationalTextField.becomeFirstResponder()
+            return
+        }
+        
+        UserInfo.user.Email = emailTextField.text
+        UserInfo.user.CityId = cityTextField.text
+//        UserInfo.user.MobilePhone = numberTextField.text
+
+        gotoNextVC()
+    }
     
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    func gotoNextVC() {
+        
         
         let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EmploymentInfoVC") as! EmploymentInfoVC
         
         navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        validate()
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -146,12 +200,14 @@ extension PersonalInfoVC {
         let result = data["results"]
         
         genderTypes.removeAll()
+        genderIDs.removeAll()
         
-        for country in result.arrayValue {
+        for gender in result.arrayValue {
             
-            let gender = country["Name"].stringValue
-            
-            genderTypes.append(gender)
+            let name = gender["Name"].stringValue
+            let id = gender["Id"].stringValue
+            genderIDs.append(id)
+            genderTypes.append(name)
         }
         
         genderPicker.reloadAllComponents()
@@ -201,7 +257,9 @@ extension PersonalInfoVC {
         for country in result.arrayValue {
             
             let name = country["Name"].stringValue
+            let id = country["Id"].stringValue
             
+            countryIDs.append(id)
             countryList.append(name)
         }
         
@@ -222,11 +280,13 @@ extension PersonalInfoVC: UIPickerViewDelegate {
         if pickerView == genderPicker {
             
             genderTextField.text = genderTypes[row]
+            UserInfo.user.GenderId = genderIDs[row]
             
         } else if pickerView == countryPicker {
             
             let country = countryList[row]
             nationalTextField.text = country
+            UserInfo.user.CountryId = countryIDs[row]
         }
         
     }

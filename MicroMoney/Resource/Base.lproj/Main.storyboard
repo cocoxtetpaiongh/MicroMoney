@@ -1450,7 +1450,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Self-Employment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kur-ND-dkg">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="KBZ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kur-ND-dkg">
                                                 <rect key="frame" x="167.5" y="253" width="187.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1462,7 +1462,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Micromoney" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-k3-XEd">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AAB 3112020499503" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-k3-XEd">
                                                 <rect key="frame" x="167.5" y="303" width="187.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1474,7 +1474,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09774567890" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9Z-W9-5H6">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12/TaKaTa(N)000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9Z-W9-5H6">
                                                 <rect key="frame" x="167.5" y="353" width="187.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1652,6 +1652,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Done"/>
                                                 <connections>
+                                                    <action selector="backButtonPressed:" destination="tqg-Ea-ID0" eventType="touchUpInside" id="Y7T-FL-INT"/>
                                                     <action selector="backButtonPressed:" destination="YJp-YD-fxN" eventType="touchUpInside" id="kr1-K5-rVf"/>
                                                 </connections>
                                             </button>
@@ -1794,6 +1795,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="nextButtonPressed:" destination="YJp-YD-fxN" eventType="touchUpInside" id="Wa7-EV-rNr"/>
+                                                    <action selector="nextButtonPressed:" destination="tqg-Ea-ID0" eventType="touchUpInside" id="f1Q-VI-peB"/>
                                                 </connections>
                                             </button>
                                         </subviews>

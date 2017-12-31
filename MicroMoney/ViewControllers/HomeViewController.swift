@@ -207,6 +207,11 @@ class HomeViewController: UIViewController {
             }
         }
         
+        if countryList.isEmpty {
+            
+            return
+        }
+        
         countryTextField.text = countryList[0]
         
         UserInfo.user.CountryId = countryIDs[0]
@@ -310,6 +315,10 @@ extension HomeViewController: UIPickerViewDataSource {
 }
 
 extension HomeViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        self.view.endEditing(true)
