@@ -13,6 +13,7 @@
 		2D43DE521FD2505000DA9818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43DE511FD2505000DA9818 /* ViewController.swift */; };
 		2D43DE551FD2505000DA9818 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D43DE531FD2505000DA9818 /* Main.storyboard */; };
 		2D43DE5A1FD2505000DA9818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D43DE581FD2505000DA9818 /* LaunchScreen.storyboard */; };
+		2D8644FD1FF80B8300630978 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8644FC1FF80B8300630978 /* CameraHandler.swift */; };
 		2D886F1B1FE67FF40078631D /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F1A1FE67FF40078631D /* DesignableSlider.swift */; };
 		2D886F1D1FE682C30078631D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D886F1C1FE682C20078631D /* Assets.xcassets */; };
 		2D886F201FE690870078631D /* AboutMicroMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D886F1F1FE690870078631D /* AboutMicroMoney.swift */; };
@@ -66,6 +67,7 @@
 		2D43DE541FD2505000DA9818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D43DE591FD2505000DA9818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D43DE5B1FD2505000DA9818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D8644FC1FF80B8300630978 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		2D886F1A1FE67FF40078631D /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
 		2D886F1C1FE682C20078631D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D886F1F1FE690870078631D /* AboutMicroMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMicroMoney.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				2DAA25941FE2DA93006D7DEB /* GettingMoneyVC.swift */,
 				2DAA25961FE2DAA2006D7DEB /* DocumentScanVC.swift */,
 				2DAA25981FE2DAB8006D7DEB /* FinishedVC.swift */,
+				2D8644FC1FF80B8300630978 /* CameraHandler.swift */,
 			);
 			path = "Loan Steps";
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				2DA1E2B01FD7A72200D5B73F /* LoanStepCell.swift in Sources */,
 				2D886F2A1FE691590078631D /* FAQs.swift in Sources */,
 				2D886F301FE6918E0078631D /* TokenSale.swift in Sources */,
+				2D8644FD1FF80B8300630978 /* CameraHandler.swift in Sources */,
 				2D886F3F1FE6B3990078631D /* AboutThirdSectionCell.swift in Sources */,
 				2D886F241FE691170078631D /* ApplyOnline.swift in Sources */,
 			);
@@ -633,6 +637,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};

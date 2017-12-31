@@ -33,9 +33,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var cashAmmountSlider: UISlider!
     @IBOutlet weak var daysCountSlider: UISlider!
     
+    @IBOutlet weak var ammountIndicatorLabel: UILabel! 
+    
     var countryPicker = UIPickerView()
     
     var countryList = [String]()
+    var countryIDs = [String]()
+    
+    var cashAmmount: Double = 0
+    var period: Double = 0
+    
+    var cashAmmountList: [Double] = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
+//    var cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +70,19 @@ class HomeViewController: UIViewController {
         countryPicker.dataSource = self
         countryTextField.inputView = countryPicker
         
+        scrollView.delegate = self
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         self.view.addGestureRecognizer(gesture)
 
+        cashAmmount = cashAmmountList[0]
+        period = 7 * 2
+        
+        calculateCashAmmount(with: cashAmmount)
+        calculateRepaymentDate(with: 2)
+    
+        calculateRepayMent()
+        changeIndicatorLabel()
     }
     
     @objc func handleGesture(_ recognizer: UITapGestureRecognizer) {
@@ -74,11 +93,72 @@ class HomeViewController: UIViewController {
     @IBAction func changeCashAmmount(_ sender: UISlider) {
         
         cashAmmountSlider.value = roundf(cashAmmountSlider.value)
+        
+        let index = Int(cashAmmountSlider.value) - 1
+        let ammount = cashAmmountList[index]
+        UserInfo.user.UsrMoneyAmount = ammount
+        
+        
+        calculateCashAmmount(with: ammount)
+        
+        self.cashAmmount = ammount
+        changeIndicatorLabel()
+
+        calculateRepayMent()
+        
+        print(UserInfo.user.UsrMoneyAmount)
+
+    }
+    
+    func calculateCashAmmount(with ammount: Double) {
+        
+        cashAmountLabel.text = Int(ammount).description + " MMK"
+        
+
+    }
+    
+    func calculateRepayMent() {
+        
+        var loan = (period / 7) / 10
+        loan += 1.2
+        let repayment = (cashAmmount * loan)
+        
+        repayAmmountLabel.text = Int(repayment).description + " MMK"
     }
     
     @IBAction func changeDaysCount(_ sender: UISlider) {
         
         daysCountSlider.value = roundf(daysCountSlider.value)
+        
+        let multplier = Double(daysCountSlider.value) + 1.0
+        UserInfo.user.UsrTerm = multplier * 7
+        
+        self.period = multplier * 7
+        calculateRepaymentDate(with: multplier)
+        
+        changeIndicatorLabel()
+        
+        calculateRepayMent()
+
+        print(UserInfo.user.UsrTerm)
+    }
+    
+    func changeIndicatorLabel() {
+        
+        ammountIndicatorLabel.text = "I NEED \(Int(cashAmmount)) MMK FOR \(Int(period)) DAYS"
+    }
+    
+    func calculateRepaymentDate(with period: Double) {
+        
+        let unit: Set<Calendar.Component> = [.day, .month, .year]
+        
+        let value = Int(period) * 7
+        let component = Calendar.current.date(byAdding: .day, value: value, to: Date())
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        
+        repayDateLabel.text = formatter.string(from: component ?? Date())
     }
     
     @IBAction func menubuttonPressed(_ seneder: UIButton) {
@@ -90,6 +170,8 @@ class HomeViewController: UIViewController {
     
     func getCountryList() {
         
+        Utlities.showLoading(on: self.view, is: true)
+        
         APIManager.share.getNationality { (response, status) in
             
             print(response)
@@ -97,6 +179,9 @@ class HomeViewController: UIViewController {
             print("CountryData: \(response)")
             
             self.parseCountryList(with: response)
+            
+            Utlities.showLoading(on: self.view, is: false)
+
         }
 
     }
@@ -110,16 +195,42 @@ class HomeViewController: UIViewController {
         for country in result.arrayValue {
             
             let name = country["Name"].stringValue
+            let id = country["Id"].stringValue
             
-            countryList.append(name)
+            if name == "Myanmar" {
+                
+                countryIDs.insert(id, at: 0)
+                countryList.insert(name, at: 0)
+            } else {
+                countryIDs.append(id)
+                countryList.append(name)
+            }
         }
+        
+        countryTextField.text = countryList[0]
+        
+        UserInfo.user.CountryId = countryIDs[0]
         
         countryPicker.reloadAllComponents()
     }
 
     @IBAction func applyButtonPressed(_ sender: UIButton) {
         
+        guard nameTextField.text != "" else {
+            Utlities.showAlert(with: "Your Name is Empty", "Enter Your Name", "Ok", self)
+            nameTextField.becomeFirstResponder()
+            return
+        }
         
+        guard phoneNumberTextField.text != "" else {
+            Utlities.showAlert(with: "Your Phone Number is Empty", "Enter Your Number", "Ok", self)
+            phoneNumberTextField.becomeFirstResponder()
+            return
+        }
+        
+        UserInfo.user.Contact = nameTextField.text
+        UserInfo.user.MobilePhone = phoneNumberTextField.text
+
         gotoNextVC()
         
         return 
@@ -176,6 +287,7 @@ extension HomeViewController: UIPickerViewDelegate {
         }
         
         let country = countryList[row]
+        UserInfo.user.CountryId = countryIDs[row]
         countryTextField.text = country
     }
 }
@@ -194,6 +306,13 @@ extension HomeViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return countryList[row]
+    }
+}
+
+extension HomeViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        self.view.endEditing(true)
     }
 }
 
@@ -222,6 +341,7 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
         return true
     }
 }

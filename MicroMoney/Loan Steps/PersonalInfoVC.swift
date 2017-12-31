@@ -60,7 +60,18 @@ class PersonalInfoVC: UIViewController {
         genderPicker.delegate = self
         
         countryPicker.delegate = self
-        countryPicker.dataSource = self 
+        countryPicker.dataSource = self
+        
+        var component = Calendar.current.date(byAdding: .year, value: -18, to: Date())
+        
+        birthdayPicker.maximumDate = component
+        
+        component = Calendar.current.date(byAdding: .year, value: -40, to: Date())
+
+        birthdayPicker.minimumDate = component
+        
+        birthdayPicker.datePickerMode = .date
+        birthdayPicker.addTarget(self, action: #selector(self.dateChange(_:)), for: .valueChanged)
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         self.view.addGestureRecognizer(gesture)
@@ -68,6 +79,15 @@ class PersonalInfoVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    @objc func dateChange(_ sender: UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+//        dateFormatter.dateStyle = .long
+        birthdayTextField.text = dateFormatter.string(from: sender.date)
+    }
+
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         

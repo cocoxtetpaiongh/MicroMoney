@@ -502,7 +502,7 @@
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment content=" 300000 MMK ">
+                                                    <fragment content=" 30000 MMK ">
                                                         <attributes>
                                                             <color key="NSColor" red="0.047058823529411764" green="0.28627450980392155" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="17" name="ArialMT"/>
@@ -640,7 +640,7 @@
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Repayment Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-sr-Lbv">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repayment Dte" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-sr-Lbv">
                                                         <rect key="frame" x="8" y="0.0" width="83" height="50"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -724,7 +724,7 @@
                                                         <rect key="frame" x="20" y="15" width="260" height="19"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Phone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNB-hm-hB8">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="15"/>
@@ -818,19 +818,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BtS-o8-uRb">
                                                 <rect key="frame" x="40" y="225" width="295" height="29"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXE-gJ-JQi">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXE-gJ-JQi" userLabel="14">
                                                         <rect key="frame" x="0.0" y="0.0" width="98.5" height="9"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="8"/>
                                                         <color key="textColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-Is-Ref">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-Is-Ref">
                                                         <rect key="frame" x="98.5" y="0.0" width="98" height="9"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="8"/>
                                                         <color key="textColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okG-ia-GAA">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okG-ia-GAA" userLabel="28">
                                                         <rect key="frame" x="196.5" y="0.0" width="98.5" height="9"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="8"/>
                                                         <color key="textColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -947,6 +947,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="ammountIndicatorLabel" destination="V0u-Wd-ncY" id="Gpp-Yt-G2h"/>
                         <outlet property="cashAmmountSlider" destination="aU0-eb-WcB" id="ai9-0r-oF3"/>
                         <outlet property="cashAmmountView" destination="43H-n9-ulv" id="iuT-Ax-LD3"/>
                         <outlet property="cashAmountLabel" destination="HyC-dT-2gg" id="NfC-MD-2yT"/>
@@ -1618,14 +1619,253 @@
             </objects>
             <point key="canvasLocation" x="4505" y="949"/>
         </scene>
-        <!--View Controller-->
+        <!--FinishedVC-->
         <scene sceneID="1qa-Fg-pkI">
             <objects>
-                <viewController id="tqg-Ea-ID0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinishedVC" id="tqg-Ea-ID0" customClass="FinishedVC" customModule="MicroMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TaZ-LT-Zhf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2z-nD-n2f">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7Q-h8-mBA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-Vm-KM6">
+                                                <rect key="frame" x="20" y="63.5" width="80" height="24"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
+                                                <color key="textColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your application is under process of verification " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-Le-Abt">
+                                                <rect key="frame" x="20" y="107.5" width="335" height="34"/>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egA-Cw-RPd">
+                                                <rect key="frame" x="20" y="12" width="47" height="31.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="egA-Cw-RPd" secondAttribute="height" multiplier="1.5" id="dDB-er-9Xy"/>
+                                                </constraints>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="YJp-YD-fxN" eventType="touchUpInside" id="kr1-K5-rVf"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IF YOUR APPLICATION WILL BE APPROVED, we will contact you within 24 hour." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFf-Pb-mwh">
+                                                <rect key="frame" x="20" y="149.5" width="335" height="34"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="if you do not receive any message from us within 24 hours, PLEASE CONTACT US" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95c-7m-2qa">
+                                                <rect key="frame" x="20" y="191.5" width="335" height="34"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="170-6p-KEZ">
+                                                <rect key="frame" x="20" y="245.5" width="335" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Send us message to ">
+                                                        <attributes>
+                                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="FACEBOOK MESSENGER">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.46270006895065308" blue="0.77975255250930786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⦿ Send us message or call to viber hotline:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-06-FUV">
+                                                <rect key="frame" x="40" y="274.5" width="315" height="17"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f43-uc-CjE">
+                                                <rect key="frame" x="40" y="299.5" width="315" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+ 95 9 422 042 220">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.16794461011886597" green="0.44895297288894653" blue="0.67569774389266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxy-ba-Rfa">
+                                                <rect key="frame" x="40" y="324.5" width="315" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+ 95 9 422 042 220">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.16794461011886597" green="0.44895297288894653" blue="0.67569774389266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⦿ Send us message or call to viber hotline:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNw-fH-DI7">
+                                                <rect key="frame" x="40" y="361.5" width="315" height="17"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMO-x3-4hg">
+                                                <rect key="frame" x="40" y="386.5" width="315" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+ 95 9 422 042 220">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.16794461011886597" green="0.44895297288894653" blue="0.67569774389266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx5-v4-kaa">
+                                                <rect key="frame" x="40" y="411.5" width="315" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+ 95 9 422 042 220">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.16794461011886597" green="0.44895297288894653" blue="0.67569774389266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⦿ Send us message or call to viber hotline:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGi-8B-Goo">
+                                                <rect key="frame" x="40" y="448.5" width="315" height="17"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aC2-8o-BqY">
+                                                <rect key="frame" x="40" y="473.5" width="315" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+ 95 9 422 042 220">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.16794461011886597" green="0.44895297288894653" blue="0.67569774389266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-cN-d2G">
+                                                <rect key="frame" x="40" y="498.5" width="315" height="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="+ 95 9 422 042 220">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.16794461011886597" green="0.44895297288894653" blue="0.67569774389266968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVJ-bN-OHw">
+                                                <rect key="frame" x="265" y="582.5" width="90" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tVJ-bN-OHw" secondAttribute="height" multiplier="3" id="bGs-rS-Cyh"/>
+                                                </constraints>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="YJp-YD-fxN" eventType="touchUpInside" id="Wa7-EV-rNr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="f43-uc-CjE" firstAttribute="top" secondItem="Goc-06-FUV" secondAttribute="bottom" constant="8" id="06Y-WM-tGd"/>
+                                            <constraint firstItem="uTY-Vm-KM6" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="20" id="0S0-eZ-JNJ"/>
+                                            <constraint firstItem="egA-Cw-RPd" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="20" id="1yJ-h5-zce"/>
+                                            <constraint firstItem="aC2-8o-BqY" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="3QV-L6-qcb"/>
+                                            <constraint firstItem="kFf-Pb-mwh" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="20" id="5l3-4c-xU8"/>
+                                            <constraint firstItem="Nx5-v4-kaa" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="81l-Nf-gH3"/>
+                                            <constraint firstItem="Goc-06-FUV" firstAttribute="top" secondItem="170-6p-KEZ" secondAttribute="bottom" constant="12" id="85Z-zp-4OV"/>
+                                            <constraint firstAttribute="trailing" secondItem="tVJ-bN-OHw" secondAttribute="trailing" constant="20" id="892-Zc-gGW"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nx5-v4-kaa" secondAttribute="trailing" constant="20" id="8Oj-G8-AfD"/>
+                                            <constraint firstItem="tVJ-bN-OHw" firstAttribute="width" secondItem="tVJ-bN-OHw" secondAttribute="height" multiplier="3" id="8iz-HO-xnt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hxy-ba-Rfa" secondAttribute="trailing" constant="20" id="8vK-6L-Q4X"/>
+                                            <constraint firstItem="egA-Cw-RPd" firstAttribute="width" secondItem="E7Q-h8-mBA" secondAttribute="width" multiplier="1/8" id="9YH-UU-IEN"/>
+                                            <constraint firstItem="GGi-8B-Goo" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="AvO-5e-899"/>
+                                            <constraint firstAttribute="trailing" secondItem="GGi-8B-Goo" secondAttribute="trailing" constant="20" id="BzC-l3-YTn"/>
+                                            <constraint firstItem="kFf-Pb-mwh" firstAttribute="top" secondItem="eUC-Le-Abt" secondAttribute="bottom" constant="8" id="ECx-UQ-C3Q"/>
+                                            <constraint firstItem="tVJ-bN-OHw" firstAttribute="top" secondItem="5uu-cN-d2G" secondAttribute="bottom" constant="67" id="HQ7-dK-JE8"/>
+                                            <constraint firstAttribute="trailing" secondItem="vNw-fH-DI7" secondAttribute="trailing" constant="20" id="IXo-4K-WqI"/>
+                                            <constraint firstAttribute="trailing" secondItem="f43-uc-CjE" secondAttribute="trailing" constant="20" id="KXj-x7-n7w"/>
+                                            <constraint firstItem="95c-7m-2qa" firstAttribute="top" secondItem="kFf-Pb-mwh" secondAttribute="bottom" constant="8" id="KdN-zv-S2V"/>
+                                            <constraint firstItem="Nx5-v4-kaa" firstAttribute="top" secondItem="qMO-x3-4hg" secondAttribute="bottom" constant="8" id="LDh-YI-Vpd"/>
+                                            <constraint firstAttribute="trailing" secondItem="170-6p-KEZ" secondAttribute="trailing" constant="20" id="LQj-nt-bJl"/>
+                                            <constraint firstItem="5uu-cN-d2G" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="MqH-b4-air"/>
+                                            <constraint firstItem="Hxy-ba-Rfa" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="QFp-0l-xeH"/>
+                                            <constraint firstAttribute="trailing" secondItem="95c-7m-2qa" secondAttribute="trailing" constant="20" id="SGw-Vq-0Li"/>
+                                            <constraint firstAttribute="trailing" secondItem="eUC-Le-Abt" secondAttribute="trailing" constant="20" id="T3t-ML-noB"/>
+                                            <constraint firstItem="aC2-8o-BqY" firstAttribute="top" secondItem="GGi-8B-Goo" secondAttribute="bottom" constant="8" id="TdB-sf-Wrh"/>
+                                            <constraint firstItem="qMO-x3-4hg" firstAttribute="top" secondItem="vNw-fH-DI7" secondAttribute="bottom" constant="8" id="VrV-us-eSD"/>
+                                            <constraint firstAttribute="trailing" secondItem="5uu-cN-d2G" secondAttribute="trailing" constant="20" id="YNb-G9-sj9"/>
+                                            <constraint firstItem="5uu-cN-d2G" firstAttribute="top" secondItem="aC2-8o-BqY" secondAttribute="bottom" constant="8" id="aqC-Ld-ez0"/>
+                                            <constraint firstItem="eUC-Le-Abt" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="20" id="ar7-xT-1Ud"/>
+                                            <constraint firstItem="GGi-8B-Goo" firstAttribute="top" secondItem="Nx5-v4-kaa" secondAttribute="bottom" constant="20" id="bQT-Gz-Hrh"/>
+                                            <constraint firstItem="95c-7m-2qa" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="20" id="cQh-To-MUc"/>
+                                            <constraint firstItem="Goc-06-FUV" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="d3N-Vv-st3"/>
+                                            <constraint firstItem="vNw-fH-DI7" firstAttribute="top" secondItem="Hxy-ba-Rfa" secondAttribute="bottom" constant="20" id="eVh-ib-zQ2"/>
+                                            <constraint firstItem="Hxy-ba-Rfa" firstAttribute="top" secondItem="f43-uc-CjE" secondAttribute="bottom" constant="8" id="fhl-wP-ys4"/>
+                                            <constraint firstAttribute="trailing" secondItem="kFf-Pb-mwh" secondAttribute="trailing" constant="20" id="izG-0E-svG"/>
+                                            <constraint firstAttribute="height" constant="667" id="mOe-zq-nn7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Goc-06-FUV" secondAttribute="trailing" constant="20" id="mZC-yY-Mkq"/>
+                                            <constraint firstAttribute="trailing" secondItem="qMO-x3-4hg" secondAttribute="trailing" constant="20" id="on5-mC-sU0"/>
+                                            <constraint firstItem="uTY-Vm-KM6" firstAttribute="top" secondItem="egA-Cw-RPd" secondAttribute="bottom" constant="20" id="qpn-5z-hWo"/>
+                                            <constraint firstItem="f43-uc-CjE" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="qt2-5g-vN6"/>
+                                            <constraint firstItem="egA-Cw-RPd" firstAttribute="top" secondItem="E7Q-h8-mBA" secondAttribute="top" constant="12" id="trW-Bv-fGB"/>
+                                            <constraint firstItem="eUC-Le-Abt" firstAttribute="top" secondItem="uTY-Vm-KM6" secondAttribute="bottom" constant="20" id="uC7-vm-YL7"/>
+                                            <constraint firstItem="vNw-fH-DI7" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="uky-yP-qqg"/>
+                                            <constraint firstItem="170-6p-KEZ" firstAttribute="top" secondItem="95c-7m-2qa" secondAttribute="bottom" constant="20" id="vHB-h8-dPy"/>
+                                            <constraint firstAttribute="trailing" secondItem="aC2-8o-BqY" secondAttribute="trailing" constant="20" id="vUj-st-KLD"/>
+                                            <constraint firstItem="170-6p-KEZ" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="20" id="x29-w6-28f"/>
+                                            <constraint firstItem="qMO-x3-4hg" firstAttribute="leading" secondItem="E7Q-h8-mBA" secondAttribute="leading" constant="40" id="xTA-3o-cW5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="E7Q-h8-mBA" firstAttribute="leading" secondItem="v2z-nD-n2f" secondAttribute="leading" id="8vW-EE-eyR"/>
+                                    <constraint firstAttribute="trailing" secondItem="E7Q-h8-mBA" secondAttribute="trailing" id="YUr-Mb-J9z"/>
+                                    <constraint firstAttribute="bottom" secondItem="E7Q-h8-mBA" secondAttribute="bottom" id="c7k-84-ljw"/>
+                                    <constraint firstItem="E7Q-h8-mBA" firstAttribute="top" secondItem="v2z-nD-n2f" secondAttribute="top" id="dMV-bh-2g0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v2z-nD-n2f" firstAttribute="bottom" secondItem="aQw-4W-gLY" secondAttribute="bottom" id="NTB-nV-t4n"/>
+                            <constraint firstItem="v2z-nD-n2f" firstAttribute="leading" secondItem="aQw-4W-gLY" secondAttribute="leading" id="T4o-wl-F9h"/>
+                            <constraint firstItem="v2z-nD-n2f" firstAttribute="top" secondItem="TaZ-LT-Zhf" secondAttribute="top" id="mso-2n-UHZ"/>
+                            <constraint firstItem="E7Q-h8-mBA" firstAttribute="width" secondItem="aQw-4W-gLY" secondAttribute="width" id="wVN-da-7Ix"/>
+                            <constraint firstItem="v2z-nD-n2f" firstAttribute="trailing" secondItem="aQw-4W-gLY" secondAttribute="trailing" id="yCe-wZ-iE7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aQw-4W-gLY"/>
                     </view>
                 </viewController>
@@ -1681,12 +1921,14 @@
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrU-nx-exr">
                                                 <rect key="frame" x="194" y="154" width="161" height="87.5"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="jrU-nx-exr" secondAttribute="height" multiplier="57:31" id="5fT-xf-ej4"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ESw-GZ-yAl">
                                                 <rect key="frame" x="194" y="281" width="161" height="87.5"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ESw-GZ-yAl" secondAttribute="height" multiplier="57:31" id="AI9-X6-ids"/>
                                                 </constraints>
