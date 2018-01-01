@@ -26,10 +26,14 @@ class PersonalInfoVC: UIViewController {
     
     var countryList = [String]()
     var countryIDs = [String]()
-    
+
+    var cityList = [String]()
+    var cityIDs = [String]()
+
     var birthdayPicker = UIDatePicker()
     var genderPicker = UIPickerView()
     var countryPicker = UIPickerView()
+    var cityPicker = UIPickerView()
     
     var genderTypes = ["", "Male", "Female"]
     var genderIDs = ["", ""]
@@ -38,6 +42,7 @@ class PersonalInfoVC: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        getCityList()
         getGenderList()
         getCountryList()
     }
@@ -57,12 +62,16 @@ class PersonalInfoVC: UIViewController {
         birthdayTextField.inputView = birthdayPicker
         genderTextField.inputView = genderPicker
         nationalTextField.inputView = countryPicker
+        cityTextField.inputView = cityPicker
         
         genderPicker.dataSource = self
         genderPicker.delegate = self
         
         countryPicker.delegate = self
         countryPicker.dataSource = self
+        
+        cityPicker.delegate = self
+        cityPicker.dataSource = self
         
         var component = Calendar.current.date(byAdding: .year, value: -18, to: Date())
         
@@ -163,6 +172,36 @@ extension PersonalInfoVC {
         self.view.endEditing(true)
     }
     
+    func getCityList() {
+        
+        Utlities.showLoading(on: self.view, is: true)
+        APIManager.share.getCityList { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                self.parseCityList(with: response)
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+        
+    }
+    
     func getGenderList() {
         
         Utlities.showLoading(on: self.view, is: true)
@@ -192,6 +231,27 @@ extension PersonalInfoVC {
         }
         
     }
+    
+    func parseCityList(with json: JSON) {
+        
+        let data = json["d"]
+        
+        let result = data["results"]
+        
+        cityList.removeAll()
+        cityIDs.removeAll()
+        
+        for city in result.arrayValue {
+            
+            let name = city["Name"].stringValue
+            let id = city["Id"].stringValue
+            cityIDs.append(id)
+            cityList.append(name)
+        }
+        
+        genderPicker.reloadAllComponents()
+    }
+
     
     func parseGenderList(with json: JSON) {
         
@@ -287,6 +347,12 @@ extension PersonalInfoVC: UIPickerViewDelegate {
             let country = countryList[row]
             nationalTextField.text = country
             UserInfo.user.CountryId = countryIDs[row]
+        } else if pickerView == cityPicker {
+            
+            let city = cityList[row]
+            cityTextField.text = city
+            UserInfo.user.CityId = cityIDs[row]
+
         }
         
     }
@@ -307,6 +373,9 @@ extension PersonalInfoVC: UIPickerViewDataSource {
         } else if pickerView == countryPicker {
             
             return countryList.count
+        } else if pickerView == cityPicker {
+            
+            return cityList.count
         }
         
         return 0
@@ -321,6 +390,9 @@ extension PersonalInfoVC: UIPickerViewDataSource {
         } else if pickerView == countryPicker {
             
             return countryList[row]
+        } else if pickerView == cityPicker {
+            
+            return cityList[row]
         }
 
         return ""

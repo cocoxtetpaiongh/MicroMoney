@@ -34,6 +34,8 @@ class GettingMoneyVC: UIViewController {
     
     func setupUI() {
         
+        repaymentDateLabel.text = UserInfo.user.repaymentDate
+        
         paymentTextField.delegate = self
         accountNumberTextField.delegate = self
         iDTextField.delegate = self

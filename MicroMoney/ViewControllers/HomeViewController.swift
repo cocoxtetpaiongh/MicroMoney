@@ -159,6 +159,8 @@ class HomeViewController: UIViewController {
         formatter.dateFormat = "dd MMM yyyy"
         
         repayDateLabel.text = formatter.string(from: component ?? Date())
+        
+        UserInfo.user.repaymentDate = formatter.string(from: component ?? Date()) + " (\(value))days "
     }
     
     @IBAction func menubuttonPressed(_ seneder: UIButton) {

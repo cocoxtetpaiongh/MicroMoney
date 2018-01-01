@@ -19,11 +19,13 @@ class DocumentScanVC: UIViewController {
         super.viewDidLoad()
 
         addGestures()
-        register()
+//        register()
         // Do any additional setup after loading the view.
     }
     
     func register() {
+        
+        Utlities.showLoading(on: self.view, is: true)
         
         APIManager.share.register { (response, status) in
             
@@ -94,6 +96,10 @@ class DocumentScanVC: UIViewController {
                     UserInfo.user.RegisterMethodId = id
                 }
                 
+                Utlities.showLoading(on: self.view, is: false)
+
+                self.gotoFinish()
+                
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
@@ -137,13 +143,42 @@ class DocumentScanVC: UIViewController {
             self.iDImageView.image = image
         }
     }
-
-
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    
+    func gotoFinish() {
         
         let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinishedVC") as! FinishedVC
         
         navigationController?.pushViewController(nextVC, animated: true)
+
+    }
+
+    func validate() {
+        
+        guard iDImageView.image != nil else {
+            Utlities.showAlert(with: "No Image", "Capture your passport image", "Ok", self)
+            
+            return
+        }
+        
+        guard bankAccoutnImageView.image != nil else {
+            Utlities.showAlert(with: "No Image", "Capture your Bank Account image", "Ok", self)
+            
+            return
+        }
+        
+        register()
+
+    }
+
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        
+        
+        validate()
+        
+//        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinishedVC") as! FinishedVC
+//
+//        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {

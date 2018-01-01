@@ -63,8 +63,19 @@ class APIManager {
                                          "UsrOccupation": user.UsrOccupation ?? "",
                                          "RegisterMethodId": user.RegisterMethodId ?? ""]
         
-
-        Alamofire.request(url, method: .post, parameters: paramaters, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        let json = JSON(paramaters) // as! Parameter
+        
+//        guard let url = URL(string: "\(APIConstants.collection)\(json)") else {
+//            return
+//        }
+        
+//        Alamofire.request(url, method: .post, parameters: paramaters, encoding: URLEncoding.default, headers: headers).response { (response) in
+//            
+//            print(response.data)
+//        }
+        
+        
+        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
             
             print(dataRsponse.response)
             print(dataRsponse.result.description)
@@ -164,6 +175,39 @@ class APIManager {
     func getGenderList(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
         guard let url = URL(string: APIConstants.gender) else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+
+    func getCityList(completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: APIConstants.city) else {
             return
         }
         

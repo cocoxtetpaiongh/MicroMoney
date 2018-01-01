@@ -14,6 +14,8 @@ class UserData: NSObject {
     var name = ""
     var country = ""
     var phoneNumber = ""
+    
+    
 
 }
 
@@ -44,6 +46,7 @@ class UserInfo: NSObject {
     var UsrOccupation: String? = nil
     var RegisterMethodId: GUID? = nil
     
+    var repaymentDate: String? = nil
 //    var email: String? = nil
     
     
