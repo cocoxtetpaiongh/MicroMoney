@@ -25,7 +25,7 @@ class UserInfo: NSObject {
     
     static var user = UserInfo()
     
-    var Id: Int? = nil
+    var Id: GUID? = nil
     var Email: String? = nil
     var CityId: GUID? = nil
     var UsrBirthDate: String? = nil
@@ -47,8 +47,13 @@ class UserInfo: NSObject {
     var RegisterMethodId: GUID? = nil
     
     var repaymentDate: String? = nil
-//    var email: String? = nil
+    var CoworkerRelationId: GUID? = nil
+    var CompanyRelationId: GUID? = nil
     
+    var CoworkerId: GUID? = nil
+    var CompanyId: GUID? = nil
+    
+//    var email: String? = nil
     
 
 }

@@ -44,24 +44,26 @@ class APIManager {
                                          "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
                                          "Accept": "application/json;odata=verbose"]
         
-        let paramaters: [String: Any] = ["Email": user.Email ?? "",
-                                         "CityId": user.CityId ?? "",
-                                         "UsrBirthDate": user.UsrMMPersonalID ?? "",
-                                         "GenderId": user.GenderId ?? "",
-                                         "MobilePhone": user.MobilePhone ?? "",
-                                         "Contact": user.Contact ?? "",
-                                         "UsrMoneyAmount": user.UsrMoneyAmount ?? "",
-                                         "UsrTerm": user.UsrTerm ?? "",
-                                         "UsrNationalityId": user.UsrNationalityId ?? "",
-                                         "CountryId": user.CountryId ?? "",
-                                         "Account": user.Account ?? "",
-                                         "UsrAccountName": user.UsrAccountName ?? "",
-                                         "UsrSalaryAmount": user.UsrSalaryAmount ?? "",
-                                         "UsrMMPersonalID": user.UsrMMPersonalID ?? "",
-                                         "UsrPaySystemAccount": user.UsrPaySystemAccount ?? "",
-                                         "UsrPaySystemId": user.UsrPaySystemId ?? "",
-                                         "UsrOccupation": user.UsrOccupation ?? "",
-                                         "RegisterMethodId": user.RegisterMethodId ?? ""]
+        var paramaters: [String: Any] = ["Email": user.Email ?? "somebody@mail.com",
+                                         "CityId": user.CityId ?? "e1b8bdae-c8a6-4bd1-b070-0007259a6158",
+                                         "UsrBirthDate": user.UsrMMPersonalID ?? "1994-01-12",
+                                         "GenderId": user.GenderId ?? "eeac42ee-65b6-df11-831a-001d60e938c6",
+                                         "MobilePhone": user.MobilePhone ?? "09250137382",
+                                         "Contact": user.Contact ?? "Somebody",
+                                         "UsrMoneyAmount": user.UsrMoneyAmount ?? "100000",
+                                         "UsrTerm": user.UsrTerm ?? "21",
+                                         "UsrNationalityId": user.UsrNationalityId ?? "4b84d246-8109-4891-a48b-8628ad9cd0cf",
+//                                         "CountryId": user.CountryId ?? "",
+                                         "Account": user.Account ?? "Company Name",
+                                         "UsrAccountName": user.UsrAccountName ?? "Account Name",
+                                         "UsrSalaryAmount": user.UsrSalaryAmount ?? "300000",
+                                         "UsrMMPersonalID": user.UsrMMPersonalID ?? "12//MaYaKa(N)129933",
+                                         "UsrPaySystemAccount": user.UsrPaySystemAccount ?? "1293393933339999",
+                                         "UsrPaySystemId": user.UsrPaySystemId ?? "e5a2acde-8044-4717-8782-19d498e63070",
+                                         "UsrOccupation": user.UsrOccupation ?? "Stringdsd",
+                                         "RegisterMethodId": user.RegisterMethodId ?? "05813cf2-91e7-4220-ac72-6c94a802bf0f"]
+        
+//        paramaters = ["": paramaters]
         
         let json = JSON(paramaters) // as! Parameter
         
@@ -74,8 +76,34 @@ class APIManager {
 //            print(response.data)
 //        }
         
+        let jsonData = json.description.data(using: .utf8, allowLossyConversion: false)
         
-        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json;odata=verbose", forHTTPHeaderField: "Content-Type")
+        request.setValue("Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj", forHTTPHeaderField: "Accept")
+        request.setValue("application/json;odata=verbose", forHTTPHeaderField: "Authorization")
+
+        request.httpBody = jsonData
+        
+//        Alamofire.request(request).responseSwiftyJSON { (dataRsponse) in
+//            
+//            print(dataRsponse.response)
+//            print(dataRsponse.result.description)
+//
+//            if let json = dataRsponse.value {
+//                
+//                completion(json, .Success)
+//                
+//            } else {
+//                
+//                completion(JSON.null, .Error)
+//            }
+//        }
+        
+        
+        
+        Alamofire.request(url, method: .post, parameters: paramaters, encoding: JSONEncoding.prettyPrinted, headers: headers).responseSwiftyJSON { (dataRsponse) in
             
             print(dataRsponse.response)
             print(dataRsponse.result.description)
@@ -91,6 +119,333 @@ class APIManager {
         }
 
     }
+    
+    func getCompanyRelationID(completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: APIConstants.relation) else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        let parameters: [String: Any] = ["$filter": "Name eq 'Workplace'"]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    func getCoworkerRealtionID(completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: APIConstants.relation) else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        let parameters: [String: Any] = ["$filter": "Name eq 'Coworker'"]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    func getCompanyID(with leadID: GUID, relationID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: APIConstants.relation) else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
+        
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    func getCoworkerID(with leadID: GUID, relationID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: APIConstants.relation) else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
+        
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    // MARK: Upload Image
+    
+    func uploadImage(with id: GUID, name: String, imageData: Data, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: APIConstants.upload) else {
+            return
+        }
+
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+
+        //        let AUTH_TOKEN_KEY = ""
+        //        let AUTH_TOKEN = ""
+        
+        let paras: [String: String] = ["LeadId": id,
+                                    "Name": name
+        ]
+        
+        let request = try! URLRequest(url: url, method: .post, headers: headers)
+        
+//        Alamofire.upload(multipartFormData: { (multiparFormData) in
+//            multiparFormData.append(imageData, withName: name)
+//
+//            for (key, value) in paras {
+//
+//                multiparFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
+//            }
+//        }, usingThreshold: 9, to: url, method: HTTPMethod(rawValue: "POST"), headers: headers) { (result) in
+//
+//
+//            print(result)
+//        }
+        
+//        Alamofire.upload(imageData, to: url, method: .post, headers: headers).responseSwiftyJSON { (response) in
+//
+//            if let json = response.value {
+//
+//                completion(json, .Success)
+//
+//            } else {
+//
+//                completion(JSON.null, .Error)
+//            }
+//
+//        }
+        
+        let fileURL = URL(fileURLWithPath: name, isDirectory: true)
+        
+//        do {
+//
+//            try imageData.write(to: fileURL, options: .atomic)
+//
+//            DispatchQueue.main.async {
+//
+//                Alamofire.upload(multipartFormData: { (multipartFormdata) in
+//
+//                    multipartFormdata.append(fileURL, withName: "Data")
+//
+//                    for (key, value) in paras {
+//
+//                        multipartFormdata.append(value.data(using: .utf8), withName: key)
+//                    }
+//
+//                }, with: url, encodingCompletion: { (encodingResult) in
+//
+//                    switch encodingResult {
+//                    case .success(let upload, _, _):
+//                        upload.responseSwiftyJSON { response in
+//                            debugPrint(response, "endcoding Response")
+//
+//
+//                            if let json = response.value {
+//
+//                                completion(json, .Success)
+//
+//                            } else {
+//
+//                                completion(JSON.null, .Error)
+//                            }
+//
+//                        }
+//                    case .failure(let encodingError):
+//                        print(encodingError)
+//                    }
+//
+//                })
+//            }
+//
+//        } catch let error as NSError {
+//
+//            print("Ooops! Something went wrong: \(error)")
+//        }
+        
+        Alamofire.upload(multipartFormData:{ multipartFormData in
+            
+            multipartFormData.append(imageData, withName: "Data")
+            
+            for (key, value) in paras {
+
+                multipartFormData.append(value.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!, withName: key)
+            }
+
+        },
+                         usingThreshold:UInt64.init(),
+                         to: APIConstants.upload,
+                         method:.post,
+                         headers: headers,
+                         encodingCompletion: { encodingResult in
+                            
+                            switch encodingResult {
+                            case .success(let upload, _, _):
+                                upload.responseSwiftyJSON { response in
+                                    debugPrint(response, "endcoding Response")
+                                    
+                                    
+                                    if let json = response.value {
+                                        
+                                        completion(json, .Success)
+                                        
+                                    } else {
+                                        
+                                        completion(JSON.null, .Error)
+                                    }
+
+                                }
+                            case .failure(let encodingError):
+                                print(encodingError)
+                            }
+        })
+        
+//        Alamofire.request(url, method: .post, parameters: paras, encoding: JSONEncoding.prettyPrinted, headers: headers).responseSwiftyJSON { (dataRsponse) in
+//
+//            print(dataRsponse.response)
+//            print(dataRsponse.result.description)
+//
+//            if let json = dataRsponse.value {
+//
+//                completion(json, .Success)
+//
+//            } else {
+//
+//                completion(JSON.null, .Error)
+//            }
+//        }
+    }
+    
+//    func getPaymentList(completion: @escaping (JSON, NetworkStatus) -> Void) {
+//
+//        let filter = "$select=Id,Name"
+//
+//        guard let url = URL(string: "\(APIConstants.payment)") else {
+//            return
+//        }
+//
+//        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+//                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+//                                         "Accept": "application/json;odata=verbose"]
+//
+//        let parameters: [String: Any] = ["$select": "Id,Name",
+//                                         "$filter": "UsrBranch/Id eq guid'7ffcfa45-b517-441c-86f0-808eaab4dd11'"]
+//
+//        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+//
+//            guard let responseData = response.data else {
+//
+//                completion(JSON.null, .Error)
+//
+//                return
+//            }
+//
+//            do {
+//
+//                let json = try JSON(data: responseData)
+//                completion(json, .Success)
+//
+//            } catch {
+//
+//                print(error)
+//                completion(JSON.null, .Error)
+//            }
+//
+//        }
+//    }
     
     func applyLoan(with parameter: Parameter? = nil, completion: @escaping (JSON, NetworkStatus) -> Void) {
         

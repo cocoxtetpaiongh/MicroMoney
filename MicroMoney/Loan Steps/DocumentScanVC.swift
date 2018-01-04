@@ -15,11 +15,13 @@ class DocumentScanVC: UIViewController {
     
     @IBOutlet weak var iDImageView: UIImageView!
 
+    var leadID: GUID? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addGestures()
-//        register()
+        register()
         // Do any additional setup after loading the view.
     }
     
@@ -85,19 +87,65 @@ class DocumentScanVC: UIViewController {
                 Utlities.showLoading(on: self.view, is: false)
                 
                 let data = response["d"]
-                let results = data["results"]
                 
-                for value in results.arrayValue {
-                    
-                    let id = value["Id"].stringValue
-                    
-                    print(id)
-                    
-                    UserInfo.user.RegisterMethodId = id
-                }
+                UserInfo.user.Id = data["Id"].stringValue
+                
+                self.leadID = data["Id"].stringValue
+                
+                self.getCoworkerRelationID()
+//                self.uploadImage(with: data["Id"].stringValue)
+
+//                self.gotoFinish()
+                
+            } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+    }
+    
+    // MARK: Upload Image
+    
+    func uploadImage(with name: GUID) {
+        
+        guard let image = iDImageView.image else {
+            
+            return
+        }
+        
+        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
+            
+            return
+        }
+        
+        guard let leadID = leadID else {
+            return
+        }
+        
+        APIManager.share.uploadImage(with: leadID, name: name, imageData: imageData) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                UserInfo.user.CompanyRelationId = data["Id"].stringValue
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
                 self.gotoFinish()
                 
             } else {
@@ -107,6 +155,196 @@ class DocumentScanVC: UIViewController {
             }
             
         }
+    }
+    
+    // MARK: Getting Company ID
+    
+    func getCompanyRelationID() {
+        
+        APIManager.share.getCompanyRelationID { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                UserInfo.user.CompanyRelationId = data["Id"].stringValue
+                
+                self.getCompanyID(with: data["Id"].stringValue)
+                
+//                Utlities.showLoading(on: self.view, is: false)
+//
+//                self.gotoFinish()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+    }
+    
+    func getCompanyID(with relationID: GUID) {
+        
+        guard let leadID = leadID else {
+            return
+        }
+        
+        APIManager.share.getCompanyID(with: leadID, relationID: relationID) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                let results = data["results"]
+                
+                for value in results.arrayValue {
+                    
+                    let id = value["Id"].stringValue
+                    
+                    print(id)
+                    
+                    UserInfo.user.CompanyId = id
+                    
+                }
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+//                self.gotoFinish()
+                //                self.getCompanyRelationID()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+        
+    }
+    
+    // MARK: Getting Cowroker ID
+    
+    func getCoworkerRelationID() {
+        
+        APIManager.share.getCoworkerRealtionID { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                let results = data["results"]
+                
+                for value in results.arrayValue {
+                    
+                    let id = value["Id"].stringValue
+                    
+                    print(id)
+                    
+                    UserInfo.user.CoworkerRelationId = id
+                    
+                    self.getCoworkerID(with: id)
+                    
+//                    self.createUser()
+                }
+
+//                Utlities.showLoading(on: self.view, is: false)
+                
+//                self.getCompanyRelationID()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+    }
+    
+    func getCoworkerID(with relationID: GUID) {
+        
+        guard let leadID = leadID else {
+            return
+        }
+        
+        APIManager.share.getCoworkerID(with: leadID, relationID: relationID) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                let results = data["results"]
+                
+                for value in results.arrayValue {
+                    
+                    let id = value["Id"].stringValue
+                    
+                    print(id)
+                    
+                    UserInfo.user.CoworkerId = id
+                    
+                }
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                self.getCompanyRelationID()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+
     }
     
     func addGestures() {
@@ -166,7 +404,9 @@ class DocumentScanVC: UIViewController {
             return
         }
         
-        register()
+        gotoFinish()
+//        register()
+        
 
     }
 
