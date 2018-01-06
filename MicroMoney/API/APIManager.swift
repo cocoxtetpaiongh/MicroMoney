@@ -24,6 +24,7 @@ enum NetworkStatus {
     case Failure
     case Unauthorized
     case Error
+    case Updated
 }
 
 class APIManager {
@@ -32,6 +33,7 @@ class APIManager {
     
     
     // MARK: Create Lead
+    
     func createLead(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
         guard let url = URL(string: "\(APIConstants.collection)") else {
@@ -44,37 +46,47 @@ class APIManager {
                                          "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
                                          "Accept": "application/json;odata=verbose"]
         
-        var paramaters: [String: Any] = ["Email": user.Email ?? "somebody@mail.com",
-                                         "CityId": user.CityId ?? "e1b8bdae-c8a6-4bd1-b070-0007259a6158",
-                                         "UsrBirthDate": user.UsrMMPersonalID ?? "1994-01-12",
-                                         "GenderId": user.GenderId ?? "eeac42ee-65b6-df11-831a-001d60e938c6",
-                                         "MobilePhone": user.MobilePhone ?? "09250137382",
-                                         "Contact": user.Contact ?? "Somebody",
-                                         "UsrMoneyAmount": user.UsrMoneyAmount ?? "100000",
-                                         "UsrTerm": user.UsrTerm ?? "21",
-                                         "UsrNationalityId": user.UsrNationalityId ?? "4b84d246-8109-4891-a48b-8628ad9cd0cf",
-//                                         "CountryId": user.CountryId ?? "",
-                                         "Account": user.Account ?? "Company Name",
-                                         "UsrAccountName": user.UsrAccountName ?? "Account Name",
-                                         "UsrSalaryAmount": user.UsrSalaryAmount ?? "300000",
-                                         "UsrMMPersonalID": user.UsrMMPersonalID ?? "12//MaYaKa(N)129933",
-                                         "UsrPaySystemAccount": user.UsrPaySystemAccount ?? "1293393933339999",
-                                         "UsrPaySystemId": user.UsrPaySystemId ?? "e5a2acde-8044-4717-8782-19d498e63070",
-                                         "UsrOccupation": user.UsrOccupation ?? "Stringdsd",
-                                         "RegisterMethodId": user.RegisterMethodId ?? "05813cf2-91e7-4220-ac72-6c94a802bf0f"]
+//        var paramaters: [String: Any] = ["Email": user.Email ?? "somebody@mail.com",
+//                                         "CityId": user.CityId ?? "e1b8bdae-c8a6-4bd1-b070-0007259a6158",
+//                                         "UsrBirthDate": user.UsrBirthDate ?? "1994-01-12",
+//                                         "GenderId": user.GenderId ?? "eeac42ee-65b6-df11-831a-001d60e938c6",
+//                                         "MobilePhone": user.MobilePhone ?? "09250137382",
+//                                         "Contact": user.Contact ?? "Somebody",
+//                                         "UsrMoneyAmount": user.UsrMoneyAmount ?? 0,
+//                                         "UsrTerm": user.UsrTerm ?? 14,
+//                                         "UsrNationalityId": user.UsrNationalityId ?? "4b84d246-8109-4891-a48b-8628ad9cd0cf",
+////                                         "CountryId": user.CountryId ?? "",
+//                                         "Account": user.Account ?? "Company Name",
+//                                         "UsrAccountName": user.UsrAccountName ?? "Account Name",
+//                                         "UsrSalaryAmount": user.UsrSalaryAmount ?? 0,
+//                                         "UsrMMPersonalID": user.UsrMMPersonalID ?? "12//MaYaKa(N)129933",
+//                                         "UsrPaySystemAccount": user.UsrPaySystemAccount ?? "1293393933339999",
+//                                         "UsrPaySystemId": user.UsrPaySystemId ?? "e5a2acde-8044-4717-8782-19d498e63070",
+//                                         "UsrOccupation": user.UsrOccupation ?? "Stringdsd",
+//                                         "RegisterMethodId": user.RegisterMethodId ?? "05813cf2-91e7-4220-ac72-6c94a802bf0f"]
         
-//        paramaters = ["": paramaters]
+        var paramaters: [String: Any] = ["Email": user.Email!,
+                                         "CityStr": user.CityId!,
+                                         "UsrBirthDate": user.UsrBirthDate!,
+                                         "GenderId": user.GenderId!,
+                                         "MobilePhone": user.MobilePhone!,
+                                         "Contact": user.Contact!,
+                                         "UsrMoneyAmount": user.UsrMoneyAmount!.description,
+                                         "UsrTerm": user.UsrTerm!.description,
+                                         "UsrNationalityId": user.UsrNationalityId!,
+//                                         "CountryId": user.CountryId!,
+                                         "Account": user.Account!,
+                                         "UsrAccountName": user.UsrAccountName!,
+                                         "UsrSalaryAmount": user.UsrSalaryAmount!.description,
+                                         "UsrMMPersonalID": user.UsrMMPersonalID!,
+                                         "UsrPaySystemAccount": user.UsrPaySystemAccount!,
+                                         "UsrPaySystemId": user.UsrPaySystemId!,
+                                         "UsrOccupation": user.UsrOccupation!,
+                                         "RegisterMethodId": user.RegisterMethodId!]
+        
         
         let json = JSON(paramaters) // as! Parameter
-        
-//        guard let url = URL(string: "\(APIConstants.collection)\(json)") else {
-//            return
-//        }
-        
-//        Alamofire.request(url, method: .post, parameters: paramaters, encoding: URLEncoding.default, headers: headers).response { (response) in
-//            
-//            print(response.data)
-//        }
+
         
         let jsonData = json.description.data(using: .utf8, allowLossyConversion: false)
         
@@ -120,6 +132,8 @@ class APIManager {
 
     }
     
+    // MARK: Company Relation ID
+    
     func getCompanyRelationID(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
         guard let url = URL(string: APIConstants.relation) else {
@@ -154,6 +168,8 @@ class APIManager {
             
         }
     }
+    
+    // MARK: Coworker Relation ID
     
     func getCoworkerRealtionID(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
@@ -190,9 +206,11 @@ class APIManager {
         }
     }
     
+    // MARK: Company ID
+    
     func getCompanyID(with leadID: GUID, relationID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
         
-        guard let url = URL(string: APIConstants.relation) else {
+        guard let url = URL(string: APIConstants.update) else {
             return
         }
         
@@ -226,9 +244,11 @@ class APIManager {
         }
     }
     
+    // MARK: Coworker ID
+    
     func getCoworkerID(with leadID: GUID, relationID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
         
-        guard let url = URL(string: APIConstants.relation) else {
+        guard let url = URL(string: APIConstants.update) else {
             return
         }
         
@@ -237,6 +257,179 @@ class APIManager {
                                          "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
+        
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    // MARK: Update Company
+
+    func updateCompany(with companyID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        let guid = "(guid'\(companyID)')"
+        guard let url = URL(string: "\(APIConstants.update)\(guid)") else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
+        
+        let user = UserInfo.user
+        
+        let companyName = user.CompanyName ?? "Company Update"
+        let companyPhone = user.CompanyPhone ?? "09876543"
+
+        let parameters = ["UsrContactName": companyName,
+                          "UsrLocalFullName": companyName,
+                          "UsrPhone": companyPhone]
+        
+        
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: headers).responseData { (response) in
+            
+            print(response, ".PUT")
+            
+            guard let isUpdated = response.data?.isEmpty else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            if response.response?.statusCode == 204 && isUpdated {
+                
+                completion(JSON.null, .Updated)
+
+            } else {
+                
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    // MARK: Update Coworker
+    
+    func UpdateCoworker(with companyID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        let guid = "(guid'\(companyID)')"
+        guard let url = URL(string: "\(APIConstants.update)\(guid)") else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
+        
+        let user = UserInfo.user
+        
+        let coworkerName = user.CoworkerName ?? "CoworkerName"
+        let coworkerPhone = user.CoworkerPhone ?? "09876543"
+        
+        let parameters = ["UsrContactName": coworkerName,
+                          "UsrLocalFullName": coworkerName,
+                          "UsrPhone": coworkerPhone]
+        
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: headers).responseData { (response) in
+            
+            print(response, ".PUT")
+            
+            guard let isUpdated = response.data?.isEmpty else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            if response.response?.statusCode == 204 && isUpdated {
+                
+                completion(JSON.null, .Updated)
+                
+            } else {
+                
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    // MARK: Get ID to update Company
+    
+    func requestUpdateToCompany(with companyID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        let guid = "(guid'\(companyID)')"
+        guard let url = URL(string: "\(APIConstants.update)\(guid)") else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+//        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
+        
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
+    // MARK: GET ID to update Coworker
+    
+    func requestUpdateToCoworker(with coworkerID: GUID, completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        let guid = "(guid'\(coworkerID)')"
+        guard let url = URL(string: "\(APIConstants.update)\(guid)") else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
         
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
@@ -489,6 +682,8 @@ class APIManager {
         }
     }
     
+    // MARK: Payment ID
+    
     func getPaymentList(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
         let filter = "$select=Id,Name"
@@ -527,6 +722,8 @@ class APIManager {
         }
     }
     
+    // MARK: Gender ID
+    
     func getGenderList(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
         guard let url = URL(string: APIConstants.gender) else {
@@ -559,6 +756,8 @@ class APIManager {
             
         }
     }
+    
+    // MARK: City ID
 
     func getCityList(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
@@ -593,6 +792,7 @@ class APIManager {
         }
     }
 
+    // MARK: Nationality ID
     
     func getNationality(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
@@ -647,6 +847,8 @@ class APIManager {
             
         }
     }
+    
+    // MARK: Country ID
     
     func getCountryID(completion: @escaping (JSON, NetworkStatus) -> Void) {
         
@@ -730,6 +932,8 @@ class APIManager {
 //        }
 
     }
+    
+    // MARK: Get Register Method ID
     
     func register(completion: @escaping (JSON, NetworkStatus) -> ()) {
         

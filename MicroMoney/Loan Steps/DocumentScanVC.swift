@@ -43,8 +43,6 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
-                
                 let data = response["d"]
                 let results = data["results"]
                 
@@ -84,18 +82,13 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
-                
                 let data = response["d"]
                 
                 UserInfo.user.Id = data["Id"].stringValue
                 
                 self.leadID = data["Id"].stringValue
                 
-                self.getCoworkerRelationID()
-//                self.uploadImage(with: data["Id"].stringValue)
-
-//                self.gotoFinish()
+                self.getCompanyRelationID()
                 
             } else {
                 
@@ -175,18 +168,22 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
-                
                 let data = response["d"]
                 
-                UserInfo.user.CompanyRelationId = data["Id"].stringValue
+                let results = data["results"]
                 
-                self.getCompanyID(with: data["Id"].stringValue)
-                
-//                Utlities.showLoading(on: self.view, is: false)
-//
-//                self.gotoFinish()
-                
+                for value in results.arrayValue {
+                    
+                    let id = value["Id"].stringValue
+                    
+                    print(id)
+                    
+                    UserInfo.user.CoworkerRelationId = id
+                    
+                    self.getCompanyID(with: id)
+                    
+                }
+
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
@@ -216,8 +213,6 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
-                
                 let data = response["d"]
                 
                 let results = data["results"]
@@ -230,12 +225,9 @@ class DocumentScanVC: UIViewController {
                     
                     UserInfo.user.CompanyId = id
                     
+                    self.sendRequestToUpdate(company: id)
+                    
                 }
-                
-                Utlities.showLoading(on: self.view, is: false)
-                
-//                self.gotoFinish()
-                //                self.getCompanyRelationID()
                 
             } else {
                 
@@ -245,6 +237,79 @@ class DocumentScanVC: UIViewController {
             
         }
         
+    }
+    
+    // MARK: Update Company
+    
+    func Update(company companyID: GUID, and userInfo: UserInfo) {
+        
+        APIManager.share.updateCompany(with: companyID) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null && status == .Updated {
+                
+//                Utlities.showLoading(on: self.view, is: false)
+//                Utlities.showAlert(with: "Success", "Company Data was updated", "OK", self)
+                
+                self.getCoworkerRelationID()
+
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                let id = data["Id"].stringValue
+                
+                
+                self.getCoworkerRelationID()
+                
+//                Utlities.showLoading(on: self.view, is: false)
+                
+                //                self.getCompanyRelationID()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Update your Data", "OK", self)
+            }
+            
+        }
+    }
+    
+    func sendRequestToUpdate(company companyID: GUID) {
+        
+        APIManager.share.requestUpdateToCompany(with: companyID) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                let data = response["d"]
+                
+                let id = data["Id"].stringValue
+                
+                self.Update(company: id, and: UserInfo.user)
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
     }
     
     // MARK: Getting Cowroker ID
@@ -265,8 +330,6 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
-                
                 let data = response["d"]
                 
                 let results = data["results"]
@@ -281,12 +344,7 @@ class DocumentScanVC: UIViewController {
                     
                     self.getCoworkerID(with: id)
                     
-//                    self.createUser()
                 }
-
-//                Utlities.showLoading(on: self.view, is: false)
-                
-//                self.getCompanyRelationID()
                 
             } else {
                 
@@ -317,8 +375,6 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
-                
                 let data = response["d"]
                 
                 let results = data["results"]
@@ -330,12 +386,9 @@ class DocumentScanVC: UIViewController {
                     print(id)
                     
                     UserInfo.user.CoworkerId = id
-                    
+                    self.sendRequestToUpdate(coworker: id)
                 }
-                
-                Utlities.showLoading(on: self.view, is: false)
-                
-                self.getCompanyRelationID()
+
                 
             } else {
                 
@@ -345,6 +398,77 @@ class DocumentScanVC: UIViewController {
             
         }
 
+    }
+    
+    // MARK: Update Coworker
+    
+    func sendRequestToUpdate(coworker coworkerID: GUID) {
+        
+        APIManager.share.requestUpdateToCoworker(with: coworkerID) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                let data = response["d"]
+                
+                let id = data["Id"].stringValue
+                
+                self.Update(coworker: id)
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+
+        }
+    }
+    
+    func Update(coworker coworkerID: GUID) {
+        
+        APIManager.share.UpdateCoworker(with: coworkerID) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null && status == .Updated {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Success", "coworker Data was updated", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                let data = response["d"]
+                
+                let id = data["Id"].stringValue
+                
+                
+                
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                //                self.getCompanyRelationID()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Update your Data", "OK", self)
+            }
+            
+        }
     }
     
     func addGestures() {

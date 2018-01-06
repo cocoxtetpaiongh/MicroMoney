@@ -21,7 +21,7 @@ class EmploymentInfoVC: UIViewController {
     
     var employeePicker = UIPickerView()
     
-    var employStatus = [String]()
+//    var employStatus = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,25 @@ class EmploymentInfoVC: UIViewController {
         setupUI()
     }
     
+    let employStatus = ["Business Owner",
+                        "Self-Employment",
+                        "Government Employee",
+                        "House Wife",
+                        "Police Military Employee",
+                        "Unemployee",
+                        "Attorney / Lawyer / Notary",
+                        "Student",
+                        "Pensioner",
+                        "Staff",
+                        "Manager",
+                        "Director",
+                        "Contract Employee",
+                        "Office Worker"]
+    
     func setupUI() {
+        
+        employeePicker.dataSource = self
+        employeePicker.delegate = self
         
         socialStatusTextField.delegate = self
         companyNameTextField.delegate = self
@@ -37,6 +55,8 @@ class EmploymentInfoVC: UIViewController {
         incomTextField.delegate = self
         coworkerNumberTextField.delegate = self
         coworkerNameTextField.delegate = self
+        
+        socialStatusTextField.inputView = employeePicker
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         self.view.addGestureRecognizer(gesture)
@@ -70,12 +90,44 @@ class EmploymentInfoVC: UIViewController {
             return
         }
 
+        guard (companyNumberTextField.text!.count <= 10)  else {
+            Utlities.showAlert(with: "Please Enter your company phone number no more than 10 characters", "", "OK", self)
+            companyNumberTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard (companyNumberTextField.text!.count >= 7)  else {
+            Utlities.showAlert(with: "Please Enter your company phone number at least 7 characters", "", "OK", self)
+            companyNumberTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard (coworkerNumberTextField.text!.count <= 10)  else {
+            Utlities.showAlert(with: "Please Enter your coworker phone number no more than 10 characters", "", "OK", self)
+            coworkerNumberTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard (coworkerNumberTextField.text!.count >= 7)  else {
+            Utlities.showAlert(with: "Please Enter your coworker phone number at least 7 characters", "", "OK", self)
+            coworkerNumberTextField.becomeFirstResponder()
+            return
+        }
+
         UserInfo.user.UsrOccupation = socialStatusTextField.text
-        UserInfo.user.Account = companyNumberTextField.text
+        UserInfo.user.Account = companyNameTextField.text
         UserInfo.user.UsrAccountName = companyNameTextField.text
-        UserInfo.user.UsrSalaryAmount = Double(incomTextField.text!) 
+        UserInfo.user.UsrSalaryAmount = Int(incomTextField.text!)
+        
+        UserInfo.user.CompanyName = companyNameTextField.text
+        UserInfo.user.CompanyPhone = companyNumberTextField.text
+        UserInfo.user.CoworkerName = coworkerNameTextField.text
+        UserInfo.user.CoworkerPhone = coworkerNumberTextField.text
+        
         // coworker name
         // coworker number
+        
+        print(UserInfo.user, "Employee Userinfo")
         
         gotoNextVC()
     }

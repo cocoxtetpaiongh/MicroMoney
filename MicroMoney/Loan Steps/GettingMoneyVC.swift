@@ -35,6 +35,7 @@ class GettingMoneyVC: UIViewController {
     func setupUI() {
         
         repaymentDateLabel.text = UserInfo.user.repaymentDate
+        totalAmmountLabel.text = UserInfo.user.RepayAmount
         
         paymentTextField.delegate = self
         accountNumberTextField.delegate = self
@@ -80,10 +81,12 @@ class GettingMoneyVC: UIViewController {
             return
         }
         
-        UserInfo.user.UsrPaySystemId = paymentTextField.text
+//        UserInfo.user.UsrPaySystemId = paymentTextField.text
         UserInfo.user.UsrPaySystemAccount = accountNumberTextField.text
         UserInfo.user.UsrMMPersonalID = iDTextField.text
 
+        print(UserInfo.user, "Money Userinfo")
+        
         gotoNextVC()
     }
     
@@ -171,7 +174,9 @@ extension GettingMoneyVC: UIPickerViewDelegate {
         }
         
         let status = paymentSystemList[row]
+        let payment = paymentSystemIDs[row]
         paymentTextField.text = status
+        UserInfo.user.UsrPaySystemId = payment
         
     }
 }

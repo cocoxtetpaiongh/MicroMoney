@@ -78,6 +78,9 @@ class HomeViewController: UIViewController {
         cashAmmount = cashAmmountList[0]
         period = 7 * 2
         
+        UserInfo.user.UsrMoneyAmount = Int(cashAmmount)
+        UserInfo.user.UsrTerm = Int(period)
+        
         calculateCashAmmount(with: cashAmmount)
         calculateRepaymentDate(with: 2)
     
@@ -96,7 +99,7 @@ class HomeViewController: UIViewController {
         
         let index = Int(cashAmmountSlider.value) - 1
         let ammount = cashAmmountList[index]
-        UserInfo.user.UsrMoneyAmount = ammount
+        UserInfo.user.UsrMoneyAmount = Int(ammount)
         
         
         calculateCashAmmount(with: ammount)
@@ -124,6 +127,8 @@ class HomeViewController: UIViewController {
         let repayment = (cashAmmount * loan)
         
         repayAmmountLabel.text = Int(repayment).description + " MMK"
+        
+        UserInfo.user.RepayAmount = repayAmmountLabel.text
     }
     
     @IBAction func changeDaysCount(_ sender: UISlider) {
@@ -131,7 +136,7 @@ class HomeViewController: UIViewController {
         daysCountSlider.value = roundf(daysCountSlider.value)
         
         let multplier = Double(daysCountSlider.value) + 1.0
-        UserInfo.user.UsrTerm = multplier * 7
+        UserInfo.user.UsrTerm = Int(multplier * 7)
         
         self.period = multplier * 7
         calculateRepaymentDate(with: multplier)
@@ -175,16 +180,28 @@ class HomeViewController: UIViewController {
         Utlities.showLoading(on: self.view, is: true)
         
         APIManager.share.getNationality { (response, status) in
-            
+
             print(response)
-            
+
             print("CountryData: \(response)")
-            
+
             self.parseCountryList(with: response)
-            
+
             Utlities.showLoading(on: self.view, is: false)
 
         }
+
+//        APIManager.share.getCountryID { (response, status) in
+//
+//            print(response)
+//
+//            print("CountryData: \(response)")
+//
+//            self.parseCountryList(with: response)
+//
+//            Utlities.showLoading(on: self.view, is: false)
+//
+//        }
 
     }
 
@@ -235,9 +252,31 @@ class HomeViewController: UIViewController {
             return
         }
         
+        guard (phoneNumberTextField.text!.count <= 10)  else {
+            Utlities.showAlert(with: "Please Enter your phone number no more than 10 characters", "", "OK", self)
+            phoneNumberTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard (phoneNumberTextField.text!.count >= 7)  else {
+            Utlities.showAlert(with: "Please Enter your phone number at least 7 characters", "", "OK", self)
+            phoneNumberTextField.becomeFirstResponder()
+            return
+        }
+
+        
         UserInfo.user.Contact = nameTextField.text
         UserInfo.user.MobilePhone = phoneNumberTextField.text
 
+        print(UserInfo.user, "Home Userinfo")
+        
+        let user = UserInfo.user
+        
+        debugPrint(user)
+        
+        print(user, "Home Userinfo")
+
+        
         gotoNextVC()
         
         return 
@@ -292,7 +331,9 @@ extension HomeViewController: UIPickerViewDelegate {
         }
         
         let country = countryList[row]
+        UserInfo.user.UsrNationalityId = countryIDs[row]
         UserInfo.user.CountryId = countryIDs[row]
+
         countryTextField.text = country
     }
 }

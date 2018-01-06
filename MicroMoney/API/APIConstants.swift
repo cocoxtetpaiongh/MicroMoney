@@ -14,10 +14,12 @@ struct APIConstants {
     
     static let nationality = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrNationalityCollection"
     
+    static let country = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/CountryCollection"
+    
     static let gender = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/GenderCollection"
     
     static let payment = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrPaySystemCollection"
-    
+        
     static let register = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadRegisterMethodCollection" //?$filter=Name eq 'iOS app'&$select=Id,Name"
     
     static let collection = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadCollection"
@@ -27,4 +29,6 @@ struct APIConstants {
     static let relation = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/RelationTypeCollection"
     
     static let upload = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/FileLeadCollection"
+    
+    static let update = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrPrimaryContactCollection"
 }

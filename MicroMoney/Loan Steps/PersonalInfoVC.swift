@@ -62,7 +62,7 @@ class PersonalInfoVC: UIViewController {
         birthdayTextField.inputView = birthdayPicker
         genderTextField.inputView = genderPicker
         nationalTextField.inputView = countryPicker
-        cityTextField.inputView = cityPicker
+//        cityTextField.inputView = cityPicker
         
         genderPicker.dataSource = self
         genderPicker.delegate = self
@@ -83,7 +83,10 @@ class PersonalInfoVC: UIViewController {
         
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
-        birthdayTextField.text = dateFormatter.string(from: Date())
+        birthdayTextField.placeholder = dateFormatter.string(from: Date())
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        UserInfo.user.UsrBirthDate = dateFormatter.string(from: Date())
 
         birthdayPicker.datePickerMode = .date
         birthdayPicker.addTarget(self, action: #selector(self.dateChange(_:)), for: .valueChanged)
@@ -139,10 +142,26 @@ class PersonalInfoVC: UIViewController {
             return
         }
         
+        
+        guard (numberTextField.text!.count <= 10)  else {
+            Utlities.showAlert(with: "Please Enter your number no more than 10 characters", "", "OK", self)
+            numberTextField.becomeFirstResponder()
+            return
+        }
+        
+        guard (numberTextField.text!.count >= 7)  else {
+            Utlities.showAlert(with: "Please Enter your number at least 7 characters", "", "OK", self)
+            numberTextField.becomeFirstResponder()
+            return
+        }
+
+        
         UserInfo.user.Email = emailTextField.text
         UserInfo.user.CityId = cityTextField.text
 //        UserInfo.user.MobilePhone = numberTextField.text
 
+        print(UserInfo.user, "Personal Userinfo")
+        
         gotoNextVC()
     }
     
@@ -346,7 +365,7 @@ extension PersonalInfoVC: UIPickerViewDelegate {
             
             let country = countryList[row]
             nationalTextField.text = country
-            UserInfo.user.CountryId = countryIDs[row]
+            UserInfo.user.UsrNationalityId = countryIDs[row]
         } else if pickerView == cityPicker {
             
             let city = cityList[row]
