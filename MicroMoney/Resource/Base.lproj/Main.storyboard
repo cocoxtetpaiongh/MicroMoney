@@ -745,13 +745,18 @@
                                                     <constraint firstAttribute="trailing" secondItem="3IY-dm-idB" secondAttribute="trailing" constant="20" id="jsa-Og-Y1Q"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-jp-esX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-jp-esX" customClass="DesignableButton" customModule="MicroMoney" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="633" width="300" height="44"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                 <state key="normal" title="APPLY TO GET LOAN NOW! ">
                                                     <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="applyButtonPressed:" destination="rFB-gK-BPi" eventType="touchUpInside" id="rO1-GT-96b"/>
                                                 </connections>
