@@ -313,9 +313,12 @@ extension HomeViewController: MenuDelegate {
             
         } else {
             
-            let webView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-            
-            present(webView, animated: true, completion: nil)
+            let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
+            present(infoVC, animated: true, completion: nil)
+
+//            let webView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+//
+//            present(webView, animated: true, completion: nil)
 
         }
     }

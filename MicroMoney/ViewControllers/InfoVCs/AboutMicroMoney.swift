@@ -24,7 +24,7 @@ typealias AboutSectionsText = [String: String]
 
 class AboutMicroMoney: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
     
     var firstSectionLabels = [StaticLabel]()
     var secondSectionLabels = [StaticLabel]()
@@ -70,16 +70,25 @@ class AboutMicroMoney: UIViewController {
 
     var sections = [[String: String]]()
     
+    @IBAction func menubuttonPressed(_ seneder: UIButton) {
+        
+//        let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuTableVC") as! MenuTableVC
+//        menuVC.delegate = self
+//        present(menuVC, animated: false, completion: nil)
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        registerTableView()
+//        registerTableView()
         
         sections.append(firstSection)
         sections.append(secondSection)
         sections.append(thirdSection)
         
-        tableView.reloadData()
+        
         
 //        for section in firstSection {
 //
@@ -87,23 +96,23 @@ class AboutMicroMoney: UIViewController {
 //        }
     }
 
-    func registerTableView() {
-        
-        var nib = UINib(nibName: "AboutFirstSectionCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "AboutFirstSectionCell")
-        
-        nib = UINib(nibName: "AboutSecondSectionCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "AboutSecondSectionCell")
-
-        nib = UINib(nibName: "AboutThirdSectionCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "AboutThirdSectionCell")
-
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
+//    func registerTableView() {
+//
+//        var nib = UINib(nibName: "AboutFirstSectionCell", bundle: nil)
+//        tableView.register(nib, forCellReuseIdentifier: "AboutFirstSectionCell")
+//
+//        nib = UINib(nibName: "AboutSecondSectionCell", bundle: nil)
+//        tableView.register(nib, forCellReuseIdentifier: "AboutSecondSectionCell")
+//
+//        nib = UINib(nibName: "AboutThirdSectionCell", bundle: nil)
+//        tableView.register(nib, forCellReuseIdentifier: "AboutThirdSectionCell")
+//
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 200
+//
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//    }
 }
 
 extension AboutMicroMoney: UITableViewDelegate {

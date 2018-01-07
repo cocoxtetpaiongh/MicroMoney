@@ -906,7 +906,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="rtf-RR-N2W">
                                         <rect key="frame" x="94" y="31.5" width="187.5" height="27"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-iA-6cp">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-iA-6cp">
                                         <rect key="frame" x="12" y="31" width="40" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WfS-iA-6cp" secondAttribute="height" multiplier="46:31" id="f0x-2u-VsZ"/>
@@ -917,7 +917,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89261144400000003" green="0.89273113010000005" blue="0.89563435319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="rtf-RR-N2W" firstAttribute="width" secondItem="Roc-Hl-YNF" secondAttribute="width" multiplier="1/2" id="9to-TS-6yh"/>
                                     <constraint firstItem="WfS-iA-6cp" firstAttribute="centerY" secondItem="rtf-RR-N2W" secondAttribute="centerY" id="Du6-UJ-2Ec"/>
@@ -2089,7 +2089,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89261144400000003" green="0.89273113010000005" blue="0.89563435319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="9zb-Or-HEq" firstAttribute="height" secondItem="1Dj-8l-Jrk" secondAttribute="height" multiplier="1/3" id="B3b-6V-z8h"/>
                                     <constraint firstItem="9zb-Or-HEq" firstAttribute="centerX" secondItem="1Dj-8l-Jrk" secondAttribute="centerX" id="BgA-sU-H6K"/>
@@ -2190,7 +2190,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89261144400000003" green="0.89273113010000005" blue="0.89563435319999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="RHm-FA-kQu" firstAttribute="centerY" secondItem="bwt-HU-4Kj" secondAttribute="centerY" id="8t2-2d-zES"/>
                                     <constraint firstItem="bwt-HU-4Kj" firstAttribute="width" secondItem="gB9-wz-6ss" secondAttribute="width" multiplier="1/2" id="RBA-7Y-gHJ"/>
@@ -2310,7 +2310,7 @@
         <image name="icon" width="30" height="30"/>
         <image name="loading_screen" width="1049" height="572"/>
         <image name="logo" width="220" height="55"/>
-        <image name="menu" width="46" height="31"/>
+        <image name="menu" width="18" height="12"/>
         <image name="title" width="327" height="34"/>
     </resources>
 </document>
