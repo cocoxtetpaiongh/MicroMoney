@@ -1,0 +1,93 @@
+/* 
+  Localizable.strings
+  MicroMoney
+
+  Created by Coco Xtet Pai on 1/8/18.
+  Copyright © 2018 Coco Xtet Pai. All rights reserved.
+*/
+
+"Next" = "ဆက္သြားမည္";
+
+"4 Easy Steps to get a Cash Loan" = "ေခ်းေငြရရွိရန္ လြယ္ကူသည့္ အဆင့္ (4) ဆင့္";
+"Why choose Micro-money" = "ဘာေၾကာင့္ အေသးစားေခ်းေငြကို ေရြးခ်ယ္ရတာလဲ။";
+"Apply To Get Loan Now" = "ေငြရရွိရန္ အခုပဲေလွ်ာက္ထားလုိက္ပါ";
+
+"I NEED " = "ကၽြႏု္ပ္ ";
+" MMK " = " က်ပ္ ";
+" FOR " = " ကို ";
+" DAYS" = " ရက္ အသံုးျပဳပါမယ္";
+
+"MMK" = "က်ပ္";
+" MMK" = " က်ပ္";
+"MMK " = "က်ပ္ ";
+
+"30000" = "30000";
+"50000" = "50000";
+"80000" = "80000";
+"100000" = "100000";
+"130000" = "130000";
+"150000" = "150000";
+"200000" = "200000";
+
+"14" = "14";
+"21" = "21";
+"28" = "28";
+
+"Cash Advance Amount" = "ေခ်းေငြပမာဏ";
+"Total Repayment amount" = "ေခ်းေငြ ျပန္ဆပ္မႈ";
+"Repayment date" = "ျပန္ေပးရမည့္ေန႔မွာ";
+
+"I am in" = "I am in";
+"Full Name" = "အမည္ အျပည့္အစံု"; // (နုိင္ငံသား မွတ္ပံုတင္ ကဒ္ျပားတြင္ပါရွိသည္႕ အတုိင္း)";
+"Phone" = "ဖုန္း";
+"APPLY TO GET LOAN NOW!" = "ေငြရရွိရန္ အခုပဲ ေလွ်ာက္ထားလုိက္ပါ";
+
+// Personal Info
+
+"Personal information" = "ကိုယ္ေရးအခ်က္အလက္";
+"Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory." = "ေအာက္ေဖာ္ျပပါ ေနရာမ်ားကို ျဖည့္စြက္ေပးပါ။ လြယ္ကူရိုးရွင္းပါတယ္။ အဂၤလိပ္လိုျဖည့္ေပးရင္ ပိုမိုအဆင္ေျပပါတယ္။ * ျပထားေသာေနရာမ်ားမွာ မျဖစ္မေနျဖည့္စြက္ရမယ့္ ေနရာမ်ားျဖစ္ပါတယ္။";
+
+"Your email" = "Your email";
+"* City" = "* ျမဳိ႕";
+"* BirthDay" = "* ေမြးသကၠရာဇ္";
+"* Gender" = "* က်ား/မ";
+"* Your Line or Whatsapp or Viber Phone number?" = "* Your Line or Whatsapp or Viber Phone number?";
+"* Nationality" = "* Nationality";
+"* mandatory field" = "* မျဖစ္မေနျဖည့္စြက္ပါ";
+
+// Employment Info
+
+"Social Status" = "အလုပ္အကိုင္အမ်ိဳးအစား";
+"* Company Name" = "* ကုမၸဏီအမည္";
+"* Company`s Phone Number" = "* ကုမၸဏီဖုန္းနံပါတ္";
+"* Monthly Gross Income (MMK)" = "* လစဥ္စုစုေပါင္းဝင္ေငြ (MMK)";
+"Your coworker phone number" = "သင့္လုပ္ေဖာ္ကုိင္ဖက္၏ ဖုန္းနံပါတ္";
+"coworker name" = "သင့္လုပ္ေဖာ္ကုိင္ဖက္၏ အမည္";
+"Employment information" = "၀န္ထမ္းအခ်က္အလက္ အေသးစိတ္";
+
+// Getting Money
+
+"Getting money" = "ပုိက္ဆံ ရယူျခင္း";
+"ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!" = "ၿပီးဆံုးခါနီးပါၿပီ။ သင့္ဘဏ္အား ေရြးခ်ယ္၍ ဘဏ္အေကာင့္နံပါတ္အား ရိုက္ေပးပါ။ အကယ္၍ လက္ရွိတြင္ ဘဏ္အေကာင့္မရွိေသးပါက ေနာက္တစ္ႀကိမ္မွ ထပ္မံျပဳလုပ္ႏိုင္ပါတယ္။";
+"Total Repayment amount" = "ေခ်းေငြ ျပန္ဆပ္မႈ";
+"Repayment date" = "ျပန္ေပးရမည့္ေန႔မွာ";
+"* Choose your bank or payment system here" = "* Choose your bank or payment system here";
+"* Fill your bank account number here" = "* သင္၏ ဘဏ္စာရင္းအမွတ္ကုိ ျဖည့္ပါ";
+"* Your ID/ Passport Number" = "* Your ID/ Passport Number";
+
+// Document Scan
+
+"Documents scan" = "စာရြက္စာတမ္းမ်ား၏ ဓာတ္ပံု (သို႔) Scan";
+"CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!" = "ေက်းဇူးတင္ပါတယ္။ ပိုက္ဆံလႊဲဖို႔ အဆင္သင့္ျဖစ္ပါၿပီ။ သင့္ရဲ႕ စာရြက္စာတမ္းမ်ားကို ျပတ္သားစြာ ရိုက္ကူးေပးဖို႔ေတာ့ လိုပါတယ္။ လက္ရွိမွာ ဘဏ္အေကာင့္မရွိေသးပါက သြားေရာက္ျပဳလုပ္ၿပီး ေနာက္တစ္ေခါက္ျပန္လည္ ေလွ်ာက္ႏိုင္ပါတယ္။";
+"Photo of your bank account number." = "သင့္ဘဏ္အေကာင့္နံပါတ္၏ ဓာတ္ပံု";
+"* Photo of your ID/Passport" = "* မွတ္ပံုတင္ (သုိ႕) Passport ၏ ဓာတ္ပံု";
+
+// Success
+
+"Success!" = "ေအာင္ျမင္ပါတယ္။";
+"Dear" = "ေလးစားရပါေသာ";
+"Send us message to FACEBOOK MESSENGER" = "ကၽြႏ္ုပ္တို႔ထံ မတ္ေစ့ခ်္ပို႔ႏိုင္ပါသည္။ ေဖ့စ္ဘြတ္မွတစ္ဆင့္";
+"Send message or call to Viber hotline:" = "Viber မွတစ္ဆင့္ ဖုန္းေခၚ၍ျဖစ္ေစ၊ မတ္ေစ့ခ်္ပို႔၍ ျဖစ္ေစ၊";
+"Send message or call to LINE hotline:" = "LINE မွ ဖုန္းေခါ္၍ျဖစ္ေစ၊ မတ္ေစ့ခ်္ပို႔၍ျဖစ္ေစ၊";
+"Call Us on mobile hotline:" = "ဖုန္းေခၚႏိုင္ပါတယ္။";
+

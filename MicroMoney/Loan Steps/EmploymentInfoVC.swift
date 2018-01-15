@@ -19,6 +19,17 @@ class EmploymentInfoVC: UIViewController {
     @IBOutlet weak var coworkerNumberTextField: UITextField!
     @IBOutlet weak var coworkerNameTextField: UITextField!
     
+    @IBOutlet weak var titleDescription: UILabel!
+    @IBOutlet weak var infoDescription: UILabel!
+    @IBOutlet weak var socialDesc: UILabel!
+    @IBOutlet weak var companyNameDesc: UILabel!
+    @IBOutlet weak var companyNumberDesc: UILabel!
+    @IBOutlet weak var incomeDesc: UILabel!
+    @IBOutlet weak var coworkerDesc: UILabel!
+    @IBOutlet weak var coworkerNumberDesc: UILabel!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
     var employeePicker = UIPickerView()
     
 //    var employStatus = [String]()
@@ -27,6 +38,21 @@ class EmploymentInfoVC: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+    }
+    
+    func setText() {
+
+        titleDescription.localize(with: "Employment information")
+        infoDescription.localize(with: "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory.")
+        
+        socialDesc.localize(with: "Social Status")
+        companyNameDesc.localize(with: "* Company Name")
+        companyNumberDesc.localize(with: "* Company`s Phone Number")
+        incomeDesc.localize(with: "* Monthly Gross Income (MMK)")
+        coworkerNumberDesc.localize(with: "Your coworker phone number")
+        coworkerDesc.localize(with: "coworker name")
+        
+        nextButton.localize(with: "Next")
     }
     
     let employStatus = ["Business Owner",
@@ -45,6 +71,8 @@ class EmploymentInfoVC: UIViewController {
                         "Office Worker"]
     
     func setupUI() {
+        
+        setText()
         
         employeePicker.dataSource = self
         employeePicker.delegate = self

@@ -1,0 +1,82 @@
+/* 
+  LoanSteps.strings
+  MicroMoney
+
+  Created by Coco Xtet Pai on 1/13/18.
+  Copyright © 2018 Coco Xtet Pai. All rights reserved.
+*/
+
+"I NEED " = "I NEED ";
+" MMK " = " MMK ";
+" FOR " = " FOR ";
+" DAYS" = " DAYS";
+
+"30000" = "30000";
+"50000" = "50000";
+"80000" = "80000";
+"100000" = "100000";
+"130000" = "130000";
+"150000" = "150000";
+"200000" = "200000";
+
+"14" = "14";
+"21" = "21";
+"28" = "28";
+
+"Cash Advance Amount" = "Cash Advance Amount";
+"Total Repayment amount" = "Total Repayment amount";
+"Repayment date" = "Repayment date";
+
+"I am in" = "I am in";
+"Full Name" = "Full Name";
+"Phone" = "Phone";
+"APPLY TO GET LOAN NOW!" = "APPLY TO GET LOAN NOW!";
+
+// Personal Info
+
+"Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory." = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory.";
+
+"Your email" = "Your email";
+"City" = "City";
+"BirthDay" = "BirthDay";
+"Gender" = "Gender";
+"Your Line or Whatsapp or Viber Phone number?" = "Your Line or Whatsapp or Viber Phone number?";
+"Nationality" = "Nationality";
+"mandatory field" = "mandatory field";
+
+// Employment Info
+
+"Social Status" = "Social Status";
+"Company Name" = "Company Name";
+"Company`s Phone Number" = "Company`s Phone Number";
+"Monthly Gross Income (MMK)" = "Monthly Gross Income (MMK)";
+"Your coworker phone number" = "Your coworker phone number";
+"coworker name" = "coworker name";
+"Employment information" = "Employment information";
+
+// Getting Money
+
+"Getting money" = "Getting money";
+"ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!" = "ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!";
+"Total Repayment amount" = "Total Repayment amount";
+"Repayment date" = "Repayment date";
+"* Choose your bank or payment system here" = "* Choose your bank or payment system here";
+"* Fill your bank account number here" = "* Fill your bank account number here";
+"* Your ID/ Passport Number" = "* Your ID/ Passport Number";
+
+// Document Scan
+
+"Documents scan" = "Documents scan";
+"CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!" = "CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!";
+"Photo of your bank account number." = "Photo of your bank account number.";
+"* Photo of your ID/Passport" = "* Photo of your ID/Passport";
+
+// Success
+
+"Success!" = "Success!";
+"Dear" = "Dear";
+"Send us message to FACEBOOK MESSENGER" = "Send us message to FACEBOOK MESSENGER";
+"Send message or call to Viber hotline:" = "Send message or call to Viber hotline:";
+"Send message or call to LINE hotline:" = "Send message or call to LINE hotline:";
+"Call Us on mobile hotline:" = "Call Us on mobile hotline:";
+

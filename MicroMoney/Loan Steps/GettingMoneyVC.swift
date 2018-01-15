@@ -19,6 +19,16 @@ class GettingMoneyVC: UIViewController {
     @IBOutlet weak var paymentTextField: UITextField!
     @IBOutlet weak var accountNumberTextField: UITextField!
     @IBOutlet weak var iDTextField: UITextField!
+    
+    @IBOutlet weak var titleDescription: UILabel!
+    @IBOutlet weak var infoDescription: UILabel!
+    @IBOutlet weak var totalAmmountDesc: UILabel!
+    @IBOutlet weak var repaymentDateDesc: UILabel!
+    @IBOutlet weak var paymentTypeDesc: UILabel!
+    @IBOutlet weak var accountNumDesc: UILabel!
+    @IBOutlet weak var idDesc: UILabel!
+    
+    @IBOutlet weak var nextButton: UIButton!
 
     var paymentSystemList = [String]()
     var paymentSystemIDs = [String]()
@@ -32,7 +42,24 @@ class GettingMoneyVC: UIViewController {
         getPaymentList()
     }
     
+    func setText() {
+        
+        titleDescription.localize(with: "Getting money")
+        infoDescription.localize(with: "ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!")
+        
+        totalAmmountDesc.localize(with: "Total Repayment amount")
+        repaymentDateDesc.localize(with: "Repayment date")
+        paymentTypeDesc.localize(with: "* Choose your bank or payment system here")
+        accountNumDesc.localize(with: "* Fill your bank account number here")
+        idDesc.localize(with: "* Your ID/ Passport Number")
+        
+        nextButton.localize(with: "Next")
+        
+    }
+    
     func setupUI() {
+        
+        setText()
         
         repaymentDateLabel.text = UserInfo.user.repaymentDate
         totalAmmountLabel.text = UserInfo.user.RepayAmount
@@ -155,8 +182,17 @@ extension GettingMoneyVC {
             let account = payment["Name"].stringValue
             let id = payment["Id"].stringValue
             
-            paymentSystemIDs.append(id)
-            paymentSystemList.append(account)
+            let description = payment["Description"].stringValue
+            
+            if description == "“**”" {
+                
+                paymentSystemIDs.append(id)
+                paymentSystemList.append(account)
+
+            }
+            
+//            paymentSystemIDs.append(id)
+//            paymentSystemList.append(account)
         }
         
         paymentPicker.reloadAllComponents()

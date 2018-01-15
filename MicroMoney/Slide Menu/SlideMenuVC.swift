@@ -1,25 +1,17 @@
 //
-//  MenuTableVC.swift
-//  MicroMoney
+//  SlideMenuVC.swift
+//  MingalarCinema
 //
-//  Created by Coco Xtet Pai on 12/6/17.
-//  Copyright © 2017 Coco Xtet Pai. All rights reserved.
+//  Created by Ye Myat Min on 12/1/17.
+//  Copyright © 2017 nexlabs. All rights reserved.
 //
 
 import UIKit
+import Localize_Swift
 
-enum LocalizeLanguage {
-    case Myanmar
-    case English
-}
+class SlideMenuVC: UIViewController {
 
-protocol MenuDelegate: class {
-    
-//    func didSelectMenu(at indexPath: Int)
-    func didSelectMenu(at indexPath: Int, and isLanguageChange: Bool, with language: LocalizeLanguage)
-}
-
-class MenuTableVC: UIViewController {
+//    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -35,9 +27,7 @@ class MenuTableVC: UIViewController {
                   "FAQs",
                   "Contat Us",
                   "Carrers",
-                  "Token Sale",
-                  "Language: 🇬🇧 -> 🇲🇲",
-                  "Language: 🇲🇲 -> 🇬🇧"]
+                  "Token Sale"]
     
     var isLanguageChange = false
     var isLocalize = false
@@ -45,12 +35,12 @@ class MenuTableVC: UIViewController {
     var lastIndex = 0
     
     var language: LocalizeLanguage = .English
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
-        tableView.dataSource = self 
+        tableView.dataSource = self
     }
     
     func dismissAction() {
@@ -81,17 +71,69 @@ class MenuTableVC: UIViewController {
                 isLanguageChange = false
             }
             
-            dismiss(animated: false, completion: {
-                
-                self.delegate?.didSelectMenu(at: view.tag, and: self.isLanguageChange, with: self.language)
-            })
-            
+            menuSelected(with: view.tag)
         }
     }
+    
+    func changeFont() {
+        
+        
+    }
+    
+    func logOut() {
+        
+    }
+    
+    func showSetting() {
+        
+//        let settingVC = Storyboards.MovieList.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
+//        present(settingVC, animated: true, completion: nil)
+    }
+    
+    func showInfoViewControllers(_ index: Int = 0) {
+        
+        let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
+        present(infoVC, animated: true, completion: nil)
+    }
+    
+    func menuSelected(with index: Int) {
+        
+        if Localize.currentLanguage() == "my" {
+            
+            language = .Myanmar
+        } else {
+            
+            language = .English
+        }
+        
+        self.delegate?.didSelectMenu(at: index, and: self.isLanguageChange, with: self.language)
 
+    }
+    
+    @IBAction func action(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 1:
+            // DO Something
+            
+            changeFont()
+            
+        case 2:
+            changeFont()
+            
+        case 3:
+            showSetting()
+            
+        case 4:
+            logOut()
+            
+        default:
+            break
+        }
+    }
 }
 
-extension MenuTableVC: UITableViewDataSource {
+extension SlideMenuVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
@@ -100,28 +142,28 @@ extension MenuTableVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         /*
-        if indexPath.row == indexPath.last {
-            
-            isLanguageChange = true
-            
-            if isLocalize {
-                
-                titles.removeLast()
-                titles.append("Language: 🇲🇲 -> 🇬🇧")
-                isLocalize = !isLocalize
-
-            } else {
-                
-                titles.removeLast()
-                titles.append("Language: 🇬🇧 -> 🇲🇲")
-                isLocalize = !isLocalize
-            }
-            
-        } else {
-            
-            isLanguageChange = false
-        }
- */
+         if indexPath.row == indexPath.last {
+         
+         isLanguageChange = true
+         
+         if isLocalize {
+         
+         titles.removeLast()
+         titles.append("Language: 🇲🇲 -> 🇬🇧")
+         isLocalize = !isLocalize
+         
+         } else {
+         
+         titles.removeLast()
+         titles.append("Language: 🇬🇧 -> 🇲🇲")
+         isLocalize = !isLocalize
+         }
+         
+         } else {
+         
+         isLanguageChange = false
+         }
+         */
         
         lastIndex = indexPath.last ?? 0
         
@@ -136,21 +178,17 @@ extension MenuTableVC: UITableViewDataSource {
     }
 }
 
-extension MenuTableVC: UITableViewDelegate {
+extension SlideMenuVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO:
+
+//        print("Select \(indexPath.row)", "TableView Select")
+//        menuSelected(with: indexPath.row)
         
-//        dismiss(animated: false, completion: {
-//
-//            self.delegate?.didSelectMenu(at: indexPath.row)
-//        })
-        
-//        delegate?.didSelectMenu(at: indexPath.row)
-//        dismissAction()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }
 }
+

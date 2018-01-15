@@ -14,16 +14,38 @@ class DocumentScanVC: UIViewController {
     @IBOutlet weak var bankAccoutnImageView: UIImageView!
     
     @IBOutlet weak var iDImageView: UIImageView!
+    
+    @IBOutlet weak var titleDescription: UILabel!
+    @IBOutlet weak var infoDescription: UILabel!
+    @IBOutlet weak var accountPhotoDesc: UILabel!
+    @IBOutlet weak var idPhotoDesc: UILabel!
+    
+    @IBOutlet weak var nextButton: UIButton!
 
     var leadID: GUID? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setText()
+        
         addGestures()
         register()
         // Do any additional setup after loading the view.
     }
+    
+    func setText() {
+        
+        titleDescription.localize(with: "Documents scan")
+        infoDescription.localize(with: "CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!")
+        
+        accountPhotoDesc.localize(with: "Photo of your bank account number.")
+        idPhotoDesc.localize(with: "* Photo of your ID/Passport")
+        
+        nextButton.localize(with: "Next")
+        
+    }
+
     
     func register() {
         
@@ -101,7 +123,94 @@ class DocumentScanVC: UIViewController {
     
     // MARK: Upload Image
     
-    func uploadImage(with name: GUID) {
+    func uploadImages(passport id: GUID, and name: String) {
+        
+        guard let image = iDImageView.image else {
+            
+            return
+        }
+        
+        guard let imageData = UIImagePNGRepresentation(image) else {
+            
+            return
+        }
+        
+        guard let leadID = leadID else {
+            return
+        }
+        
+        APIManager.share.uploadImage(with: id, name: name, imageData: imageData) { (response, status) in
+            
+            print(response)
+            
+            if status == .Success {
+                
+                //                self.uploadImages(with: id)
+                self.requestUpload(with: "bankaccount.png")
+
+//                Utlities.showLoading(on: self.view, is: false)
+//
+//                self.gotoFinish()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+        
+        
+    }
+    
+    func uploadImages(with id: GUID, and name: String) {
+        
+        guard let image = bankAccoutnImageView.image else {
+            
+            return
+        }
+        
+        guard let imageData = UIImagePNGRepresentation(image) else {
+            
+            return
+        }
+        
+        guard let leadID = leadID else {
+            return
+        }
+        
+        APIManager.share.uploadImage(with: id, name: name, imageData: imageData) { (response, status) in
+            
+            print(response)
+            
+//            if response == JSON.null {
+//
+//                Utlities.showLoading(on: self.view, is: false)
+//                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+//
+//                return
+//            }
+            
+            if status == .Success {
+                
+//                self.uploadImages(with: id)
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                self.gotoFinish()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+
+
+    }
+    
+    func requestUpload(passport name: GUID) {
         
         guard let image = iDImageView.image else {
             
@@ -117,7 +226,7 @@ class DocumentScanVC: UIViewController {
             return
         }
         
-        APIManager.share.uploadImage(with: leadID, name: name, imageData: imageData) { (response, status) in
+        APIManager.share.requestUpload(with: leadID, name: name, imageData: imageData.base64EncodedData()) { (response, status) in
             
             print(response)
             
@@ -135,11 +244,65 @@ class DocumentScanVC: UIViewController {
                 
                 let data = response["d"]
                 
-                UserInfo.user.CompanyRelationId = data["Id"].stringValue
+                let id  = data["Id"].stringValue
+                
+//                self.uploadImages(with: id, and: name)
+                self.uploadImages(passport: id, and: name)
+                
+                //                Utlities.showLoading(on: self.view, is: false)
+                
+                //                self.gotoFinish()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+            }
+            
+        }
+    }
+    
+    func requestUpload(with name: GUID) {
+        
+        guard let image = bankAccoutnImageView.image else {
+            
+            return
+        }
+        
+        guard let imageData = UIImageJPEGRepresentation(image, 1) else {
+            
+            return
+        }
+        
+        guard let leadID = leadID else {
+            return
+        }
+        
+        APIManager.share.requestUpload(with: leadID, name: name, imageData: imageData.base64EncodedData()) { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                
+                return
+            }
+            
+            if status == .Success {
                 
                 Utlities.showLoading(on: self.view, is: false)
                 
-                self.gotoFinish()
+                let data = response["d"]
+                
+                let id  = data["Id"].stringValue
+                
+                self.uploadImages(with: id, and: name)
+                
+//                Utlities.showLoading(on: self.view, is: false)
+                
+//                self.gotoFinish()
                 
             } else {
                 
@@ -442,7 +605,7 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null && status == .Updated {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Success", "coworker Data was updated", "OK", self)
+                Utlities.showAlert(with: "Success", "Your data was updated", "OK", self)
                 
                 return
             }
@@ -514,21 +677,22 @@ class DocumentScanVC: UIViewController {
 
     }
 
-    func validate() {
+    func validate() -> Bool {
         
         guard iDImageView.image != nil else {
             Utlities.showAlert(with: "No Image", "Capture your passport image", "Ok", self)
             
-            return
+            return false
         }
         
         guard bankAccoutnImageView.image != nil else {
             Utlities.showAlert(with: "No Image", "Capture your Bank Account image", "Ok", self)
             
-            return
+            return false
         }
         
-        gotoFinish()
+        return true
+//        gotoFinish()
 //        register()
         
 
@@ -538,7 +702,14 @@ class DocumentScanVC: UIViewController {
         
         
         
-        validate()
+        if validate() {
+            
+            if let id = leadID {
+                
+//                requestUpload(with: "image1.png")
+                requestUpload(passport: "passport.png")
+            }
+        }
         
 //        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinishedVC") as! FinishedVC
 //

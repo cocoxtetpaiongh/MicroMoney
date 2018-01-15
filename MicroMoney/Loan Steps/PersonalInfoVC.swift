@@ -24,6 +24,17 @@ class PersonalInfoVC: UIViewController {
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var nationalTextField: UITextField!
     
+    @IBOutlet weak var titleDescription: UILabel!
+    @IBOutlet weak var infoDescription: UILabel!
+    @IBOutlet weak var emailDesc: UILabel!
+    @IBOutlet weak var cityDesc: UILabel!
+    @IBOutlet weak var birthdayDesc: UILabel!
+    @IBOutlet weak var genderDesc: UILabel!
+    @IBOutlet weak var numberDesc: UILabel!
+    @IBOutlet weak var nationalDesc: UILabel!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
     var countryList = [String]()
     var countryIDs = [String]()
 
@@ -47,7 +58,23 @@ class PersonalInfoVC: UIViewController {
         getCountryList()
     }
     
+    func setText() {
+        
+        titleDescription.localize(with: "Personal information")
+        infoDescription.localize(with: "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory.")
+
+        cityDesc.localize(with: "* City")
+        birthdayDesc.localize(with: "* BirthDay")
+        genderDesc.localize(with: "* Gender")
+        numberDesc.localize(with: "* Your Line or Whatsapp or Viber Phone number?")
+        nationalDesc.localize(with: "* Nationality")
+        
+        nextButton.localize(with: "Next")
+    }
+    
     func setupUI() {
+        
+        setText()
         
         emailTextField.delegate = self
         cityTextField.delegate = self
@@ -112,11 +139,11 @@ class PersonalInfoVC: UIViewController {
 
     func validate() {
         
-        guard emailTextField.text != "" else {
-            Utlities.showAlert(with: "Email is Empty", "Enter your email", "OK", self)
-            emailTextField.becomeFirstResponder()
-            return
-        }
+//        guard emailTextField.text != "" else {
+//            Utlities.showAlert(with: "Email is Empty", "Enter your email", "OK", self)
+//            emailTextField.becomeFirstResponder()
+//            return
+//        }
         
         guard cityTextField.text != "" else {
             Utlities.showAlert(with: "City is Empty", "Enter your town", "OK", self)

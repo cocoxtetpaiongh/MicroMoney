@@ -26,6 +26,10 @@ class AboutMicroMoney: UIViewController {
     
 //    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var textView: UITextView!
+    
+    var page: String?
+    
     var firstSectionLabels = [StaticLabel]()
     var secondSectionLabels = [StaticLabel]()
     var thirdSectionLabels = [StaticLabel]()
@@ -79,10 +83,35 @@ class AboutMicroMoney: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func backButtonPressed(_ seneder: UIButton) {
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
 //        registerTableView()
+        
+        textView.text = textView.text.localized()
+        
+        let page = self.page ?? ""
+        
+        if let localfilePath = Bundle.main.url(forResource: page, withExtension: "html") {
+            
+            do {
+                
+                let data = try Data(contentsOf: localfilePath)
+                
+                textView.text = ""
+                textView.attributedText = data.html2AttributedString
+
+            } catch {
+                
+                print(error.localizedDescription)
+            }
+            
+        }
         
         sections.append(firstSection)
         sections.append(secondSection)

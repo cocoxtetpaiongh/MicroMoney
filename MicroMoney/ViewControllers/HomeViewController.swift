@@ -9,8 +9,17 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Localize_Swift
+//import Localize_Swift
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var cashAdvanceAmmountDesc: UILabel!
+    @IBOutlet weak var totalRepayAmmountDesc: UILabel!
+    @IBOutlet weak var repayDateAmmountDesc: UILabel!
+    
+    @IBOutlet weak var fullNameDesc: UILabel!
+    @IBOutlet weak var phoneDesc: UILabel!
     
     @IBOutlet weak var scrollView: UIScrollView! 
     
@@ -29,13 +38,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
 
     @IBOutlet weak var applyButton: UIButton!
+    
+    @IBOutlet weak var languageButton: UIButton! 
 
     @IBOutlet weak var cashAmmountSlider: UISlider!
     @IBOutlet weak var daysCountSlider: UISlider!
     
-    @IBOutlet weak var ammountIndicatorLabel: UILabel! 
+    @IBOutlet weak var ammountIndicatorLabel: UILabel!
+    
+    weak var slideMenuDelegate: SlideMenuDelegate?
     
     var countryPicker = UIPickerView()
+    
+    let overlayTag = 99
     
     var countryList = [String]()
     var countryIDs = [String]()
@@ -46,15 +61,115 @@ class HomeViewController: UIViewController {
     var cashAmmountList: [Double] = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
 //    var cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
 
+    @IBAction func languageButtonPressed(_ sender: UIButton) {
+        
+        if languageButton.titleLabel?.text == "🇲🇲" {
+            
+            languageButton.setTitle("🇬🇧", for: .normal)
+            Localize.resetCurrentLanguageToDefault()
+            
+        } else {
+            
+            languageButton.setTitle("🇲🇲", for: .normal)
+            Localize.setCurrentLanguage("my")
+
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setText()
         setupUI()
         getCountryList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func setText() {
+        
+        ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " MMK ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+        ammountIndicatorLabel.adjustLocaleFont()
+        
+//        cashAdvanceAmmountDesc.text = "Cash Advance Amount".localized()
+//        totalRepayAmmountDesc.text = "Total Repayment amount".localized()
+//        repayDateAmmountDesc.text = "Repayment date".localized()
+        
+        cashAdvanceAmmountDesc.localize(with: "Cash Advance Amount")
+        totalRepayAmmountDesc.localize(with: "Total Repayment amount")
+        repayDateAmmountDesc.localize(with: "Repayment date")
+        
+        fullNameDesc.text = "Full Name".localized()
+//        fullNameDesc.adjustLocaleFont()
+//        fullNameDesc.localize(with: "Full Name")
+//        phoneDesc.text = "Phone".localized()
+        phoneDesc.localize(with: "Phone")
+//        applyButton.setTitle("APPLY TO GET LOAN NOW!".localized(), for: .normal)
+        applyButton.localize(with: "APPLY TO GET LOAN NOW!")
+        
+//        "Cash Advance Amount" = "Cash Advance Amount";
+//        "Total Repayment amount" = "Total Repayment amount";
+//        "Repayment date" = "Repayment date";
+//
+//        "I am in" = "I am in";
+//        "Full Name" = "Full Name";
+//        "Phone" = "Phone";
+//        "APPLY TO GET LOAN NOW!" = "APPLY TO GET LOAN NOW!";
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        
+//        slideOverLay()
+        slideMenuDelegate?.toggleSlideMenu()
+    }
+    
+    func slideOverLay() {
+        
+        if let overlay = self.view.viewWithTag(overlayTag) {
+            
+            overlay.removeFromSuperview()
+        } else {
+            
+            
+            let overlayView = UIView()
+            
+            overlayView.frame = self.view.frame
+            overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            
+            overlayView.isUserInteractionEnabled = true
+            
+            overlayView.tag = overlayTag
+            
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(toggleSlider))
+            overlayView.addGestureRecognizer(gesture)
+            
+            self.view.addSubview(overlayView)
+            
+        }
+    }
+    
+    @objc func toggleSlider() {
+        
+        slideMenuDelegate?.toggleSlideMenu()
+    }
+
+    
     func setupUI() {
         
+        languageButton.setTitle("🇬🇧", for: .normal)
+        Localize.resetCurrentLanguageToDefault()
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -115,8 +230,8 @@ class HomeViewController: UIViewController {
     
     func calculateCashAmmount(with ammount: Double) {
         
-        cashAmountLabel.text = Int(ammount).description + " MMK"
-        
+        cashAmountLabel.text = Int(ammount).description + " MMK".localized()
+        cashAmountLabel.adjustLocaleFont()
 
     }
     
@@ -126,7 +241,8 @@ class HomeViewController: UIViewController {
         loan += 1.2
         let repayment = (cashAmmount * loan)
         
-        repayAmmountLabel.text = Int(repayment).description + " MMK"
+        repayAmmountLabel.text = Int(repayment).description + " MMK".localized()
+        repayAmmountLabel.adjustLocaleFont()
         
         UserInfo.user.RepayAmount = repayAmmountLabel.text
     }
@@ -150,7 +266,9 @@ class HomeViewController: UIViewController {
     
     func changeIndicatorLabel() {
         
-        ammountIndicatorLabel.text = "I NEED \(Int(cashAmmount)) MMK FOR \(Int(period)) DAYS"
+//        ammountIndicatorLabel.text = "I NEED \(Int(cashAmmount)) MMK FOR \(Int(period)) DAYS"
+        ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " MMK ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+        ammountIndicatorLabel.adjustLocaleFont()
     }
     
     func calculateRepaymentDate(with period: Double) {
@@ -168,12 +286,14 @@ class HomeViewController: UIViewController {
         UserInfo.user.repaymentDate = formatter.string(from: component ?? Date()) + " (\(value))days "
     }
     
-    @IBAction func menubuttonPressed(_ seneder: UIButton) {
-        
-        let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuTableVC") as! MenuTableVC
-        menuVC.delegate = self 
-        present(menuVC, animated: false, completion: nil)
-    }
+    
+    
+//    @IBAction func menubuttonPressed(_ seneder: UIButton) {
+//        
+//        let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SlideMenuVC") as! SlideMenuVC
+//        menuVC.delegate = self 
+//        present(menuVC, animated: false, completion: nil)
+//    }
     
     func getCountryList() {
         
@@ -298,6 +418,47 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: MenuDelegate {
     
+    
+    func didSelectMenu(at indexPath: Int, and isLanguageChange: Bool, with language: LocalizeLanguage) {
+        
+        if isLanguageChange {
+            
+            if language == .Myanmar {
+                
+                Localize.setCurrentLanguage("my")
+//                UILabel.setLanguage(.Myanmar)
+
+            } else {
+                
+                Localize.resetCurrentLanguageToDefault()
+//                UILabel.setLanguage(.English)
+
+//                Zawgyi-One
+            }
+            
+            return
+        }
+        
+        if indexPath == 0 {
+            
+            let infoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+            present(infoVC, animated: true, completion: nil)
+            
+        } else if indexPath == -1 {
+            
+            let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
+            present(infoVC, animated: true, completion: nil)
+            
+        } else {
+            
+            let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
+            present(infoVC, animated: true, completion: nil)
+            
+        }
+
+    }
+    
+    
     func didSelectMenu(at indexPath: Int) {
         
         if indexPath == 0 {
@@ -398,3 +559,12 @@ extension HomeViewController: UITextFieldDelegate {
         return true
     }
 }
+
+//extension HomeViewController: MenuDelegate {
+//
+//    func didSelectMenu(at indexPath: Int, and isLanguageChange: Bool, with language: LocalizeLanguage) {
+//
+//    }
+//
+//}
+

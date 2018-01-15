@@ -10,26 +10,35 @@ import UIKit
 
 class FinancialLiteracy: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setText()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setText() {
+        
+        let titleAttribute: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont(name: "Zawgyi-One", size: 21)!, NSAttributedStringKey.foregroundColor: UIColor.black]
+        
+        let titleString = NSAttributedString(string: "5 Articles to Refresh Your Financial Literacy By Jean Folger", attributes: titleAttribute)
+        
+        let titleDescAttribute: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont(name: "Zawgyi-One", size: 15)!, NSAttributedStringKey.foregroundColor: UIColor.black]
+        
+        let titleDesc = NSAttributedString(string: "5 Articles to Refresh Your Financial Literacy By Jean Folger", attributes: titleAttribute)
+
+
+//        let titleAttribute: [NSAttributedStringKey: Any] = [NSAttributedStringKey.foregroundColor: UIColor.red,
+//                                                            NSAttributedStringKey.fo]
+//        let titleString = "5 Articles to Refresh Your Financial Literacy By Jean Folger"
+//        let titleStrin = NSAttributedString(string: "5 Articles to Refresh Your Financial Literacy By Jean Folger", attributes: titleAttribute)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+
+
+

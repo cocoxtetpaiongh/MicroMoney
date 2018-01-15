@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 struct LoanInfoStep {
     
@@ -36,12 +37,25 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        changeLanguage()
         registerNibs()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         getLoans()
 
+    }
+    
+    func changeLanguage(on view: UIView) {
+        
+        for view in view.subviews {
+            
+            if let label = view as? UILabel {
+                
+                label.changeLanguage(with: Localize.currentLanguage())
+                
+            }
+        }
     }
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
@@ -121,8 +135,20 @@ class InfoViewController: UIViewController {
             
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LoanHeaderView", for: indexPath) as! LoanHeaderView
             
-            view.title.text = titles[indexPath.section].uppercased()
+//            view.title.text = titles[indexPath.section].uppercased().localized(using: "Info", in: nil)
+            view.title.text = titles[indexPath.section].localized()
             view.title.textColor = colors[indexPath.section]
+            
+//            if Localize.currentLanguage() == "my" {
+//
+//                view.title.font = UIFont(name: "Zawgyi", size: 17)
+//            } else {
+//
+//                view.title.font = UIFont(name: "Arial_Bold", size: 17)
+//
+//            }
+
+            self.changeLanguage(on: view)
             
             return view
 
