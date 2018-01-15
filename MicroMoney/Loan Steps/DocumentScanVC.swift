@@ -127,15 +127,22 @@ class DocumentScanVC: UIViewController {
         
         guard let image = iDImageView.image else {
             
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
         guard let imageData = UIImagePNGRepresentation(image) else {
             
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
         guard let leadID = leadID else {
+
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
@@ -145,12 +152,8 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                //                self.uploadImages(with: id)
                 self.requestUpload(with: "bankaccount.png")
 
-//                Utlities.showLoading(on: self.view, is: false)
-//
-//                self.gotoFinish()
                 
             } else {
                 
@@ -166,16 +169,23 @@ class DocumentScanVC: UIViewController {
     func uploadImages(with id: GUID, and name: String) {
         
         guard let image = bankAccoutnImageView.image else {
-            
+
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
         guard let imageData = UIImagePNGRepresentation(image) else {
             
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
         guard let leadID = leadID else {
+            
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
@@ -183,13 +193,6 @@ class DocumentScanVC: UIViewController {
             
             print(response)
             
-//            if response == JSON.null {
-//
-//                Utlities.showLoading(on: self.view, is: false)
-//                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
-//
-//                return
-//            }
             
             if status == .Success {
                 
@@ -226,6 +229,8 @@ class DocumentScanVC: UIViewController {
             return
         }
         
+        Utlities.showLoading(on: self.view, is: true)
+
         APIManager.share.requestUpload(with: leadID, name: name, imageData: imageData.base64EncodedData()) { (response, status) in
             
             print(response)
@@ -240,18 +245,12 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
                 
                 let data = response["d"]
                 
                 let id  = data["Id"].stringValue
                 
-//                self.uploadImages(with: id, and: name)
                 self.uploadImages(passport: id, and: name)
-                
-                //                Utlities.showLoading(on: self.view, is: false)
-                
-                //                self.gotoFinish()
                 
             } else {
                 
@@ -266,15 +265,22 @@ class DocumentScanVC: UIViewController {
         
         guard let image = bankAccoutnImageView.image else {
             
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
         guard let imageData = UIImageJPEGRepresentation(image, 1) else {
             
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
         guard let leadID = leadID else {
+            
+            Utlities.showLoading(on: self.view, is: false)
+
             return
         }
         
@@ -292,17 +298,13 @@ class DocumentScanVC: UIViewController {
             
             if status == .Success {
                 
-                Utlities.showLoading(on: self.view, is: false)
                 
                 let data = response["d"]
                 
                 let id  = data["Id"].stringValue
                 
                 self.uploadImages(with: id, and: name)
-                
-//                Utlities.showLoading(on: self.view, is: false)
-                
-//                self.gotoFinish()
+
                 
             } else {
                 
