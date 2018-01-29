@@ -48,6 +48,8 @@ class HomeViewController: UIViewController {
     
     weak var slideMenuDelegate: SlideMenuDelegate?
     
+    var currentCountry = ""
+    
     var countryPicker = UIPickerView()
     
     let overlayTag = 99
@@ -63,16 +65,87 @@ class HomeViewController: UIViewController {
 
     @IBAction func languageButtonPressed(_ sender: UIButton) {
         
-        if languageButton.titleLabel?.text == "🇲🇲" {
+//        if languageButton.titleLabel?.text == "🇲🇲" {
+//
+//            languageButton.setTitle("🇬🇧", for: .normal)
+//            Localize.resetCurrentLanguageToDefault()
+//
+//        } else {
+//
+//            languageButton.setTitle("🇲🇲", for: .normal)
+//            Localize.setCurrentLanguage("my")
+//
+//        }
+        
+        switch currentCountry {
+        case CountryList.Myanmar.rawValue:
             
-            languageButton.setTitle("🇬🇧", for: .normal)
-            Localize.resetCurrentLanguageToDefault()
-            
-        } else {
-            
-            languageButton.setTitle("🇲🇲", for: .normal)
-            Localize.setCurrentLanguage("my")
+            if languageButton.titleLabel?.text == LocalizeLabel.Myanmar.rawValue {
 
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle("🇲🇲", for: .normal)
+                Localize.setCurrentLanguage("my")
+            }
+            break
+            
+        case CountryList.Thailand.rawValue:
+            
+            if languageButton.titleLabel?.text == LocalizeLabel.Thailand.rawValue {
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle(LocalizeLabel.Thailand.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
+            }
+
+            break
+            
+        case CountryList.Indonesia.rawValue:
+            
+            if languageButton.titleLabel?.text == LocalizeLabel.Indonesia.rawValue {
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle(LocalizeLabel.Indonesia.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.Indonesia.rawValue)
+            }
+            break
+            
+        case CountryList.SriLankan.rawValue:
+            
+            if languageButton.titleLabel?.text == LocalizeLabel.SriLankan.rawValue {
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle(LocalizeLabel.SriLankan.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.SriLanka.rawValue)
+            }
+            break
+            
+        case CountryList.Nigeria.rawValue:
+            
+            if languageButton.titleLabel?.text == LocalizeLabel.Nigeria.rawValue {
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle(LocalizeLabel.Nigeria.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.Nigeria.rawValue)
+            }
+            break
+            
+        default:
+            break
         }
     }
     
@@ -190,6 +263,11 @@ class HomeViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         self.view.addGestureRecognizer(gesture)
 
+        setDefaults()
+    }
+    
+    func setDefaults() {
+        
         cashAmmount = cashAmmountList[0]
         period = 7 * 2
         
@@ -198,9 +276,10 @@ class HomeViewController: UIViewController {
         
         calculateCashAmmount(with: cashAmmount)
         calculateRepaymentDate(with: 2)
-    
+        
         calculateRepayMent()
         changeIndicatorLabel()
+
     }
     
     @objc func handleGesture(_ recognizer: UITapGestureRecognizer) {
@@ -372,8 +451,8 @@ class HomeViewController: UIViewController {
             return
         }
         
-        guard (phoneNumberTextField.text!.count <= 10)  else {
-            Utlities.showAlert(with: "Please Enter your phone number no more than 10 characters", "", "OK", self)
+        guard (phoneNumberTextField.text!.count <= 15)  else {
+            Utlities.showAlert(with: "Please Enter your phone number no more than 15 characters", "", "OK", self)
             phoneNumberTextField.becomeFirstResponder()
             return
         }
@@ -499,7 +578,91 @@ extension HomeViewController: UIPickerViewDelegate {
         UserInfo.user.CountryId = countryIDs[row]
 
         countryTextField.text = country
+        
+        validateLanguage()
+        
+        currentCountry = countryTextField.text ?? ""
     }
+    
+    func validateLanguage() {
+        
+        guard countryTextField.text != currentCountry else {
+            return
+        }
+        
+        guard let country = countryTextField.text else {
+            
+            return
+        }
+        
+        switch country {
+        case CountryList.Myanmar.rawValue:
+            languageButton.setTitle("🇲🇲", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.Myanmar.rawValue)
+            cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
+
+            break
+            
+        case CountryList.Thailand.rawValue:
+            languageButton.setTitle("🇹🇭", for: .normal)
+//            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
+            Localize.setCurrentLanguage("th_TH")
+            cashAmmountList = [200000, 400000, 800000, 1000000, 1350000, 1500000, 2000000]
+
+            break
+            
+        case CountryList.Indonesia.rawValue:
+            languageButton.setTitle("🇮🇩", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.Indonesia.rawValue)
+            cashAmmountList = [1000, 2000, 3000, 4000, 5000, 7000, 9000]
+
+            break
+            
+        case CountryList.SriLankan.rawValue:
+            languageButton.setTitle("🇱🇰", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.SriLanka.rawValue)
+            cashAmmountList = [7500, 10000, 15000, 20000, 25000, 30000, 35000]
+            break
+            
+        case CountryList.Nigeria.rawValue:
+            languageButton.setTitle("🇳🇬", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.Nigeria.rawValue)
+            cashAmmountList = [35000, 50000, 75000, 100000, 125000, 150000, 175000]
+
+            break
+            
+        default:
+            languageButton.setTitle("🇬🇧", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
+
+            break
+        }
+        
+        setDefaults()
+    }
+    
+}
+
+enum LocalizeLabel: String {
+    case Indonesia = "🇮🇩"
+    case Nigeria = "🇳🇬"
+    case Thailand = "🇹🇭"
+    case Cambodian = "🇰🇭"
+    case Philippines = "🇵🇭"
+    case Myanmar = "🇲🇲"
+    case SriLankan = "🇱🇰"
+    case Lao = "🇱🇦"
+}
+
+enum CountryList: String {
+    case Indonesia = "Indonesia"
+    case Nigeria = "Nigeria"
+    case Thailand = "Thailand"
+    case Cambodian = "Cambodian"
+    case Philippines = "Philippines"
+    case Myanmar = "Myanmar"
+    case SriLankan = "Sri Lankan"
+    case Lao = "Lao"
 }
 
 extension HomeViewController: UIPickerViewDataSource {
@@ -548,10 +711,11 @@ extension HomeViewController: UITextFieldDelegate {
         scrollView.contentInset = contentInset
     }
     
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+        currentCountry = textField.text ?? ""
 //        scrollView.contentOffset.y = textField.frame.origin.y
-//    }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

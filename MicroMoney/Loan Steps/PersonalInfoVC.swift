@@ -170,8 +170,8 @@ class PersonalInfoVC: UIViewController {
         }
         
         
-        guard (numberTextField.text!.count <= 10)  else {
-            Utlities.showAlert(with: "Please Enter your number no more than 10 characters", "", "OK", self)
+        guard (numberTextField.text!.count <= 15)  else {
+            Utlities.showAlert(with: "Please Enter your number no more than 15 characters", "", "OK", self)
             numberTextField.becomeFirstResponder()
             return
         }
@@ -282,6 +282,14 @@ extension PersonalInfoVC {
         
         let data = json["d"]
         
+        if data == JSON.null {
+            
+            Utlities.showLoading(on: self.view, is: false)
+            Utlities.showAlert(with: "Error Loading Data", "Sorry, We cannot load city list", "OK", self)
+            
+//            return
+        }
+
         let result = data["results"]
         
         cityList.removeAll()
@@ -302,6 +310,15 @@ extension PersonalInfoVC {
     func parseGenderList(with json: JSON) {
         
         let data = json["d"]
+        
+        if data == JSON.null {
+            
+            Utlities.showLoading(on: self.view, is: false)
+            Utlities.showAlert(with: "Error Loading Data", "Sorry, We cannot load gender list", "OK", self)
+            
+//            return
+        }
+
         
         let result = data["results"]
         
@@ -357,6 +374,15 @@ extension PersonalInfoVC {
     func parseCountryList(with json: JSON) {
         
         let data = json["d"]
+        
+        if data == JSON.null {
+            
+            Utlities.showLoading(on: self.view, is: false)
+            Utlities.showAlert(with: "Error Loading Data", "Sorry, We cannot load country load", "OK", self)
+            
+//            return
+        }
+
         
         let result = data["results"]
         

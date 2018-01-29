@@ -66,6 +66,15 @@ class DocumentScanVC: UIViewController {
             if status == .Success {
                 
                 let data = response["d"]
+                
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
+                
                 let results = data["results"]
                 
                 for value in results.arrayValue {
@@ -82,7 +91,7 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
             }
 
         }
@@ -105,6 +114,14 @@ class DocumentScanVC: UIViewController {
             if status == .Success {
                 
                 let data = response["d"]
+                
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
                 
                 UserInfo.user.Id = data["Id"].stringValue
                 
@@ -248,6 +265,14 @@ class DocumentScanVC: UIViewController {
                 
                 let data = response["d"]
                 
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
+                
                 let id  = data["Id"].stringValue
                 
                 self.uploadImages(passport: id, and: name)
@@ -301,6 +326,14 @@ class DocumentScanVC: UIViewController {
                 
                 let data = response["d"]
                 
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
+                
                 let id  = data["Id"].stringValue
                 
                 self.uploadImages(with: id, and: name)
@@ -334,6 +367,14 @@ class DocumentScanVC: UIViewController {
             if status == .Success {
                 
                 let data = response["d"]
+                
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
                 
                 let results = data["results"]
                 
@@ -379,6 +420,14 @@ class DocumentScanVC: UIViewController {
             if status == .Success {
                 
                 let data = response["d"]
+                
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
                 
                 let results = data["results"]
                 
@@ -427,6 +476,14 @@ class DocumentScanVC: UIViewController {
                 Utlities.showLoading(on: self.view, is: false)
                 
                 let data = response["d"]
+                
+                if data == JSON.null {
+                    
+                    Utlities.showLoading(on: self.view, is: false)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    
+                    return
+                }
                 
                 let id = data["Id"].stringValue
                 

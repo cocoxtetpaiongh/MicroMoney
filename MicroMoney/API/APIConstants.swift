@@ -31,4 +31,8 @@ struct APIConstants {
     static let upload = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/FileLeadCollection"
     
     static let update = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrPrimaryContactCollection"
+    
+    static let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                     "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg=",
+                                     "Accept": "application/json;odata=verbose"]
 }

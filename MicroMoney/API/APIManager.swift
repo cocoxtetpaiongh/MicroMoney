@@ -43,7 +43,7 @@ class APIManager {
         let user = UserInfo.user
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
 //        var paramaters: [String: Any] = ["Email": user.Email ?? "somebody@mail.com",
@@ -93,7 +93,7 @@ class APIManager {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json;odata=verbose", forHTTPHeaderField: "Content-Type")
-        request.setValue("Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj", forHTTPHeaderField: "Accept")
+        request.setValue("Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg=", forHTTPHeaderField: "Accept")
         request.setValue("application/json;odata=verbose", forHTTPHeaderField: "Authorization")
 
         request.httpBody = jsonData
@@ -115,7 +115,7 @@ class APIManager {
         
         
         
-        Alamofire.request(url, method: .post, parameters: paramaters, encoding: JSONEncoding.prettyPrinted, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        Alamofire.request(url, method: .post, parameters: paramaters, encoding: JSONEncoding.prettyPrinted, headers: APIConstants.headers).responseSwiftyJSON { (dataRsponse) in
             
             print(dataRsponse.response)
             print(dataRsponse.result.description)
@@ -141,12 +141,12 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$filter": "Name eq 'Workplace'"]
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -178,12 +178,12 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$filter": "Name eq 'Coworker'"]
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -215,13 +215,13 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
         
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -253,13 +253,13 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
         
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -292,7 +292,7 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
@@ -307,7 +307,7 @@ class APIManager {
                           "UsrPhone": companyPhone]
         
         
-        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: APIConstants.headers).responseData { (response) in
             
             print(response, ".PUT")
             
@@ -340,7 +340,7 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
@@ -354,7 +354,7 @@ class APIManager {
                           "UsrLocalFullName": coworkerName,
                           "UsrPhone": coworkerPhone]
         
-        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: APIConstants.headers).responseData { (response) in
             
             print(response, ".PUT")
             
@@ -387,14 +387,14 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
 //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
         
         
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -465,14 +465,14 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let paras: [String: Any] = ["LeadId": id,
                                     "Name": name
         ]
         
-        Alamofire.request(url, method: .post, parameters: paras, encoding: JSONEncoding.prettyPrinted, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        Alamofire.request(url, method: .post, parameters: paras, encoding: JSONEncoding.prettyPrinted, headers: APIConstants.headers).responseSwiftyJSON { (dataRsponse) in
             
             print(dataRsponse.response)
             print(dataRsponse.result.description)
@@ -497,13 +497,13 @@ class APIManager {
         }
 
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
 
         //        let AUTH_TOKEN_KEY = ""
         //        let AUTH_TOKEN = ""
         
-        Alamofire.upload(imageData, to: url, method: .put, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        Alamofire.upload(imageData, to: url, method: .put, headers: APIConstants.headers).responseSwiftyJSON { (dataRsponse) in
 
             print(dataRsponse.response)
             print(dataRsponse.result.description)
@@ -595,7 +595,7 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                      "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj"]
+                                      "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg"]
         
 //        let AUTH_TOKEN_KEY = ""
 //        let AUTH_TOKEN = ""
@@ -614,7 +614,7 @@ class APIManager {
 //                print(response.result.value as Any)   // result of response serialization
 //        }
         
-        Alamofire.request(url, method: .post, parameters: paras, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        Alamofire.request(url, method: .post, parameters: paras, encoding: URLEncoding.default, headers: APIConstants.headers).responseSwiftyJSON { (dataRsponse) in
             
             print(dataRsponse.response)
             print(dataRsponse.result.description)
@@ -641,13 +641,13 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$select": "Id,Name,Description",
                                          "$filter": "UsrBranch/Id eq guid'7ffcfa45-b517-441c-86f0-808eaab4dd11'"]
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -679,10 +679,10 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -714,10 +714,10 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -753,10 +753,10 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
 
             guard let responseData = response.data else {
 
@@ -805,10 +805,10 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
 
             print(response.data?.debugDescription)
             print(response.response?.statusCode)
@@ -890,13 +890,13 @@ class APIManager {
         }
         
         let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6WWVNaW5UR0E0OTM3dmFj",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
                                          "Accept": "application/json;odata=verbose"]
         
         let paramaters: [String: Any] = ["$filter": "Name eq 'iOS app'",
                                          "$select": "Id,Name"]
         
-        Alamofire.request(url, method: .get, parameters: paramaters, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON { (dataRsponse) in
+        Alamofire.request(url, method: .get, parameters: paramaters, encoding: URLEncoding.default, headers: APIConstants.headers).responseSwiftyJSON { (dataRsponse) in
             
             print(dataRsponse.response)
             print(dataRsponse.result.description)

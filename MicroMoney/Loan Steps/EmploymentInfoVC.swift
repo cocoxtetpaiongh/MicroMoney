@@ -118,8 +118,8 @@ class EmploymentInfoVC: UIViewController {
             return
         }
 
-        guard (companyNumberTextField.text!.count <= 10)  else {
-            Utlities.showAlert(with: "Please Enter your company phone number no more than 10 characters", "", "OK", self)
+        guard (companyNumberTextField.text!.count <= 15)  else {
+            Utlities.showAlert(with: "Please Enter your company phone number no more than 15 characters", "", "OK", self)
             companyNumberTextField.becomeFirstResponder()
             return
         }
@@ -130,8 +130,8 @@ class EmploymentInfoVC: UIViewController {
             return
         }
         
-        guard (coworkerNumberTextField.text!.count <= 10)  else {
-            Utlities.showAlert(with: "Please Enter your coworker phone number no more than 10 characters", "", "OK", self)
+        guard (coworkerNumberTextField.text!.count <= 15)  else {
+            Utlities.showAlert(with: "Please Enter your coworker phone number no more than 15 characters", "", "OK", self)
             coworkerNumberTextField.becomeFirstResponder()
             return
         }

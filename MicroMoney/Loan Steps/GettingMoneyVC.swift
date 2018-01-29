@@ -173,6 +173,14 @@ extension GettingMoneyVC {
         
         let data = json["d"]
         
+        if data == JSON.null {
+            
+            Utlities.showLoading(on: self.view, is: false)
+            Utlities.showAlert(with: "Error Loading Data", "Sorry, we cannot load payment list", "OK", self)
+            
+//            return
+        }
+        
         let result = data["results"]
         
         paymentSystemList.removeAll()
