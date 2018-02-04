@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D1D5E4C1FD5B80A0065EA76 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D5E4A1FD5B80A0065EA76 /* HomeCell.swift */; };
 		2D1D5E4D1FD5B80A0065EA76 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D1D5E4B1FD5B80A0065EA76 /* HomeCell.xib */; };
+		2D1E98F1201F96C900C48345 /* PhoneContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E98F0201F96C900C48345 /* PhoneContacts.swift */; };
 		2D3FFDE02009ECBD001EDA47 /* Info.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FFDE22009ECBD001EDA47 /* Info.strings */; };
 		2D3FFDE6200A0440001EDA47 /* LoanSteps.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FFDE5200A0440001EDA47 /* LoanSteps.strings */; };
 		2D43DE501FD2505000DA9818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D43DE4F1FD2505000DA9818 /* AppDelegate.swift */; };
@@ -88,6 +89,7 @@
 		20E378444B4CA215F80852D7 /* Pods-MicroMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroMoney.release.xcconfig"; path = "Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney.release.xcconfig"; sourceTree = "<group>"; };
 		2D1D5E4A1FD5B80A0065EA76 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		2D1D5E4B1FD5B80A0065EA76 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		2D1E98F0201F96C900C48345 /* PhoneContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneContacts.swift; sourceTree = "<group>"; };
 		2D330F6A201C79A900A5D187 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
 		2D330F6B201C79A900A5D187 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2D330F6C201C79A900A5D187 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Info.strings; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA1E2BE1FD83E1600D5B73F /* Extensions.swift */,
+				2D1E98F0201F96C900C48345 /* PhoneContacts.swift */,
 				2D99D9531FEFC45600827F62 /* User.swift */,
 				2D99D9551FF0069D00827F62 /* Utlities.swift */,
 			);
@@ -547,6 +550,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -554,6 +560,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -609,6 +618,7 @@
 				2DAA25951FE2DA93006D7DEB /* GettingMoneyVC.swift in Sources */,
 				2D62E0AE200666AC00474ECD /* SlideContaierVC.swift in Sources */,
 				2DAA25911FE2DA50006D7DEB /* EmploymentInfoVC.swift in Sources */,
+				2D1E98F1201F96C900C48345 /* PhoneContacts.swift in Sources */,
 				2D43DE521FD2505000DA9818 /* ViewController.swift in Sources */,
 				2D886F201FE690870078631D /* AboutMicroMoney.swift in Sources */,
 				2DCCA2B21FE4CDD4002F40E7 /* APIConstants.swift in Sources */,

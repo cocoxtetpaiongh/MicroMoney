@@ -60,7 +60,8 @@ class InfoViewController: UIViewController {
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func getLoans() {

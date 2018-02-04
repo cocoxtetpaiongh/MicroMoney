@@ -37,6 +37,14 @@
 	<string>This app requires access to the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app requires access to the photo library.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Do you allow MicroMoney to know your current location?</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Will you allow MicroMoney to always know your location?</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Will you allow MicroMoney to always know your location?</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Do you allow MicroMoney to know your contacts?</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Zawgyi.ttf</string>

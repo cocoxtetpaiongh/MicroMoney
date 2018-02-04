@@ -6,21 +6,21 @@
   Copyright © 2018 Coco Xtet Pai. All rights reserved.
 */
 
-"Next" = "Next";
+"Next" = "ต่อไป";
 
-"4 Easy Steps to get a Cash Loan" = "4 Easy Steps to get a Cash Loan";
-"Why choose Micro-money" = "Why choose Micro-money";
-"Apply To Get Loan Now" = "Apply To Get Loan Now";
+"4 Easy Steps to get a Cash Loan" = "4 ขั้นตอนง่ายๆ ที่จะสามารถใช้บริการกับเรา";
+"Why choose Micro-money" = "ทำไมคุณถึงต้องเลือก Micro Money";
+"Apply To Get Loan Now" = "สมัครใช้งานตอนนี้";
 
 // LOAN STEP HOME
 
-"I NEED " = "I NEED ";
-" MMK " = " MMK ";
-" FOR " = " FOR ";
-" DAYS" = " DAYS";
-"MMK" = "MMK";
-" MMK" = " MMK";
-"MMK " = "MMK ";
+"I NEED " = "ฉันต้องการ ";
+" MMK " = " THB ";
+" FOR " = " เพื่อ ";
+" DAYS" = " วัน";
+"MMK" = "THB";
+" MMK" = " THB";
+"MMK " = "THB ";
 
 "30000" = "30000";
 "50000" = "50000";
@@ -34,62 +34,61 @@
 "21" = "21";
 "28" = "28";
 
-"Cash Advance Amount" = "Cash Advance Amount";
-"Total Repayment amount" = "Total Repayment amount";
-"Repayment date" = "Repayment date";
+"Cash Advance Amount" = "เงินทั้งหมด";
+"Total Repayment amount" = "จำนวนเงินที่จ่ายคืนทั้งหมด";
+"Repayment date" = "วันที่ต้องจ่ายคืน";
 
-"I am in" = "I am in";
-"Full Name" = "Full Name";
-"Phone" = "Phone";
-"APPLY TO GET LOAN NOW!" = "APPLY TO GET LOAN NOW!";
+"I am in" = "ฉันอยู่ใน";
+"Full Name" = "ชื่อจริง";
+"Phone" = "เบอร์โทรศัพท์";
+"APPLY TO GET LOAN NOW!" = "สมัครใช้งานตอนนี้";
 
 // Personal Info
 
-"Personal information" = "Personal information";
-"Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory." = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory.";
+"Personal information" = "ข้อมูลส่วนตัว";
+"Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory." = "กรุณาใส่ข้อมูลของคุณลงไปช่องทั้งหมด ง่ายนิดเดียว หากคุณใส่ข้อมูลเป็นภาษาอังกฤษเราจะขอบคุณอย่างมาก ต้องใส่ข้อมูลลงใน * ทั้งหมด";
 
-"Your email" = "Your email";
-"* City" = "* City";
-"* BirthDay" = "* BirthDay";
-"* Gender" = "* Gender";
-"* Your Line or Whatsapp or Viber Phone number?" = "* Your Line or Whatsapp or Viber Phone number?";
-"* Nationality" = "* Nationality";
-"* mandatory field" = "* mandatory field";
+"Your email" = "อีเมลล์";
+"* City" = "* เมือง";
+"* BirthDay" = "* วันเกิด";
+"* Gender" = "* เพศ";
+"* Your Line or Whatsapp or Viber Phone number?" = "* Line หรือ เบอร์ Whatsapp หรือ Viber ";
+"* Nationality" = "* สัญชาติ";
+"* mandatory field" = "* ช่องที่จำเป็น";
 
 // Employment Info
 
-"Social Status" = "Social Status";
-"* Company Name" = "* Company Name";
-"* Company`s Phone Number" = "* Company`s Phone Number";
-"* Monthly Gross Income (MMK)" = "* Monthly Gross Income (MMK)";
-"Your coworker phone number" = "Your coworker phone number";
-"coworker name" = "coworker name";
+"Social Status" = "สถานะทางสังคม";
+"* Company Name" = "* ชื่อบริษัท";
+"* Company`s Phone Number" = "* เบอร์โทรบริษัท";
+"* Monthly Gross Income (MMK)" = "* รายได้รวมทั้งหมด";
+"Your coworker phone number" = "เบอร์โทรเพื่อนร่วมงาน";
+"coworker name" = "รายละเอียดการทำงาน";
 "Employment information" = "Employment information";
 
 // Getting Money
 
-"Getting money" = "Getting money";
-"ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!" = "ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!";
-"Total Repayment amount" = "Total Repayment amount";
-"Repayment date" = "Repayment date";
-"* Choose your bank or payment system here" = "* Choose your bank or payment system here";
-"* Fill your bank account number here" = "* Fill your bank account number here";
-"* Your ID/ Passport Number" = "* Your ID/ Passport Number";
+"Getting money" = "รับเงิน";
+"ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!" = "ใกล้เสร็จแล้ว! กรุณาเลือธนาคารของคุณ และกรอกเลขบัญชีธนาคาร, หากคุณยังไม่มีบัญชีธนาคาร คุณสามารถสมัครใหม่ได้ครั้งหน้า รีบหน่อยนะ!";
+"Repayment date" = "วันที่ต้องจ่ายคืน";
+"* Choose your bank or payment system here" = "* คุณสามารถเลือกธนาคารหรือช่องทางการจ่ายเงินอื่นๆ ได้ที่นี่";
+"* Fill your bank account number here" = "* ใส่เลขที่บัญชีของคุณ";
+"* Your ID/ Passport Number" = "* เลขบัตประชาชน หรือพาสสปอร์ต";
 
 // Document Scan
 
-"Documents scan" = "Documents scan";
-"CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!" = "CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!";
-"Photo of your bank account number." = "Photo of your bank account number.";
-"* Photo of your ID/Passport" = "* Photo of your ID/Passport";
+"Documents scan" = "สแกนเอกสาร";
+"CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!" = "ยินดีด้วย! เราพร้อมแล้วที่จะส่งเงินให้กับคุณ! กรุณารูปภาพเอกสารของคุณให้ชัด หากคุณยังไม่มีบัญชีธนาคาร คุณสามารถสมัครใหม่ได้ครั้งหน้า";
+"Photo of your bank account number." = "รูปภาพเลขบัญชีธนาคาร";
+"* Photo of your ID/Passport" = "* รููปภาพบัตรประชาชน หรือ พาสสปอร์ต";
 
 // Success
 
-"Success!" = "Success!";
-"Dear" = "Dear";
-"Send us message to FACEBOOK MESSENGER" = "Send us message to FACEBOOK MESSENGER";
-"Send message or call to Viber hotline:" = "Send message or call to Viber hotline:";
-"Send message or call to LINE hotline:" = "Send message or call to LINE hotline:";
-"Call Us on mobile hotline:" = "Call Us on mobile hotline:";
+"Success!" = "สำเร็จแล้ว!";
+"Dear" = "คุณ";
+"Send us message to FACEBOOK MESSENGER" = "ส่งข้อความหาเราในเฟสบุ๊ค";
+"Send message or call to Viber hotline:" = "ส่งข้อความหาเราใน Viber";
+"Send message or call to LINE hotline:" = "ส่งข้อความหาเราใน Line";
+"Call Us on mobile hotline:" = "โทรหาเรา";
 
 

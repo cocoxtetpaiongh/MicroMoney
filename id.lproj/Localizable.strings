@@ -6,21 +6,21 @@
   Copyright © 2018 Coco Xtet Pai. All rights reserved.
 */
 
-"Next" = "Next";
+"Next" = "Berikutnya";
 
-"4 Easy Steps to get a Cash Loan" = "4 Easy Steps to get a Cash Loan";
-"Why choose Micro-money" = "Why choose Micro-money";
-"Apply To Get Loan Now" = "Apply To Get Loan Now";
+"4 Easy Steps to get a Cash Loan" = "4 Cara Mudah untuk mendapatkan Pinjaman Tunai";
+"Why choose Micro-money" = "Mengapa memilih Micro-money";
+"Apply To Get Loan Now" = "Daftar sekarang untuk mendapatkan pinjaman";
 
 // LOAN STEP HOME
 
-"I NEED " = "I NEED ";
-" MMK " = " MMK ";
-" FOR " = " FOR ";
-" DAYS" = " DAYS";
-"MMK" = "MMK";
-" MMK" = " MMK";
-"MMK " = "MMK ";
+"I NEED " = "SAYA BUTUH ";
+" MMK " = " IDR ";
+" FOR " = " UNTUK ";
+" DAYS" = " HARI";
+"MMK" = "IDR";
+" MMK" = " IDR";
+"MMK " = "IDR ";
 
 "30000" = "30000";
 "50000" = "50000";
@@ -34,62 +34,61 @@
 "21" = "21";
 "28" = "28";
 
-"Cash Advance Amount" = "Cash Advance Amount";
-"Total Repayment amount" = "Total Repayment amount";
-"Repayment date" = "Repayment date";
+"Cash Advance Amount" = "Jumlah Dana Tunai";
+"Total Repayment amount" = "Jumlah Pengembalian Dana";
+"Repayment date" = "Tanggal pengembalian";
 
-"I am in" = "I am in";
-"Full Name" = "Full Name";
-"Phone" = "Phone";
+"I am in" = "Saya di";
+"Full Name" = "Nama Lengkap";
+"Phone" = "Telepon";
 "APPLY TO GET LOAN NOW!" = "APPLY TO GET LOAN NOW!";
 
 // Personal Info
 
-"Personal information" = "Personal information";
-"Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory." = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory.";
+"Personal information" = "Data Pribadi";
+"Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mandatory." = "Mohon untuk mengisi kolom-kolom di bawah. Sangat mudah. Kolom dengan tanda * wajib diisi.";
 
-"Your email" = "Your email";
-"* City" = "* City";
-"* BirthDay" = "* BirthDay";
-"* Gender" = "* Gender";
-"* Your Line or Whatsapp or Viber Phone number?" = "* Your Line or Whatsapp or Viber Phone number?";
-"* Nationality" = "* Nationality";
-"* mandatory field" = "* mandatory field";
+"Your email" = "Email Anda";
+"* City" = "* Kota";
+"* BirthDay" = "* Tanggal Lahir";
+"* Gender" = "* Jenis kelamin";
+"* Your Line or Whatsapp or Viber Phone number?" = "* Line ID atau nomor Whatsapp Anda?";
+"* Nationality" = "* Kebangsaan";
+"* mandatory field" = "* kolom wajib diisi";
 
 // Employment Info
 
-"Social Status" = "Social Status";
-"* Company Name" = "* Company Name";
-"* Company`s Phone Number" = "* Company`s Phone Number";
-"* Monthly Gross Income (MMK)" = "* Monthly Gross Income (MMK)";
-"Your coworker phone number" = "Your coworker phone number";
-"coworker name" = "coworker name";
-"Employment information" = "Employment information";
+"Social Status" = "Status Pernikahan";
+"* Company Name" = "* Nama Perusahaan";
+"* Company`s Phone Number" = "* Nomor telepon perusahaan";
+"* Monthly Gross Income (MMK)" = "* Gaji gross per bulan (Rp)";
+"Your coworker phone number" = "Nomor telepon rekan kerja";
+"coworker name" = "Nama rekan kerja";
+"Employment information" = "Informasi pekerjaan";
 
 // Getting Money
 
-"Getting money" = "Getting money";
-"ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!" = "ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!";
-"Total Repayment amount" = "Total Repayment amount";
-"Repayment date" = "Repayment date";
-"* Choose your bank or payment system here" = "* Choose your bank or payment system here";
-"* Fill your bank account number here" = "* Fill your bank account number here";
-"* Your ID/ Passport Number" = "* Your ID/ Passport Number";
+"Getting money" = "Mendapatkan uang";
+"ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!" = "SUDAH HAMPIR SELESAI! Mohon untuk memilih bank serta tulis nomor rekening bank Anda. Apabila Anda tidak memiliki akun bank, Anda dapat melanjutkan aplikasi ini nanti! Dapatkan uang Anda secepatnya!";
+"Repayment date" = "Tanggal pengembalian";
+"* Choose your bank or payment system here" = "* Pilih bank Anda";
+"* Fill your bank account number here" = "* Masukkan nomor rekening bank Anda di sini";
+"* Your ID/ Passport Number" = "* No KTP Anda";
 
 // Document Scan
 
-"Documents scan" = "Documents scan";
-"CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!" = "CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!";
-"Photo of your bank account number." = "Photo of your bank account number.";
-"* Photo of your ID/Passport" = "* Photo of your ID/Passport";
+"Documents scan" = "Scan dokumen-dokumen";
+"CONGRATULATIONS! We are ready to send you money! Please take clear photos of your documents. If you not yet have bank account , you can continue this application later!" = "SELAMAT! Kita sudah siap untuk mengirimkan uang kepada Anda! Mohon untuk mengambil foto dengan jelas untuk dokumen-dokumen Anda.Apabila Anda tidak memiliki akun bank, Anda dapat melanjutkan aplikasi ini nanti! ";
+"Photo of your bank account number." = "Foto cover buku tabungan Anda";
+"* Photo of your ID/Passport" = "* Foto KTP Anda";
 
 // Success
 
-"Success!" = "Success!";
-"Dear" = "Dear";
-"Send us message to FACEBOOK MESSENGER" = "Send us message to FACEBOOK MESSENGER";
-"Send message or call to Viber hotline:" = "Send message or call to Viber hotline:";
-"Send message or call to LINE hotline:" = "Send message or call to LINE hotline:";
-"Call Us on mobile hotline:" = "Call Us on mobile hotline:";
+"Success!" = "Berhasil!";
+"Dear" = "Kepada Yth.";
+"Send us message to FACEBOOK MESSENGER" = "Kirimkan pesan kepada kami melalui FACEBOOK MESSENGER";
+"Send message or call to Viber hotline:" = "Kirimkan pesan melalui Whatsapp";
+"Send message or call to LINE hotline:" = "Kirimkan pesan melalui Whatsapp";
+"Call Us on mobile hotline:" = "Hubungi Call Center kami";
 
 

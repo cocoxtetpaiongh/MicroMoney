@@ -11,10 +11,10 @@ import UIKit
 enum LocalizeLanguage: String {
     case Myanmar = "my"
     case English = "en"
-    case Thailand = "th_TH"
+    case Thailand = "th"
     case Indonesia = "id"
-    case SriLanka = "ta_LK"
-    case Nigeria = "yo_NG"
+    case SriLanka = "ta-LK"
+    case Nigeria = "yo-NG"
 }
 
 protocol MenuDelegate: class {

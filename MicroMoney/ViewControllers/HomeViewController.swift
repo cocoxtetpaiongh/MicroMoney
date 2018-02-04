@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Localize_Swift
+import CoreLocation
+import Contacts
+import ContactsUI
+
 //import Localize_Swift
 
 class HomeViewController: UIViewController {
@@ -47,6 +51,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var ammountIndicatorLabel: UILabel!
     
     weak var slideMenuDelegate: SlideMenuDelegate?
+    
+    var locationManager: CLLocationManager!
+    
+    var phoneContacts = [PhoneContacts]() // array of PhoneContact
+    var filter: ContactsFilter = .none
     
     var currentCountry = ""
     
@@ -155,7 +164,137 @@ class HomeViewController: UIViewController {
         setText()
         setupUI()
         getCountryList()
+        
+        getLocation()
+        
+        let contacts = phoneNumberWithContryCode()
+        
+        print(contacts.first, "Phone Number First")
     }
+    
+    func getLocation() {
+        
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func phoneNumberWithContryCode() -> [String] {
+        
+        let contacts = PhoneContacts.getContacts() // here calling the getContacts methods
+        
+        var arrPhoneNumbers = [String]()
+        for contact in contacts {
+            for ContctNumVar: CNLabeledValue in contact.phoneNumbers {
+                if let fulMobNumVar  = ContctNumVar.value as? CNPhoneNumber {
+                    //let countryCode = fulMobNumVar.value(forKey: "countryCode") get country code
+                    if let MccNamVar = fulMobNumVar.value(forKey: "digits") as? String {
+                        arrPhoneNumbers.append(MccNamVar)
+                    }
+                }
+            }
+        }
+        return arrPhoneNumbers // here array has all contact numbers.
+    }
+    
+//    fileprivate func loadContacts(filter: ContactsFilter) {
+//        phoneContacts.removeAll()
+//        var allContacts = [PhoneContacts]()
+//        for contact in PhoneContacts.getContacts(filter: filter) {
+//            allContacts.append(phoneContacts(contact: contact))
+//        }
+//
+//        var filterdArray = [phoneContacts]
+//        if self.filter == .mail {
+//            filterdArray = allContacts.filter({ $0.email.count > 0 }) // getting all email
+//        } else if self.filter == .message {
+//            filterdArray = allContacts.filter({ $0.phoneNumber.count > 0 })
+//        } else {
+//            filterdArray = allContacts
+//        }
+//        phoneContacts.append(contentsOf: filterdArray)
+////        DispatchQueue.main.async {
+////            self.tableView.reloadData()
+////        }
+//    }
+
+//    func loginToFacebook() {
+//
+//        let loginManager = FBSDKLoginManager()
+//
+//        loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self, handler: {
+//            result, error in
+//
+//            guard error == nil else { return }
+//
+//            guard let result = result else { return }
+//
+//            if result.isCancelled {
+//
+//                print("Cancelled")
+//            } else {
+//
+//                print(result)
+//
+//                self.getFBUserInfo()
+//
+//            }
+//        })
+//
+//    }
+    
+//    func getFBUserInfo() {
+//        let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"first_name,email,birthday,gender,name"]) // ,picture.type(large)"])
+//        
+//        Utlities.showLoading(on: self.view, is: true)
+//        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+//            
+//            if ((error) != nil)
+//            {
+//                print("Error: \(String(describing: error))")
+//                Utlities.showLoading(on: self.view, is: false)
+//            }
+//            else
+//            {
+//                let data:[String: AnyObject] = result as! [String : AnyObject]
+//                print(data)
+//                
+//                if let name = data["name"] as? String {
+//                    
+//                    self.nameTextField.text = name
+//                }
+//                
+//                if let gender = data["gender"] as? String {
+//                    
+//                    self.genderTextField.text = gender.capitalized
+//                }
+//                
+//                if let birthday = data["birthday"] as? String {
+//                    
+//                    self.birthdayTextField.text = birthday.replacingOccurrences(of: "/", with: "-")
+//                }
+//                
+//                if let email = data["email"] as? String {
+//                    
+//                    self.emailTextField.text = email
+//                }
+//                
+//                self.userInfo.name = self.nameTextField.text ?? ""
+//                self.userInfo.gender = self.genderTextField.text ?? ""
+//                self.userInfo.birthday = self.birthdayTextField.text ?? ""
+//                self.userInfo.email = self.emailTextField.text
+//                
+//                self.gotoDetail()
+//                
+//                Utlities.showLoading(on: self.view, is: false)
+//            }
+//        })
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -495,6 +634,16 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations.last! as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+    }
+}
+
 extension HomeViewController: MenuDelegate {
     
     
@@ -521,18 +670,19 @@ extension HomeViewController: MenuDelegate {
         if indexPath == 0 {
             
             let infoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-            present(infoVC, animated: true, completion: nil)
+//            present(infoVC, animated: true, completion: nil)
+            navigationController?.pushViewController(infoVC, animated: true)
             
         } else if indexPath == -1 {
             
             let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
-            present(infoVC, animated: true, completion: nil)
-            
+            navigationController?.pushViewController(infoVC, animated: true)
+
         } else {
             
             let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
-            present(infoVC, animated: true, completion: nil)
-            
+            navigationController?.pushViewController(infoVC, animated: true)
+
         }
 
     }
@@ -543,18 +693,19 @@ extension HomeViewController: MenuDelegate {
         if indexPath == 0 {
             
             let infoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-            present(infoVC, animated: true, completion: nil)
+//            present(infoVC, animated: true, completion: nil)
 
-//            self.navigationController?.pushViewController(menuVC, animated: true)
+            self.navigationController?.pushViewController(infoVC, animated: true)
+            
         } else if indexPath == -1 {
             
             let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
-            present(infoVC, animated: true, completion: nil)
-            
+            navigationController?.pushViewController(infoVC, animated: true)
+
         } else {
             
             let infoVC = UIStoryboard(name: "Info", bundle: nil).instantiateViewController(withIdentifier: "AboutMicroMoney") as! AboutMicroMoney
-            present(infoVC, animated: true, completion: nil)
+            navigationController?.pushViewController(infoVC, animated: true)
 
 //            let webView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
 //
@@ -605,8 +756,8 @@ extension HomeViewController: UIPickerViewDelegate {
             
         case CountryList.Thailand.rawValue:
             languageButton.setTitle("🇹🇭", for: .normal)
-//            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
-            Localize.setCurrentLanguage("th_TH")
+            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
+//            Localize.setCurrentLanguage("th")
             cashAmmountList = [200000, 400000, 800000, 1000000, 1350000, 1500000, 2000000]
 
             break

@@ -62,5 +62,12 @@ class UserInfo: NSObject {
     
 //    var email: String? = nil
     
+    var UsrGps: String? = nil
+    var UsrAppEmail: String? = nil
+    var UsrAppGoogle: String? = nil
+    var UsrAppFacebookMessenger: String? = nil
+    var UsrAppFacebookAuth: String? = nil
+    var UsrImei: String? = nil
+
 
 }
