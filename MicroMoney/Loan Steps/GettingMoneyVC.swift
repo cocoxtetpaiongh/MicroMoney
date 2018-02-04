@@ -149,8 +149,10 @@ extension GettingMoneyVC {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
-                self.navigationController?.popViewController(animated: true)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                })
                 return
             }
             
@@ -162,8 +164,12 @@ extension GettingMoneyVC {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
-                self.navigationController?.popViewController(animated: true)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+                
             }
             
         }

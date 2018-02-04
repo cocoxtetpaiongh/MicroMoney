@@ -58,7 +58,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -70,7 +74,11 @@ class DocumentScanVC: UIViewController {
                 if data == JSON.null {
                     
                     Utlities.showLoading(on: self.view, is: false)
-                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self, completion: {
+                        
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    })
                     
                     return
                 }
@@ -91,7 +99,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
             }
 
         }
@@ -106,7 +118,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -118,7 +134,11 @@ class DocumentScanVC: UIViewController {
                 if data == JSON.null {
                     
                     Utlities.showLoading(on: self.view, is: false)
-                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self, completion: {
+                        
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    })
                     
                     return
                 }
@@ -132,7 +152,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
             }
             
         }
@@ -375,7 +399,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                })
                 
                 return
             }
@@ -387,7 +415,10 @@ class DocumentScanVC: UIViewController {
                 if data == JSON.null {
                     
                     Utlities.showLoading(on: self.view, is: false)
-                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self, completion: {
+                        
+                        self.navigationController?.popViewController(animated: true)
+                    })
                     
                     return
                 }
@@ -409,7 +440,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+
+                })
             }
             
         }
@@ -428,7 +463,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+
+                })
                 
                 return
             }
@@ -440,7 +479,11 @@ class DocumentScanVC: UIViewController {
                 if data == JSON.null {
                     
                     Utlities.showLoading(on: self.view, is: false)
-                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self, completion: {
+                        
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    })
                     
                     return
                 }
@@ -462,7 +505,12 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
+
             }
             
         }
@@ -496,7 +544,11 @@ class DocumentScanVC: UIViewController {
                 if data == JSON.null {
                     
                     Utlities.showLoading(on: self.view, is: false)
-                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self)
+                    Utlities.showAlert(with: "Error Loading Data", "Can not update your Data", "OK", self, completion: {
+                        
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    })
                     
                     return
                 }
@@ -513,7 +565,12 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Update your Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Update your Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
+
             }
             
         }
@@ -528,7 +585,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -544,7 +605,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
             }
             
         }
@@ -561,7 +626,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -587,7 +656,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
             }
             
         }
@@ -606,7 +679,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -631,7 +708,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
             }
             
         }
@@ -649,7 +730,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -665,7 +750,12 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
+
             }
 
         }
@@ -680,7 +770,11 @@ class DocumentScanVC: UIViewController {
             if response == JSON.null && status == .Updated {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Success", "Your data was updated", "OK", self)
+                Utlities.showAlert(with: "Success", "Your data was updated", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
                 
                 return
             }
@@ -703,7 +797,11 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Update your Data", "OK", self)
+                Utlities.showAlert(with: "Error Loading Data", "Cannot Update your Data", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                })
             }
             
         }

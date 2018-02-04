@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,40 +31,40 @@
                                     <constraint firstAttribute="width" secondItem="dZs-A1-hMl" secondAttribute="height" id="dAM-Pj-OSp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App is loading ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFl-Q9-0j6">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App is loading ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFl-Q9-0j6">
                                 <rect key="frame" x="0.0" y="489" width="375" height="23.5"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
                                 <color key="textColor" red="0.39215686274509803" green="0.77254901960784317" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pls do not turn off your phone or application " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-4k-a0g">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pls do not turn off your phone or application " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-4k-a0g">
                                 <rect key="frame" x="0.0" y="540.5" width="375" height="47"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
                                 <color key="textColor" red="0.39215686274509803" green="0.77254901960784317" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MICROMONEY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJO-lI-txd">
-                                <rect key="frame" x="0.0" y="72" width="375" height="23.5"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
-                                <color key="textColor" red="0.39215686274509803" green="0.77254901960784317" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="YSh-9X-Yam">
+                                <rect key="frame" x="20" y="40" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Kl6-eP-3CX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dZs-A1-hMl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CTf-Br-VvP"/>
+                            <constraint firstItem="YSh-9X-Yam" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IfJ-Et-Vua"/>
                             <constraint firstItem="n0U-4k-a0g" firstAttribute="top" secondItem="dZs-A1-hMl" secondAttribute="bottom" constant="20" id="LGR-og-mK8"/>
                             <constraint firstItem="dZs-A1-hMl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LJ1-Wd-rKj"/>
-                            <constraint firstItem="DJO-lI-txd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NYh-eb-brs"/>
                             <constraint firstItem="n0U-4k-a0g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rm9-b3-kKz"/>
-                            <constraint firstItem="DJO-lI-txd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1/4" id="TF5-bf-GaO"/>
                             <constraint firstItem="FFl-Q9-0j6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.5" id="UEd-Dy-SHi"/>
                             <constraint firstItem="FFl-Q9-0j6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XYu-Ql-mLk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DJO-lI-txd" secondAttribute="trailing" id="Xr0-YD-ksb"/>
                             <constraint firstItem="FFl-Q9-0j6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Z6n-Le-bzx"/>
+                            <constraint firstAttribute="trailing" secondItem="YSh-9X-Yam" secondAttribute="trailing" constant="20" id="ZFK-SW-y1y"/>
                             <constraint firstItem="dZs-A1-hMl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fOb-H2-49F"/>
                             <constraint firstItem="FFl-Q9-0j6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gJy-ub-QhJ"/>
-                            <constraint firstItem="DJO-lI-txd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iWv-lz-3WL"/>
+                            <constraint firstItem="YSh-9X-Yam" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="hLZ-NF-5YX"/>
+                            <constraint firstItem="YSh-9X-Yam" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kvN-43-0vW"/>
                             <constraint firstItem="n0U-4k-a0g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pOD-Gu-Jrr"/>
                             <constraint firstItem="dZs-A1-hMl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rzc-lA-Ksk"/>
                         </constraints>
@@ -77,6 +77,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loading_screen" width="1049" height="572"/>
+        <image name="loading_screen" width="633" height="494"/>
+        <image name="title" width="1959" height="395"/>
     </resources>
 </document>
