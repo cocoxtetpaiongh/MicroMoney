@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class FinishedVC: UIViewController {
     
@@ -58,6 +59,68 @@ class FinishedVC: UIViewController {
         doneButton.localize(with: "Next")
     }
 
+    @IBAction func facebookButtonPressed(_ sender: UIButton) {
+        
+        var messengerURL = ""
+        
+        switch Localize.currentLanguage() {
+        case LocalizeLanguage.English.rawValue:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneymyanmar"
+
+            break
+            
+        case LocalizeLanguage.Myanmar.rawValue:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneymyanmar"
+
+            break
+            
+        case LocalizeLanguage.Thailand.rawValue:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneyth"
+
+            break
+            
+        case LocalizeLanguage.Indonesia.rawValue:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneyid"
+
+            break
+            
+        case LocalizeLanguage.SriLanka.rawValue:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneylk"
+
+            break
+            
+        case LocalizeLanguage.Nigeria.rawValue:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneyNG"
+
+            break
+
+        default:
+            
+            messengerURL = "https://www.messenger.com/t/micromoneymyanmar"
+
+            break
+        }
+        
+        guard messengerURL != "" else {
+            return
+        }
+        
+        if let url = URL(string: messengerURL) {
+            
+            if UIApplication.shared.canOpenURL(url) {
+                
+                UIApplication.shared.openURL(url)
+            }
+
+        }
+        
+    }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         

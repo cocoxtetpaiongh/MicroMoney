@@ -49,7 +49,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var daysCountSlider: UISlider!
     
     @IBOutlet weak var ammountIndicatorLabel: UILabel!
-    
+
+    @IBOutlet weak var cashAMmountContainerView: UIStackView!
+
     weak var slideMenuDelegate: SlideMenuDelegate?
     
     var locationManager: CLLocationManager!
@@ -69,7 +71,7 @@ class HomeViewController: UIViewController {
     var cashAmmount: Double = 0
     var period: Double = 0
     
-    var cashAmmountList: [Double] = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
+    var cashAmmountList: [Double] = [30000, 50000, 80000, 100000, 130000, 150000, 200000, 300000]
 //    var cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
 
     @IBAction func languageButtonPressed(_ sender: UIButton) {
@@ -401,6 +403,12 @@ class HomeViewController: UIViewController {
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         self.view.addGestureRecognizer(gesture)
+        
+//        cashAmmountSlider.addTarget(self, action: #selector(cashAmmountSlider(valueChanged:)), for: UIControlEventAllEvents)
+        
+        cashAmmountSlider.addTarget(self, action: #selector(cashAmmountSlider(valueChanged:)), for: UIControlEvents.allEvents)
+        
+        daysCountSlider.addTarget(self, action: #selector(daysCountSlider(valueChanged:)), for: UIControlEvents.allEvents)
 
         setDefaults()
     }
@@ -426,9 +434,70 @@ class HomeViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func updateCashAmmount() {
+        
+        for subView in cashAMmountContainerView.subviews.enumerated() {
+            
+            if let label = subView.element as? UILabel {
+                
+                let ammount = Int(cashAmmountList[subView.offset])
+                label.text = ammount.description
+            }
+        }
+    }
+    
+    @objc func daysCountSlider(valueChanged sender: UISlider) {
+        
+        let dayCountValue = roundf(daysCountSlider.value)
+        
+        daysCountSlider.setValue(dayCountValue, animated: true)
+
+        let multplier = Double(daysCountSlider.value) + 1.0
+        UserInfo.user.UsrTerm = Int(multplier * 7)
+        
+        self.period = multplier * 7
+        calculateRepaymentDate(with: multplier)
+        
+        changeIndicatorLabel()
+        
+        calculateRepayMent()
+        
+        print(UserInfo.user.UsrTerm)
+    }
+    
+    @objc func cashAmmountSlider(valueChanged sender: UISlider) {
+        
+        //        cashAmmountSlider.value = roundf(cashAmmountSlider.value)
+        let cashAmmountValue = roundf(cashAmmountSlider.value)
+        
+        cashAmmountSlider.setValue(cashAmmountValue, animated: true)
+        
+        print(cashAmmountSlider.value, "Cash Value")
+        
+        let index = Int(cashAmmountSlider.value) - 1
+        let ammount = cashAmmountList[index]
+        UserInfo.user.UsrMoneyAmount = Int(ammount)
+        
+        
+        calculateCashAmmount(with: ammount)
+        
+        self.cashAmmount = ammount
+        changeIndicatorLabel()
+        
+        calculateRepayMent()
+        
+        print(UserInfo.user.UsrMoneyAmount)
+        
+    }
+    
     @IBAction func changeCashAmmount(_ sender: UISlider) {
         
-        cashAmmountSlider.value = roundf(cashAmmountSlider.value)
+//        cashAmmountSlider.value = roundf(cashAmmountSlider.value)
+        let cashAmmountValue = roundf(cashAmmountSlider.value)
+        
+        cashAmmountSlider.setValue(cashAmmountValue, animated: true)
+
+        print(cashAmmountSlider.value, "Cash Value")
         
         let index = Int(cashAmmountSlider.value) - 1
         let ammount = cashAmmountList[index]
@@ -641,6 +710,10 @@ extension HomeViewController: CLLocationManagerDelegate {
         let location = locations.last! as CLLocation
         
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
+        print("User Location", location.coordinate.latitude, location.coordinate.longitude)
+        
+        UserInfo.user.UsrGps = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
     }
 }
 
@@ -750,7 +823,7 @@ extension HomeViewController: UIPickerViewDelegate {
         case CountryList.Myanmar.rawValue:
             languageButton.setTitle("🇲🇲", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.Myanmar.rawValue)
-            cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000]
+            cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000, 300000]
 
             break
             
@@ -758,27 +831,27 @@ extension HomeViewController: UIPickerViewDelegate {
             languageButton.setTitle("🇹🇭", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
 //            Localize.setCurrentLanguage("th")
-            cashAmmountList = [200000, 400000, 800000, 1000000, 1350000, 1500000, 2000000]
+            cashAmmountList = [200000, 400000, 800000, 1000000, 1350000, 1500000, 2000000, 300000]
 
             break
             
         case CountryList.Indonesia.rawValue:
             languageButton.setTitle("🇮🇩", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.Indonesia.rawValue)
-            cashAmmountList = [1000, 2000, 3000, 4000, 5000, 7000, 9000]
+            cashAmmountList = [1000, 2000, 3000, 4000, 5000, 7000, 9000, 120000]
 
             break
             
         case CountryList.SriLankan.rawValue:
             languageButton.setTitle("🇱🇰", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.SriLanka.rawValue)
-            cashAmmountList = [7500, 10000, 15000, 20000, 25000, 30000, 35000]
+            cashAmmountList = [7500, 10000, 15000, 20000, 25000, 30000, 35000, 50000]
             break
             
         case CountryList.Nigeria.rawValue:
             languageButton.setTitle("🇳🇬", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.Nigeria.rawValue)
-            cashAmmountList = [35000, 50000, 75000, 100000, 125000, 150000, 175000]
+            cashAmmountList = [35000, 50000, 75000, 100000, 125000, 150000, 175000, 200000]
 
             break
             
@@ -788,6 +861,8 @@ extension HomeViewController: UIPickerViewDelegate {
 
             break
         }
+        
+        updateCashAmmount()
         
         setDefaults()
     }

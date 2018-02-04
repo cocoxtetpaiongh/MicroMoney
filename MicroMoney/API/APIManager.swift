@@ -82,8 +82,16 @@ class APIManager {
                                          "UsrPaySystemAccount": user.UsrPaySystemAccount!,
                                          "UsrPaySystemId": user.UsrPaySystemId!,
                                          "UsrOccupation": user.UsrOccupation!,
+                                         "UsrGps": user.UsrGps ?? "",
+                                         "UsrAppFacebookAuth": user.UsrAppFacebookAuth ?? "",
                                          "RegisterMethodId": user.RegisterMethodId!]
         
+//        var UsrGps: String? = nil
+//        var UsrAppEmail: String? = nil
+//        var UsrAppGoogle: String? = nil
+//        var UsrAppFacebookMessenger: String? = nil
+//        var UsrAppFacebookAuth: String? = nil
+//        var UsrImei: String? = nil
         
         let json = JSON(paramaters) // as! Parameter
 
@@ -433,7 +441,7 @@ class APIManager {
         //        let parameters: [String: Any] = ["$filter": "UsrLead/Id eq guid'\(leadID)' and UsrRelationshipType/Id eq guid'\(relationID)'"]
         
         
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseData { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             
             guard let responseData = response.data else {
                 
@@ -514,7 +522,7 @@ class APIManager {
 
             } else {
 
-                completion(JSON.null, .Error)
+                completion(JSON.null, .Updated)
             }
 
         }

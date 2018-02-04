@@ -167,15 +167,23 @@ class DocumentScanVC: UIViewController {
             
             print(response)
             
+            if response == JSON.null && status == .Updated {
+                
+                self.requestUpload(with: "bankaccount1.png")
+
+                return
+            }
+
+            
             if status == .Success {
                 
-                self.requestUpload(with: "bankaccount.png")
+                self.requestUpload(with: "bankaccount1.png")
 
                 
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Uploading Photo", "Cannot Upload your passport Photo", "OK", self)
             }
             
         }
@@ -210,6 +218,14 @@ class DocumentScanVC: UIViewController {
             
             print(response)
             
+            if response == JSON.null && status == .Updated {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                
+                self.gotoFinish()
+
+                return
+            }
             
             if status == .Success {
                 
@@ -222,7 +238,7 @@ class DocumentScanVC: UIViewController {
             } else {
                 
                 Utlities.showLoading(on: self.view, is: false)
-                Utlities.showAlert(with: "Error Loading Data", "Cannot Get Gender Data", "OK", self)
+                Utlities.showAlert(with: "Error Uploading Photo", "Cannot Upload your Bank Account Image", "OK", self)
             }
             
         }
@@ -766,7 +782,7 @@ class DocumentScanVC: UIViewController {
             if let id = leadID {
                 
 //                requestUpload(with: "image1.png")
-                requestUpload(passport: "passport.png")
+                requestUpload(passport: "passport1.png")
             }
         }
         
