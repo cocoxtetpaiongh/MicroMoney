@@ -415,8 +415,13 @@ extension PersonalInfoVC {
             let name = country["Name"].stringValue
             let id = country["Id"].stringValue
             
-            countryIDs.append(id)
-            countryList.append(name)
+            if name != "Cambodian" && name != "Philippines" && name != "Lao" {
+                
+                countryIDs.append(id)
+                countryList.append(name)
+
+            }
+
         }
         
         countryPicker.reloadAllComponents()

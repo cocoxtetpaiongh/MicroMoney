@@ -51,6 +51,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var ammountIndicatorLabel: UILabel!
 
     @IBOutlet weak var cashAMmountContainerView: UIStackView!
+    
+    @IBOutlet weak var firstLoanLabel: UILabel!
 
     weak var slideMenuDelegate: SlideMenuDelegate?
     
@@ -58,6 +60,7 @@ class HomeViewController: UIViewController {
     
     var phoneContacts = [PhoneContacts]() // array of PhoneContact
     var filter: ContactsFilter = .none
+    
     
     var currentCountry = ""
     
@@ -108,6 +111,12 @@ class HomeViewController: UIViewController {
                 
                 languageButton.setTitle("🇬🇧", for: .normal)
                 Localize.resetCurrentLanguageToDefault()
+                
+            } else if languageButton.titleLabel?.text == LocalizeLabel.Default.rawValue {
+                
+                languageButton.setTitle(LocalizeLabel.Myanmar.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.Myanmar.rawValue)
+
             } else {
                 
                 languageButton.setTitle(LocalizeLabel.Thailand.rawValue, for: .normal)
@@ -163,6 +172,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        firstLoanLabel.text = ""
+
         setText()
         setupUI()
         getCountryList()
@@ -468,6 +479,16 @@ class HomeViewController: UIViewController {
     @objc func cashAmmountSlider(valueChanged sender: UISlider) {
         
         //        cashAmmountSlider.value = roundf(cashAmmountSlider.value)
+        
+//        if !UserInfo.isUserAlreadyLoan() {
+//
+//            firstLoanLabel.text = "This amount is available to repeat borrowers only"
+//
+//        } else {
+//
+//            firstLoanLabel.text = ""
+//        }
+        
         let cashAmmountValue = roundf(cashAmmountSlider.value)
         
         cashAmmountSlider.setValue(cashAmmountValue, animated: true)
@@ -478,6 +499,21 @@ class HomeViewController: UIViewController {
         let ammount = cashAmmountList[index]
         UserInfo.user.UsrMoneyAmount = Int(ammount)
         
+        if index > 1 {
+            
+            if !UserInfo.isUserAlreadyLoan() {
+                
+                firstLoanLabel.text = "This amount is available to repeat borrowers only"
+                
+            } else {
+                
+                firstLoanLabel.text = ""
+            }
+
+        } else {
+            
+            firstLoanLabel.text = ""
+        }
         
         calculateCashAmmount(with: ammount)
         
@@ -524,9 +560,20 @@ class HomeViewController: UIViewController {
     
     func calculateRepayMent() {
         
-        var loan = (period / 7) / 10
-        loan += 1.2
-        let repayment = (cashAmmount * loan)
+        var loan: Double = 0
+//        var loan = (period / 7) / 10
+//        loan += 1.2
+//        let repayment = (cashAmmount * loan)
+        
+        loan = (cashAmmount / 100) * period
+
+        if Localize.currentLanguage() == LocalizeLanguage.Indonesia.rawValue || Localize.currentLanguage() == LocalizeLanguage.SriLanka.rawValue {
+            
+            loan = (cashAmmount * 2 / 100) * period
+
+        }
+        
+        let repayment = (cashAmmount + loan)
         
         repayAmmountLabel.text = Int(repayment).description + " MMK".localized()
         repayAmmountLabel.adjustLocaleFont()
@@ -598,17 +645,6 @@ class HomeViewController: UIViewController {
 
         }
 
-//        APIManager.share.getCountryID { (response, status) in
-//
-//            print(response)
-//
-//            print("CountryData: \(response)")
-//
-//            self.parseCountryList(with: response)
-//
-//            Utlities.showLoading(on: self.view, is: false)
-//
-//        }
 
     }
 
@@ -627,7 +663,7 @@ class HomeViewController: UIViewController {
                 
                 countryIDs.insert(id, at: 0)
                 countryList.insert(name, at: 0)
-            } else {
+            } else if name != "Cambodian" && name != "Philippines" && name != "Lao"{
                 countryIDs.append(id)
                 countryList.append(name)
             }
@@ -878,6 +914,7 @@ enum LocalizeLabel: String {
     case Myanmar = "🇲🇲"
     case SriLankan = "🇱🇰"
     case Lao = "🇱🇦"
+    case Default = "🇬🇧"
 }
 
 enum CountryList: String {

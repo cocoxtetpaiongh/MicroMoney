@@ -865,11 +865,18 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This amount is available to repeat borrowers only" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Lr-pO-ktO">
+                                                <rect key="frame" x="40" y="67" width="295" height="19"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                                <color key="textColor" red="0.89412000000000003" green="0.68627000000000005" blue="0.039219999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="FaW-MV-wvI" firstAttribute="centerY" secondItem="ObJ-BJ-SbF" secondAttribute="centerY" id="0qV-aD-Vkw"/>
                                             <constraint firstItem="BtS-o8-uRb" firstAttribute="height" secondItem="4s7-Az-4Zg" secondAttribute="height" id="1Ia-u9-Ac1"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Lr-pO-ktO" secondAttribute="trailing" constant="40" id="1bt-ik-uXr"/>
                                             <constraint firstAttribute="trailing" secondItem="NQB-Y2-lOf" secondAttribute="trailing" constant="20" id="3kR-yN-W9R"/>
                                             <constraint firstItem="BtS-o8-uRb" firstAttribute="leading" secondItem="4s7-Az-4Zg" secondAttribute="leading" id="45i-e5-EkX"/>
                                             <constraint firstItem="aU0-eb-WcB" firstAttribute="top" secondItem="V0u-Wd-ncY" secondAttribute="bottom" constant="50" id="4WZ-Wa-mC0"/>
@@ -885,6 +892,7 @@
                                             <constraint firstItem="DSd-7D-CYG" firstAttribute="height" secondItem="aU0-eb-WcB" secondAttribute="height" id="ERt-td-lfx"/>
                                             <constraint firstItem="Ddb-Mp-6Sv" firstAttribute="leading" secondItem="QNT-3o-3Po" secondAttribute="leading" constant="20" id="IBW-7d-bGY"/>
                                             <constraint firstItem="Ddb-Mp-6Sv" firstAttribute="top" secondItem="43H-n9-ulv" secondAttribute="bottom" constant="20" id="J3q-sC-DMx"/>
+                                            <constraint firstItem="4Lr-pO-ktO" firstAttribute="leading" secondItem="QNT-3o-3Po" secondAttribute="leading" constant="40" id="JHi-dm-BXx"/>
                                             <constraint firstItem="DSd-7D-CYG" firstAttribute="leading" secondItem="aU0-eb-WcB" secondAttribute="leading" constant="-10" id="JcV-5B-Oqk"/>
                                             <constraint firstItem="V0u-Wd-ncY" firstAttribute="leading" secondItem="QNT-3o-3Po" secondAttribute="leading" constant="40" id="Jsr-qJ-khO"/>
                                             <constraint firstItem="FaW-MV-wvI" firstAttribute="leading" secondItem="ObJ-BJ-SbF" secondAttribute="trailing" constant="2" id="L2h-Gh-jkP"/>
@@ -895,6 +903,7 @@
                                             <constraint firstItem="4s7-Az-4Zg" firstAttribute="trailing" secondItem="aU0-eb-WcB" secondAttribute="trailing" id="QhE-cL-pQA"/>
                                             <constraint firstItem="VhS-87-f95" firstAttribute="leading" secondItem="QNT-3o-3Po" secondAttribute="leading" constant="20" id="RcB-rd-HUO"/>
                                             <constraint firstItem="NQB-Y2-lOf" firstAttribute="leading" secondItem="QNT-3o-3Po" secondAttribute="leading" constant="20" id="SeG-Ce-SX5"/>
+                                            <constraint firstItem="4Lr-pO-ktO" firstAttribute="top" secondItem="V0u-Wd-ncY" secondAttribute="bottom" constant="8" id="ShO-8J-BbK"/>
                                             <constraint firstItem="DSd-7D-CYG" firstAttribute="trailing" secondItem="aU0-eb-WcB" secondAttribute="trailing" constant="10" id="TbN-5l-dhG"/>
                                             <constraint firstItem="NQB-Y2-lOf" firstAttribute="top" secondItem="NNB-hm-hB8" secondAttribute="bottom" constant="8" id="XBl-hO-gDI"/>
                                             <constraint firstAttribute="width" constant="375" id="Yec-dt-HsU"/>
@@ -1000,6 +1009,7 @@
                         <outlet property="cashAmountLabel" destination="HyC-dT-2gg" id="NfC-MD-2yT"/>
                         <outlet property="countryTextField" destination="ixb-sg-bXv" id="cTk-cm-K14"/>
                         <outlet property="daysCountSlider" destination="4s7-Az-4Zg" id="GO9-iW-P5x"/>
+                        <outlet property="firstLoanLabel" destination="4Lr-pO-ktO" id="nRR-nY-XfW"/>
                         <outlet property="fullNameDesc" destination="9l7-Vi-WYi" id="S0r-iq-44v"/>
                         <outlet property="languageButton" destination="r7b-zJ-Q45" id="dzI-Fr-wpT"/>
                         <outlet property="menuButton" destination="WfS-iA-6cp" id="fQD-ck-kGK"/>

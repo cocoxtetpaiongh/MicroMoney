@@ -21,7 +21,31 @@ class UserData: NSObject {
 
 typealias GUID = String
 
+//enum UserDefaultsKeys {
+//    case isAlreadyLoan = isAlreadyLoan
+//}
+
+struct UserDefaultsKeys {
+    static var isAlreadyLoan = "isAlreadyLoan"
+}
+
 class UserInfo: NSObject {
+    
+    static func isUserAlreadyLoan() -> Bool {
+        
+        if let isAlreadyLoan = UserDefaults.standard.value(forKey: UserDefaultsKeys.isAlreadyLoan) as? Bool {
+            
+            return isAlreadyLoan
+        } else {
+            
+            return false
+        }
+    }
+    
+    static func userDidLoan() {
+        
+        UserDefaults.standard.setValue(true, forKey: UserDefaultsKeys.isAlreadyLoan)
+    }
     
     static var user = UserInfo()
     
