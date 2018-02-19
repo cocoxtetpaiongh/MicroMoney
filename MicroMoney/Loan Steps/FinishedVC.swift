@@ -44,6 +44,7 @@ class FinishedVC: UIViewController {
         super.viewDidLoad()
 
         setText()
+        addGestures()
     }
 
     func setText() {
@@ -51,12 +52,71 @@ class FinishedVC: UIViewController {
         titleDescription.localize(with: "Success!")
 //        infoDescription.localize(with: "ALMOST DONE! Please choose the bank and write your bank account number. If you not yet have bank account , you can continue this application later! Hurry to take your money!")
         
-        messengerDesc.localize(with: "Send us message to FACEBOOK MESSENGER")
+//        messengerDesc.localize(with: "Send us message to FACEBOOK MESSENGER")
+//        messengerDesc.localize(with: "Send us message to FACEBOOK MESSENGER")
+        messengerDesc.localizeAttrubute(with: "Send us message to FACEBOOK MESSENGER")
         viberDesc.localize(with: "Send message or call to Viber hotline:")
         lineDesc.localize(with: "Send message or call to LINE hotline:")
         hotLineDesc.localize(with: "Call Us on mobile hotline:")
         
         doneButton.localize(with: "Next")
+    }
+    
+    func addGestures() {
+        
+        let mobile1Gesture = UITapGestureRecognizer(target: self, action: #selector(makePhCall(_:)))
+        
+        mobileHotline1Label.addGestureRecognizer(mobile1Gesture)
+        mobileHotline1Label.isUserInteractionEnabled = true
+        
+        let mobile2Gesture = UITapGestureRecognizer(target: self, action: #selector(makePhCall(_:)))
+        
+        mobileHotline2Label.addGestureRecognizer(mobile2Gesture)
+        mobileHotline2Label.isUserInteractionEnabled = true
+
+        let viber1Gesture = UITapGestureRecognizer(target: self, action: #selector(makePhCall(_:)))
+        
+        viberHotline1Label.addGestureRecognizer(viber1Gesture)
+        viberHotline1Label.isUserInteractionEnabled = true
+        
+        let viber2Gesture = UITapGestureRecognizer(target: self, action: #selector(makePhCall(_:)))
+        
+        viberHotline2Label.addGestureRecognizer(viber2Gesture)
+        viberHotline2Label.isUserInteractionEnabled = true
+
+        
+        let line2Gesture = UITapGestureRecognizer(target: self, action: #selector(makePhCall(_:)))
+        
+        lineHotline2Label.addGestureRecognizer(line2Gesture)
+        lineHotline2Label.isUserInteractionEnabled = true
+        
+        let line1Gesture = UITapGestureRecognizer(target: self, action: #selector(makePhCall(_:)))
+        
+        lineHotline1Label.addGestureRecognizer(line1Gesture)
+        lineHotline1Label.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func makePhCall(_ recognizer: UITapGestureRecognizer) {
+        
+        guard let label = recognizer.view as? UILabel else {
+            
+            return
+        }
+        
+        guard let number = label.text?.replacingOccurrences(of: " ", with: "") else {
+            
+            return
+        }
+        
+        if let url = URL(string: "tel://\(number)") {
+            
+            if(UIApplication.shared.canOpenURL(url)) {
+                
+                UIApplication.shared.openURL(url)
+            }
+        }
+
     }
 
     @IBAction func facebookButtonPressed(_ sender: UIButton) {

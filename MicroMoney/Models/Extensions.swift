@@ -96,6 +96,41 @@ extension UIButton {
 
 extension UILabel {
     
+    func localizeAttrubute(with text: String, and table: String? = nil, by attributed: Bool = true) {
+        
+        let size = self.font.pointSize
+        
+        if let table = table {
+            
+            let localizedText = text.localized(using: table)
+            
+            let attributedText = NSAttributedString(string: localizedText,
+                                                               attributes: [NSAttributedStringKey.foregroundColor : UIColor.blue])
+
+            self.attributedText = attributedText
+            
+        } else {
+            
+            let localizedText = text.localized()
+            
+            let attributedText = NSAttributedString(string: localizedText,
+                                                    attributes: [NSAttributedStringKey.foregroundColor : UIColor.blue])
+            
+            self.attributedText = attributedText
+
+        }
+        
+        if Localize.currentLanguage() == "my" {
+            
+            self.font = UIFont(name: "Zawgyi-One", size: size)
+            
+        } else {
+            
+            self.font = UIFont(name: "Arial_Bold", size: size)
+        }
+        
+    }
+    
     func localize(with text: String, and table: String? = nil) {
         
         let size = self.font.pointSize

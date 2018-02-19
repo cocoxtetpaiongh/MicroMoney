@@ -13,6 +13,11 @@ import Localize_Swift
 import CoreLocation
 import Contacts
 import ContactsUI
+import FBSDKCoreKit
+import FBSDKLoginKit
+
+//import FBSDKLoginManager
+//import FBSDKGraphRequest
 
 //import Localize_Swift
 
@@ -184,6 +189,18 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = self.view.center
+//        self.view.addSubview(loginButton)
+        
+        if let token =  FBSDKAccessToken.current() {
+            
+            // User is logged in, do work such as go to next view controller.
+
+        }
+        
+        loginButton.readPermissions = ["public_profile", "email"]
         
         firstLoanLabel.text = ""
 
