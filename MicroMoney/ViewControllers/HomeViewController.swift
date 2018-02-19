@@ -92,9 +92,9 @@ class HomeViewController: UIViewController {
 //        }
         
         switch currentCountry {
-        case CountryList.Philippines.rawValue:
+        case CountryList.Myanmar.rawValue:
             
-            if languageButton.titleLabel?.text == LocalizeLabel.Philippines.rawValue {
+            if languageButton.titleLabel?.text == LocalizeLabel.Myanmar.rawValue {
                 
                 languageButton.setTitle("🇬🇧", for: .normal)
                 Localize.resetCurrentLanguageToDefault()
@@ -105,9 +105,9 @@ class HomeViewController: UIViewController {
             }
             break
             
-        case CountryList.Myanmar.rawValue:
+        case CountryList.Philippines.rawValue:
             
-            if languageButton.titleLabel?.text == LocalizeLabel.Myanmar.rawValue {
+            if languageButton.titleLabel?.text == LocalizeLabel.Philippines.rawValue {
                 
                 languageButton.setTitle("🇬🇧", for: .normal)
                 Localize.resetCurrentLanguageToDefault()
