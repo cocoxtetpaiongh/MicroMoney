@@ -772,7 +772,7 @@ class DocumentScanVC: UIViewController {
                 Utlities.showLoading(on: self.view, is: false)
                 Utlities.showAlert(with: "Success", "Your data was updated", "OK", self, completion: {
                     
-                    self.navigationController?.popViewController(animated: true)
+//                    self.navigationController?.popViewController(animated: true)
                     
                 })
                 
