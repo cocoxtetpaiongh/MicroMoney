@@ -92,16 +92,29 @@ class HomeViewController: UIViewController {
 //        }
         
         switch currentCountry {
-        case CountryList.Myanmar.rawValue:
+        case CountryList.Philippines.rawValue:
             
-            if languageButton.titleLabel?.text == LocalizeLabel.Myanmar.rawValue {
-
+            if languageButton.titleLabel?.text == LocalizeLabel.Philippines.rawValue {
+                
                 languageButton.setTitle("🇬🇧", for: .normal)
                 Localize.resetCurrentLanguageToDefault()
             } else {
                 
                 languageButton.setTitle("🇲🇲", for: .normal)
                 Localize.setCurrentLanguage("my")
+            }
+            break
+            
+        case CountryList.Myanmar.rawValue:
+            
+            if languageButton.titleLabel?.text == LocalizeLabel.Myanmar.rawValue {
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle(LocalizeLabel.Philippines.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.Philippines.rawValue)
             }
             break
             
@@ -663,7 +676,7 @@ class HomeViewController: UIViewController {
                 
                 countryIDs.insert(id, at: 0)
                 countryList.insert(name, at: 0)
-            } else if name != "Cambodian" && name != "Philippines" && name != "Lao"{
+            } else if name != "Cambodian" && name != "Lao"{
                 countryIDs.append(id)
                 countryList.append(name)
             }
@@ -890,6 +903,12 @@ extension HomeViewController: UIPickerViewDelegate {
             cashAmmountList = [35000, 50000, 75000, 100000, 125000, 150000, 175000, 200000]
 
             break
+            
+        case CountryList.Philippines.rawValue:
+            languageButton.setTitle("🇵🇭", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.Philippines.rawValue)
+            cashAmmountList = [40000, 80000, 100000, 12500, 150000, 175000, 200000, 250000]
+
             
         default:
             languageButton.setTitle("🇬🇧", for: .normal)

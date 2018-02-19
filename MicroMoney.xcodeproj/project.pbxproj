@@ -121,6 +121,10 @@
 		2D5D598820051FB0009ADDE7 /* Info.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Info.strings; sourceTree = "<group>"; };
 		2D62E0AC200666AB00474ECD /* SlideContaierVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideContaierVC.swift; sourceTree = "<group>"; };
 		2D62E0AD200666AC00474ECD /* SlideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuVC.swift; sourceTree = "<group>"; };
+		2D642BC1203B38320035C18D /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/Main.strings; sourceTree = "<group>"; };
+		2D642BC2203B38320035C18D /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2D642BC3203B38320035C18D /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/Info.strings; sourceTree = "<group>"; };
+		2D642BC4203B38330035C18D /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2D8644FC1FF80B8300630978 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		2D886F1A1FE67FF40078631D /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
 		2D886F1C1FE682C20078631D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -484,6 +488,7 @@
 				id,
 				"ta-LK",
 				"yo-NG",
+				fil,
 			);
 			mainGroup = 2D43DE431FD2505000DA9818;
 			productRefGroup = 2D43DE4D1FD2505000DA9818 /* Products */;
@@ -675,6 +680,7 @@
 				2D330F6E201C79C700A5D187 /* id */,
 				2D330F72201C7AAC00A5D187 /* ta-LK */,
 				2D330F7A201CC6A600A5D187 /* yo-NG */,
+				2D642BC1203B38320035C18D /* fil */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -688,6 +694,7 @@
 				2D330F6F201C79C700A5D187 /* id */,
 				2D330F73201C7AAC00A5D187 /* ta-LK */,
 				2D330F7B201CC6A700A5D187 /* yo-NG */,
+				2D642BC2203B38320035C18D /* fil */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -701,6 +708,7 @@
 				2D330F71201C79C800A5D187 /* id */,
 				2D330F75201C7AAD00A5D187 /* ta-LK */,
 				2D330F7D201CC6A700A5D187 /* yo-NG */,
+				2D642BC4203B38330035C18D /* fil */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -714,6 +722,7 @@
 				2D330F70201C79C800A5D187 /* id */,
 				2D330F74201C7AAD00A5D187 /* ta-LK */,
 				2D330F7C201CC6A700A5D187 /* yo-NG */,
+				2D642BC3203B38320035C18D /* fil */,
 			);
 			name = Info.storyboard;
 			sourceTree = "<group>";

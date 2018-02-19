@@ -415,7 +415,7 @@ extension PersonalInfoVC {
             let name = country["Name"].stringValue
             let id = country["Id"].stringValue
             
-            if name != "Cambodian" && name != "Philippines" && name != "Lao" {
+            if name != "Cambodian" && name != "Lao" {
                 
                 countryIDs.append(id)
                 countryList.append(name)
