@@ -354,7 +354,11 @@ class HomeViewController: UIViewController {
     
     @objc func setText() {
         
-        ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " MMK ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+        let currency = UserInfo.getLocalizedCurrency(with: currentCountry)
+//        ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " MMK ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+        
+        ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " " + currency + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+
         ammountIndicatorLabel.adjustLocaleFont()
         
 //        cashAdvanceAmmountDesc.text = "Cash Advance Amount".localized()

@@ -31,6 +31,32 @@ struct UserDefaultsKeys {
 
 class UserInfo: NSObject {
     
+    static func getLocalizedCurrency(with currentLanguage: String) -> String {
+        
+        switch currentLanguage {
+        case CountryList.Myanmar.rawValue:
+            return "MMK"
+
+        case CountryList.Thailand.rawValue:
+            return "THB"
+
+        case CountryList.Indonesia.rawValue:
+            return "IDR"
+
+        case CountryList.Nigeria.rawValue:
+            return "USD"
+
+        case CountryList.Philippines.rawValue:
+            return "PHP"
+
+        case CountryList.SriLankan.rawValue:
+            return "LKR"
+
+        default:
+            return "USD"
+        }
+    }
+    
     static func isUserAlreadyLoan() -> Bool {
         
         if let isAlreadyLoan = UserDefaults.standard.value(forKey: UserDefaultsKeys.isAlreadyLoan) as? Bool {
