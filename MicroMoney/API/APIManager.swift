@@ -65,7 +65,9 @@ class APIManager {
 //                                         "UsrOccupation": user.UsrOccupation ?? "Stringdsd",
 //                                         "RegisterMethodId": user.RegisterMethodId ?? "05813cf2-91e7-4220-ac72-6c94a802bf0f"]
         
-        var paramaters: [String: Any] = ["Email": user.Email!,
+        let paySystem = (user.UsrPaySystemId == nil) ? "Notes" : "UsrPaySystemId"
+        
+        let paramaters: [String: Any] = ["Email": user.Email!,
                                          "CityStr": user.CityId!,
                                          "UsrBirthDate": user.UsrBirthDate!,
                                          "GenderId": user.GenderId!,
@@ -80,7 +82,8 @@ class APIManager {
                                          "UsrSalaryAmount": user.UsrSalaryAmount!.description,
                                          "UsrMMPersonalID": user.UsrMMPersonalID!,
                                          "UsrPaySystemAccount": user.UsrPaySystemAccount!,
-                                         "UsrPaySystemId": user.UsrPaySystemId!,
+//                                         "UsrPaySystemId": user.UsrPaySystemId ?? user.UsrPaySystem,
+                                         paySystem: user.UsrPaySystemId ?? user.UsrPaySystem,
                                          "UsrOccupation": user.UsrOccupation!,
                                          "UsrGps": user.UsrGps ?? "",
                                          "UsrAppFacebookAuth": user.UsrAppFacebookAuth ?? "",
@@ -638,22 +641,71 @@ class APIManager {
         }
     }
     
+    // MARK: Get Branches
+    
+    func getBranches(completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: "\(APIConstants.branches)") else {
+            return
+        }
+        
+//        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+//                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
+//                                         "Accept": "application/json;odata=verbose"]
+        
+        let parameters: [String: Any] = ["$select": "Id,Name"]
+        
+//                                         "$filter": "UsrBranch/Id eq guid'7ffcfa45-b517-441c-86f0-808eaab4dd11'"]
+        //        UsrBranch/Id eq guid'7ee06674-6cf4-4fe9-95ec-df0726db5e07'
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
+            
+            guard let responseData = response.data else {
+                
+                completion(JSON.null, .Error)
+                
+                return
+            }
+            
+            do {
+                
+                let json = try JSON(data: responseData)
+                completion(json, .Success)
+                
+            } catch {
+                
+                print(error)
+                completion(JSON.null, .Error)
+            }
+            
+        }
+    }
+    
     // MARK: Payment ID
     
-    func getPaymentList(completion: @escaping (JSON, NetworkStatus) -> Void) {
+    func getPaymentList(with branches: String = "", completion: @escaping (JSON, NetworkStatus) -> Void) {
         
-        let filter = "$select=Id,Name"
+        var filter = "UsrBranch/Id eq guid'\(branches)'"
+        
+        if branches == "" {
+            
+            filter = ""
+        }
         
         guard let url = URL(string: "\(APIConstants.payment)") else {
             return
         }
         
-        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
-                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
-                                         "Accept": "application/json;odata=verbose"]
+//        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+//                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
+//                                         "Accept": "application/json;odata=verbose"]
         
         let parameters: [String: Any] = ["$select": "Id,Name,Description",
-                                         "$filter": "UsrBranch/Id eq guid'7ffcfa45-b517-441c-86f0-808eaab4dd11'"]
+                                         "$filter": filter]
+
+//        let parameters: [String: Any] = ["$select": "Id,Name,Description",
+//                                         "$filter": "UsrBranch/Id eq guid'7ffcfa45-b517-441c-86f0-808eaab4dd11'"]
+//        UsrBranch/Id eq guid'7ee06674-6cf4-4fe9-95ec-df0726db5e07'
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: APIConstants.headers).responseData { (response) in
             

@@ -15,12 +15,12 @@
 // LOAN STEP HOME
 
 "I NEED " = "I NEED ";
-" MMK " = " USD ";
+" MMK " = " NGN ";
 " FOR " = " FOR ";
 " DAYS" = " DAYS";
-"MMK" = "USD";
-" MMK" = " USD";
-"MMK " = "USD ";
+"MMK" = "NGN";
+" MMK" = " NGN";
+"MMK " = "NGN ";
 
 "30000" = "30000";
 "50000" = "50000";

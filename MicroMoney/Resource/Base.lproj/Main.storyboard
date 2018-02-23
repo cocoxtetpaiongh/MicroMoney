@@ -559,9 +559,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43H-n9-ulv">
                                                 <rect key="frame" x="40" y="273" width="99" height="99"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Advance Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-4U-XRO">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Advance Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-4U-XRO">
                                                         <rect key="frame" x="8" y="0.0" width="83" height="50"/>
-                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -611,14 +611,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObJ-BJ-SbF">
                                                 <rect key="frame" x="141" y="273" width="99" height="99"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200 THB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzb-7S-p9h">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200 THB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzb-7S-p9h">
                                                         <rect key="frame" x="8" y="50" width="83" height="49"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Repayment Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOO-W5-tNn">
-                                                        <rect key="frame" x="8" y="0.0" width="83" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Repayment Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOO-W5-tNn">
+                                                        <rect key="frame" x="8" y="0.0" width="83" height="99"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -629,7 +629,8 @@
                                                     <constraint firstItem="uOO-W5-tNn" firstAttribute="centerX" secondItem="Uzb-7S-p9h" secondAttribute="centerX" id="9O9-gq-6gi"/>
                                                     <constraint firstItem="Uzb-7S-p9h" firstAttribute="height" secondItem="ObJ-BJ-SbF" secondAttribute="height" multiplier="1/2" id="9kq-DW-81F"/>
                                                     <constraint firstItem="Uzb-7S-p9h" firstAttribute="leading" secondItem="ObJ-BJ-SbF" secondAttribute="leading" constant="8" id="O6z-XX-1pC"/>
-                                                    <constraint firstItem="Uzb-7S-p9h" firstAttribute="top" secondItem="uOO-W5-tNn" secondAttribute="bottom" id="eJI-dv-iql"/>
+                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="centerY" secondItem="ObJ-BJ-SbF" secondAttribute="centerY" id="PtC-wo-gGT"/>
+                                                    <constraint firstItem="Uzb-7S-p9h" firstAttribute="top" secondItem="uOO-W5-tNn" secondAttribute="bottom" priority="998" id="eJI-dv-iql"/>
                                                     <constraint firstAttribute="trailing" secondItem="Uzb-7S-p9h" secondAttribute="trailing" constant="8" id="qNm-wk-r1a"/>
                                                     <constraint firstItem="uOO-W5-tNn" firstAttribute="width" secondItem="Uzb-7S-p9h" secondAttribute="width" id="siK-um-1qo"/>
                                                     <constraint firstItem="uOO-W5-tNn" firstAttribute="top" secondItem="ObJ-BJ-SbF" secondAttribute="top" id="wta-5W-KXr"/>
@@ -645,7 +646,7 @@
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repayment Dte" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-sr-Lbv">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repayment Dte" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-sr-Lbv">
                                                         <rect key="frame" x="8" y="0.0" width="83" height="50"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -666,7 +667,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-A6-zAD" customClass="DesignableView" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="415.5" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="422" width="335" height="42"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Thailand" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-sg-bXv">
                                                         <rect key="frame" x="8" y="8" width="319" height="26"/>
@@ -691,7 +692,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhS-87-f95" customClass="DesignableView" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="499" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="512" width="335" height="42"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8GP-Kx-N8y">
                                                         <rect key="frame" x="8" y="8" width="319" height="26"/>
@@ -716,7 +717,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQB-Y2-lOf" customClass="DesignableView" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="582.5" width="335" height="41.5"/>
+                                                <rect key="frame" x="20" y="602" width="335" height="41.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IY-dm-idB">
                                                         <rect key="frame" x="8" y="8" width="319" height="26"/>
@@ -741,7 +742,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-jp-esX" customClass="DesignableButton" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="644" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="663.5" width="335" height="42"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bCF-jp-esX" secondAttribute="height" multiplier="8" id="NQh-gI-nUv"/>
@@ -848,19 +849,28 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="I'm in " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddb-Mp-6Sv">
-                                                <rect key="frame" x="20" y="392" width="335" height="13.5"/>
+                                                <rect key="frame" x="20" y="392" width="335" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="pTL-gM-tZg"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Full Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9l7-Vi-WYi">
-                                                <rect key="frame" x="20" y="477.5" width="335" height="13.5"/>
+                                                <rect key="frame" x="20" y="484" width="335" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="B2K-20-IkK"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Phone" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNB-hm-hB8">
-                                                <rect key="frame" x="20" y="561" width="335" height="13.5"/>
+                                                <rect key="frame" x="20" y="574" width="335" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="zXj-we-ucR"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1586,7 +1596,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09774567890" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-J4-4HS">
-                                                <rect key="frame" x="20" y="329.5" width="335" height="41.5"/>
+                                                <rect key="frame" x="20" y="329.5" width="335" height="41"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.5568627451" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1603,39 +1613,39 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montly Gross Incom (MMK)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkZ-cg-HA1">
-                                                <rect key="frame" x="20" y="391" width="335" height="13.5"/>
+                                                <rect key="frame" x="20" y="390.5" width="335" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="300000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-IS-CNU">
-                                                <rect key="frame" x="20" y="412.5" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="412" width="335" height="42"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.5568627451" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Co-worker phone number" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2J3-gc-C5C">
-                                                <rect key="frame" x="20" y="474.5" width="335" height="13.5"/>
+                                                <rect key="frame" x="20" y="474" width="335" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09774567890" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIz-9D-vbk">
-                                                <rect key="frame" x="20" y="496" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="495.5" width="335" height="42"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.5568627451" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Co-worker name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBM-Qw-82Q">
-                                                <rect key="frame" x="20" y="558" width="335" height="14"/>
+                                                <rect key="frame" x="20" y="557.5" width="335" height="14"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Co-worker name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-Dw-2W9">
-                                                <rect key="frame" x="20" y="580" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="579.5" width="335" height="42"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.5568627451" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1650,7 +1660,7 @@
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyk-pM-zU4">
-                                                <rect key="frame" x="0.0" y="642" width="374.5" height="358"/>
+                                                <rect key="frame" x="0.0" y="641.5" width="374.5" height="358.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhA-9U-jkF" customClass="DesignableButton" customModule="MicroMoney" customModuleProvider="target">
                                                         <rect key="frame" x="190.5" y="50" width="164" height="41"/>
@@ -2635,7 +2645,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo of your ID / Passport" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wle-EG-JlE">
-                                                <rect key="frame" x="20" y="267.5" width="134" height="26"/>
+                                                <rect key="frame" x="20" y="267.5" width="134" height="26.5"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3028,7 +3038,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-wz-6ss">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="bwt-HU-4Kj">
                                         <rect key="frame" x="30" y="31" width="187.5" height="26.5"/>
@@ -3062,7 +3072,7 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-5E-sxj">
-                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="60" id="W0Q-1q-KiK" customClass="MenuCell" customModule="MicroMoney" customModuleProvider="target">
@@ -3101,8 +3111,8 @@
                             <constraint firstItem="WFf-5E-sxj" firstAttribute="leading" secondItem="GFR-XJ-utf" secondAttribute="leading" id="GqK-BS-sSS"/>
                             <constraint firstItem="WFf-5E-sxj" firstAttribute="top" secondItem="gB9-wz-6ss" secondAttribute="bottom" id="S4q-OD-MIa"/>
                             <constraint firstItem="gB9-wz-6ss" firstAttribute="leading" secondItem="7ss-gZ-cRL" secondAttribute="leading" id="Vp0-ZN-6m8"/>
+                            <constraint firstItem="gB9-wz-6ss" firstAttribute="top" secondItem="7ss-gZ-cRL" secondAttribute="top" constant="20" symbolic="YES" id="e4b-Pr-OJJ"/>
                             <constraint firstItem="gB9-wz-6ss" firstAttribute="width" secondItem="gB9-wz-6ss" secondAttribute="height" multiplier="375:61" priority="999" id="qhs-wO-w11"/>
-                            <constraint firstItem="gB9-wz-6ss" firstAttribute="top" secondItem="7ss-gZ-cRL" secondAttribute="top" id="xhP-Vs-vvk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GFR-XJ-utf"/>
                     </view>

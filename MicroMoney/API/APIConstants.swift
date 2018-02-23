@@ -24,6 +24,8 @@ struct APIConstants {
     
     static let collection = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/LeadCollection"
     
+    static let branches = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/UsrBranchCollection"
+    
     static let city = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/CityCollection"
     
     static let relation = "http://109.120.138.197/0/ServiceModel/EntityDataService.svc/RelationTypeCollection"

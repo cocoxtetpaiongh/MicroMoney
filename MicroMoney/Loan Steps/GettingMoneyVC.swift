@@ -35,11 +35,14 @@ class GettingMoneyVC: UIViewController {
 
     var paymentPicker = UIPickerView()
     
+    var branchList = [String: String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-        getPaymentList()
+        getBranchLists()
+//        getPaymentList()
     }
     
     func setText() {
@@ -111,6 +114,11 @@ class GettingMoneyVC: UIViewController {
 //        UserInfo.user.UsrPaySystemId = paymentTextField.text
         UserInfo.user.UsrPaySystemAccount = accountNumberTextField.text
         UserInfo.user.UsrMMPersonalID = iDTextField.text
+        
+        if paymentSystemList.isEmpty {
+            
+            UserInfo.user.UsrPaySystem = paymentTextField.text!
+        }
 
         print(UserInfo.user, "Money Userinfo")
         
@@ -139,10 +147,53 @@ class GettingMoneyVC: UIViewController {
 
 extension GettingMoneyVC {
     
+    func getBranchLists() {
+        
+        Utlities.showLoading(on: self.view, is: true)
+        APIManager.share.getBranches { (response, status) in
+            
+            print(response)
+            
+            if response == JSON.null {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+                self.getPaymentList()
+                return
+            }
+            
+            if status == .Success {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                self.parseBranchList(with: response)
+                self.getPaymentList()
+                
+            } else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+                    
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+                
+            }
+            
+        }
+        
+    }
+    
     func getPaymentList() {
         
         Utlities.showLoading(on: self.view, is: true)
-        APIManager.share.getPaymentList { (response, status) in
+        
+        let branch = branchList[UserInfo.branch] ?? ""
+        
+        APIManager.share.getPaymentList(with: branch) { (response, status) in
             
             print(response)
             
@@ -171,6 +222,65 @@ extension GettingMoneyVC {
                 
                 
             }
+            
+        }
+        
+//        APIManager.share.getPaymentList { (response, status) in
+//
+//            print(response)
+//
+//            if response == JSON.null {
+//
+//                Utlities.showLoading(on: self.view, is: false)
+//                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+//
+//                    self.navigationController?.popViewController(animated: true)
+//                })
+//                return
+//            }
+//
+//            if status == .Success {
+//
+//                Utlities.showLoading(on: self.view, is: false)
+//                self.parsePaymentList(with: response)
+//
+//            } else {
+//
+//                Utlities.showLoading(on: self.view, is: false)
+//                Utlities.showAlert(with: "No Network Connection", "Check your Internet Connection", "OK", self, completion: {
+//
+//                    self.navigationController?.popViewController(animated: true)
+//                })
+//
+//
+//            }
+//
+//        }
+        
+    }
+    
+    func parseBranchList(with json: JSON) {
+        
+        let data = json["d"]
+        
+        if data == JSON.null {
+            
+            Utlities.showLoading(on: self.view, is: false)
+            Utlities.showAlert(with: "Error Loading Data", "Sorry, we cannot load payment list", "OK", self)
+            
+            //            return
+        }
+        
+        let result = data["results"]
+        
+        branchList.removeAll()
+
+        for payment in result.arrayValue {
+            
+            let account = payment["Name"].stringValue
+            let id = payment["Id"].stringValue
+            
+            branchList[account] = id
             
         }
         
@@ -211,6 +321,11 @@ extension GettingMoneyVC {
         }
         
         paymentPicker.reloadAllComponents()
+        
+        if paymentSystemList.isEmpty {
+            
+            paymentTextField.inputView = nil 
+        }
     }
 
 }

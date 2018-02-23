@@ -346,8 +346,12 @@ extension PersonalInfoVC {
             
             let name = gender["Name"].stringValue
             let id = gender["Id"].stringValue
-            genderIDs.append(id)
-            genderTypes.append(name)
+            
+            if name == "Male" || name == "Female" {
+                
+                genderIDs.append(id)
+                genderTypes.append(name)
+            }
         }
         
         genderPicker.reloadAllComponents()

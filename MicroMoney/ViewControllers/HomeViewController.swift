@@ -127,18 +127,29 @@ class HomeViewController: UIViewController {
             
             if languageButton.titleLabel?.text == LocalizeLabel.Thailand.rawValue {
                 
-                languageButton.setTitle("🇬🇧", for: .normal)
-                Localize.resetCurrentLanguageToDefault()
-                
-            } else if languageButton.titleLabel?.text == LocalizeLabel.Default.rawValue {
+//                languageButton.setTitle("🇬🇧", for: .normal)
+//                Localize.resetCurrentLanguageToDefault()
                 
                 languageButton.setTitle(LocalizeLabel.Myanmar.rawValue, for: .normal)
                 Localize.setCurrentLanguage(LocalizeLanguage.Myanmar.rawValue)
 
-            } else {
+                
+            } else if languageButton.titleLabel?.text == LocalizeLabel.Default.rawValue {
+                
+//                languageButton.setTitle(LocalizeLabel.Myanmar.rawValue, for: .normal)
+//                Localize.setCurrentLanguage(LocalizeLanguage.Myanmar.rawValue)
                 
                 languageButton.setTitle(LocalizeLabel.Thailand.rawValue, for: .normal)
                 Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
+
+            } else {
+                
+//                languageButton.setTitle(LocalizeLabel.Thailand.rawValue, for: .normal)
+//                Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+
             }
 
             break
@@ -613,6 +624,9 @@ class HomeViewController: UIViewController {
         repayAmmountLabel.adjustLocaleFont()
         
         UserInfo.user.RepayAmount = repayAmmountLabel.text
+        
+        repayAmmountLabel.text = ""
+
     }
     
     @IBAction func changeDaysCount(_ sender: UISlider) {
@@ -895,27 +909,34 @@ extension HomeViewController: UIPickerViewDelegate {
             Localize.setCurrentLanguage(LocalizeLanguage.Myanmar.rawValue)
             cashAmmountList = [30000, 50000, 80000, 100000, 130000, 150000, 200000, 300000]
 
+            UserInfo.branch = BranchList.Myanmar.rawValue
             break
             
         case CountryList.Thailand.rawValue:
-            languageButton.setTitle("🇹🇭", for: .normal)
-            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
-//            Localize.setCurrentLanguage("th")
-            cashAmmountList = [200000, 400000, 800000, 1000000, 1350000, 1500000, 2000000, 300000]
+            languageButton.setTitle(LocalizeLabel.Default.rawValue, for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
 
+//            languageButton.setTitle("🇹🇭", for: .normal)
+//            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
+////            Localize.setCurrentLanguage("th")
+            cashAmmountList = [200000, 400000, 800000, 1000000, 1350000, 1500000, 2000000, 300000]
+            UserInfo.branch = BranchList.Thailand.rawValue
             break
             
         case CountryList.Indonesia.rawValue:
             languageButton.setTitle("🇮🇩", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.Indonesia.rawValue)
             cashAmmountList = [1000, 2000, 3000, 4000, 5000, 7000, 9000, 120000]
-
+            
+            UserInfo.branch = BranchList.Indonesia.rawValue
             break
             
         case CountryList.SriLankan.rawValue:
             languageButton.setTitle("🇱🇰", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.SriLanka.rawValue)
             cashAmmountList = [7500, 10000, 15000, 20000, 25000, 30000, 35000, 50000]
+            
+            UserInfo.branch = BranchList.SriLankan.rawValue
             break
             
         case CountryList.Nigeria.rawValue:
@@ -923,6 +944,7 @@ extension HomeViewController: UIPickerViewDelegate {
             Localize.setCurrentLanguage(LocalizeLanguage.Nigeria.rawValue)
             cashAmmountList = [35000, 50000, 75000, 100000, 125000, 150000, 175000, 200000]
 
+            UserInfo.branch = BranchList.Nigeria.rawValue
             break
             
         case CountryList.Philippines.rawValue:
@@ -930,11 +952,14 @@ extension HomeViewController: UIPickerViewDelegate {
             Localize.setCurrentLanguage(LocalizeLanguage.Philippines.rawValue)
             cashAmmountList = [40000, 80000, 100000, 12500, 150000, 175000, 200000, 250000]
 
+            UserInfo.branch = BranchList.Philippines.rawValue
+            break
             
         default:
             languageButton.setTitle("🇬🇧", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
-
+            
+            UserInfo.branch = ""
             break
         }
         
@@ -963,6 +988,17 @@ enum CountryList: String {
     case Thailand = "Thailand"
     case Cambodian = "Cambodian"
     case Philippines = "Philippines"
+    case Myanmar = "Myanmar"
+    case SriLankan = "Sri Lankan"
+    case Lao = "Lao"
+}
+
+enum BranchList: String {
+    case Indonesia = "Indonesia"
+    case Nigeria = "Nigeria"
+    case Thailand = "Thailand"
+    case Cambodian = "Cambodia"
+    case Philippines = "Philippine"
     case Myanmar = "Myanmar"
     case SriLankan = "Sri Lankan"
     case Lao = "Lao"

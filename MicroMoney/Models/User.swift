@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import Localize_Swift
 
 class UserData: NSObject {
     
@@ -30,6 +31,16 @@ struct UserDefaultsKeys {
 }
 
 class UserInfo: NSObject {
+    
+    static func getBranch() {
+        
+        switch Localize.currentLanguage() {
+        case LocalizeLanguage.English.rawValue:
+            break
+        default:
+            break
+        }
+    }
     
     static func getLocalizedCurrency(with currentLanguage: String) -> String {
         
@@ -73,6 +84,8 @@ class UserInfo: NSObject {
         UserDefaults.standard.setValue(true, forKey: UserDefaultsKeys.isAlreadyLoan)
     }
     
+    static var branch = BranchList.Thailand.rawValue
+    
     static var user = UserInfo()
     
     var Id: GUID? = nil
@@ -93,6 +106,7 @@ class UserInfo: NSObject {
     var UsrMMPersonalID: String? = nil
     var UsrPaySystemAccount: String? = nil
     var UsrPaySystemId: GUID? = nil
+    var UsrPaySystem: String = ""
     var UsrOccupation: String? = nil
     var RegisterMethodId: GUID? = nil
     
