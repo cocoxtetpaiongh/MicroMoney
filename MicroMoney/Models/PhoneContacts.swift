@@ -25,6 +25,7 @@ class PhoneContacts {
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
             CNContactPhoneNumbersKey,
             CNContactEmailAddressesKey,
+//            CNContactProperty(),
             CNContactThumbnailImageDataKey] as [Any]
         
         var allContainers: [CNContainer] = []

