@@ -15,12 +15,12 @@
 // LOAN STEP HOME
 
 "I NEED " = "I NEED ";
-" MMK " = " MMK ";
+" MMK " = " LAK ";
 " FOR " = " FOR ";
 " DAYS" = " DAYS";
-"MMK" = "MMK";
-" MMK" = " MMK";
-"MMK " = "MMK ";
+"MMK" = "LAK";
+" MMK" = " LAK";
+"MMK " = "LAK ";
 
 "30000" = "30000";
 "50000" = "50000";
@@ -61,7 +61,7 @@
 "Social Status" = "Social Status";
 "* Company Name" = "* Company Name";
 "* Company`s Phone Number" = "* Company`s Phone Number";
-"* Monthly Gross Income (MMK)" = "* Monthly Gross Income (MMK)";
+"* Monthly Gross Income (MMK)" = "* Monthly Gross Income (LAK)";
 "Your coworker phone number" = "Your coworker phone number";
 "coworker name" = "coworker name";
 "Employment information" = "Employment information";

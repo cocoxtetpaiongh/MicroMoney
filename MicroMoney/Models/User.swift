@@ -63,6 +63,9 @@ class UserInfo: NSObject {
         case CountryList.SriLankan.rawValue:
             return "LKR"
 
+        case CountryList.Lao.rawValue:
+            return "LAK"
+            
         default:
             return "USD"
         }

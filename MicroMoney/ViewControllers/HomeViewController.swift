@@ -432,6 +432,8 @@ class HomeViewController: UIViewController {
 //        ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " MMK ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
         
         ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " " + currency + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+        
+        print(currency, currentCountry, Localize.currentLanguage())
 
         ammountIndicatorLabel.adjustLocaleFont()
         
@@ -992,8 +994,8 @@ extension HomeViewController: UIPickerViewDelegate {
             break
             
         case CountryList.Thailand.rawValue:
-            languageButton.setTitle(LocalizeLabel.Default.rawValue, for: .normal)
-            Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
+            languageButton.setTitle(LocalizeLabel.Thailand.rawValue, for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
 
 //            languageButton.setTitle("🇹🇭", for: .normal)
 //            Localize.setCurrentLanguage(LocalizeLanguage.Thailand.rawValue)
@@ -1037,7 +1039,7 @@ extension HomeViewController: UIPickerViewDelegate {
         case CountryList.Lao.rawValue:
             
             languageButton.setTitle("🇱🇦", for: .normal)
-            Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
+            Localize.setCurrentLanguage(LocalizeLanguage.Laos.rawValue)
             cashAmmountList = [200000, 300000, 500000, 620000, 800000, 920000, 1200000, 2000000]
             
             UserInfo.branch = BranchList.Lao.rawValue
