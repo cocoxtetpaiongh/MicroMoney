@@ -56,13 +56,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires access to the camera.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Do you allow MicroMoney to know your contacts?</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Will you allow MicroMoney to always know your location?</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Will you allow MicroMoney to always know your location?</string>
+	<string>MicroMoney will user your contact to acquire information</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Do you allow MicroMoney to know your current location?</string>
+	<string>MicroMoney will use your location to track where you are for available service</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app requires access to the photo library.</string>
 	<key>UIAppFonts</key>

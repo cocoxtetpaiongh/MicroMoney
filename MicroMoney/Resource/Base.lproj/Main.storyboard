@@ -559,7 +559,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43H-n9-ulv">
                                                 <rect key="frame" x="40" y="273" width="99" height="99"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Advance Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-4U-XRO">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Advance Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-4U-XRO">
                                                         <rect key="frame" x="8" y="0.0" width="83" height="50"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -617,8 +617,8 @@
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Repayment Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOO-W5-tNn">
-                                                        <rect key="frame" x="8" y="0.0" width="83" height="99"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Repayment Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="uOO-W5-tNn">
+                                                        <rect key="frame" x="8" y="8" width="83" height="83"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -626,14 +626,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.086274509799999996" green="0.41568627450000001" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="centerX" secondItem="Uzb-7S-p9h" secondAttribute="centerX" id="9O9-gq-6gi"/>
                                                     <constraint firstItem="Uzb-7S-p9h" firstAttribute="height" secondItem="ObJ-BJ-SbF" secondAttribute="height" multiplier="1/2" id="9kq-DW-81F"/>
+                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="top" secondItem="ObJ-BJ-SbF" secondAttribute="top" constant="8" id="Ktl-qa-i9c"/>
                                                     <constraint firstItem="Uzb-7S-p9h" firstAttribute="leading" secondItem="ObJ-BJ-SbF" secondAttribute="leading" constant="8" id="O6z-XX-1pC"/>
-                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="centerY" secondItem="ObJ-BJ-SbF" secondAttribute="centerY" id="PtC-wo-gGT"/>
-                                                    <constraint firstItem="Uzb-7S-p9h" firstAttribute="top" secondItem="uOO-W5-tNn" secondAttribute="bottom" priority="998" id="eJI-dv-iql"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uOO-W5-tNn" secondAttribute="trailing" constant="8" id="dG8-uO-xUN"/>
+                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="leading" secondItem="ObJ-BJ-SbF" secondAttribute="leading" constant="8" id="lH8-bH-aWa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uOO-W5-tNn" secondAttribute="bottom" constant="8" id="pZN-6l-q1J"/>
                                                     <constraint firstAttribute="trailing" secondItem="Uzb-7S-p9h" secondAttribute="trailing" constant="8" id="qNm-wk-r1a"/>
-                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="width" secondItem="Uzb-7S-p9h" secondAttribute="width" id="siK-um-1qo"/>
-                                                    <constraint firstItem="uOO-W5-tNn" firstAttribute="top" secondItem="ObJ-BJ-SbF" secondAttribute="top" id="wta-5W-KXr"/>
                                                     <constraint firstAttribute="bottom" secondItem="Uzb-7S-p9h" secondAttribute="bottom" id="yhF-hu-3vV"/>
                                                 </constraints>
                                             </view>
@@ -646,7 +645,7 @@
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repayment Dte" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-sr-Lbv">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repayment Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-sr-Lbv">
                                                         <rect key="frame" x="8" y="0.0" width="83" height="50"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="10"/>
                                                         <color key="textColor" red="0.61176470589999998" green="0.80784313730000001" blue="0.8980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -658,7 +657,6 @@
                                                     <constraint firstItem="7eP-gm-Q75" firstAttribute="leading" secondItem="FaW-MV-wvI" secondAttribute="leading" constant="8" id="7PN-Qa-6vI"/>
                                                     <constraint firstItem="oFn-sr-Lbv" firstAttribute="trailing" secondItem="7eP-gm-Q75" secondAttribute="trailing" id="9zI-Dj-poi"/>
                                                     <constraint firstItem="7eP-gm-Q75" firstAttribute="top" secondItem="oFn-sr-Lbv" secondAttribute="bottom" id="Hjg-X7-ToN"/>
-                                                    <constraint firstItem="oFn-sr-Lbv" firstAttribute="centerX" secondItem="7eP-gm-Q75" secondAttribute="centerX" id="Yhu-I5-St6"/>
                                                     <constraint firstAttribute="trailing" secondItem="7eP-gm-Q75" secondAttribute="trailing" constant="8" id="cer-dD-0TR"/>
                                                     <constraint firstItem="oFn-sr-Lbv" firstAttribute="leading" secondItem="7eP-gm-Q75" secondAttribute="leading" id="fvT-nL-nW6"/>
                                                     <constraint firstItem="oFn-sr-Lbv" firstAttribute="top" secondItem="FaW-MV-wvI" secondAttribute="top" id="ioc-2q-kqi"/>
