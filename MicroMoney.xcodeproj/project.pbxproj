@@ -189,6 +189,10 @@
 		2DBB95A92005319E0020FC41 /* my */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = my; path = my.lproj/Info.storyboard; sourceTree = "<group>"; };
 		2DCCA2B11FE4CDD4002F40E7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		2DCCA2B31FE4CDE1002F40E7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5248A9362066789C00962C3E /* lo */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lo; path = lo.lproj/Main.strings; sourceTree = "<group>"; };
+		5248A9372066789C00962C3E /* lo */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lo; path = lo.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5248A9382066789D00962C3E /* lo */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lo; path = lo.lproj/Info.strings; sourceTree = "<group>"; };
+		5248A9392066789D00962C3E /* lo */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lo; path = lo.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A868F5C77F0E3F251E344B49 /* Pods_MicroMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MicroMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C663F31E7DD6A39D180FA7FB /* Pods-MicroMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroMoney.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		D30BEBA0FCB6A7391B599FCA /* Pods-MicroMoney.stagin.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MicroMoney.stagin.xcconfig"; path = "Pods/Target Support Files/Pods-MicroMoney/Pods-MicroMoney.stagin.xcconfig"; sourceTree = "<group>"; };
@@ -489,6 +493,7 @@
 				"ta-LK",
 				"yo-NG",
 				fil,
+				lo,
 			);
 			mainGroup = 2D43DE431FD2505000DA9818;
 			productRefGroup = 2D43DE4D1FD2505000DA9818 /* Products */;
@@ -681,6 +686,7 @@
 				2D330F72201C7AAC00A5D187 /* ta-LK */,
 				2D330F7A201CC6A600A5D187 /* yo-NG */,
 				2D642BC1203B38320035C18D /* fil */,
+				5248A9362066789C00962C3E /* lo */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -695,6 +701,7 @@
 				2D330F73201C7AAC00A5D187 /* ta-LK */,
 				2D330F7B201CC6A700A5D187 /* yo-NG */,
 				2D642BC2203B38320035C18D /* fil */,
+				5248A9372066789C00962C3E /* lo */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -709,6 +716,7 @@
 				2D330F75201C7AAD00A5D187 /* ta-LK */,
 				2D330F7D201CC6A700A5D187 /* yo-NG */,
 				2D642BC4203B38330035C18D /* fil */,
+				5248A9392066789D00962C3E /* lo */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -723,6 +731,7 @@
 				2D330F74201C7AAD00A5D187 /* ta-LK */,
 				2D330F7C201CC6A700A5D187 /* yo-NG */,
 				2D642BC3203B38320035C18D /* fil */,
+				5248A9382066789D00962C3E /* lo */,
 			);
 			name = Info.storyboard;
 			sourceTree = "<group>";

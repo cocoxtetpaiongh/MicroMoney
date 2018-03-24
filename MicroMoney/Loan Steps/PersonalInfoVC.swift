@@ -318,6 +318,8 @@ extension PersonalInfoVC {
             let id = city["Id"].stringValue
             cityIDs.append(id)
             cityList.append(name)
+            
+//            print(name)
         }
         
         genderPicker.reloadAllComponents()
@@ -419,11 +421,12 @@ extension PersonalInfoVC {
             let name = country["Name"].stringValue
             let id = country["Id"].stringValue
             
-            if name != "Cambodian" && name != "Lao" {
+            if name != "Cambodian" { // }&& name != "Lao" {
                 
                 countryIDs.append(id)
                 countryList.append(name)
 
+                print(name)
             }
 
         }

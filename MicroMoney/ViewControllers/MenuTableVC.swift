@@ -16,6 +16,7 @@ enum LocalizeLanguage: String {
     case SriLanka = "ta-LK"
     case Nigeria = "yo-NG"
     case Philippines = "fil"
+    case Laos = "lo"
 }
 
 protocol MenuDelegate: class {

@@ -198,7 +198,20 @@ class HomeViewController: UIViewController {
                 Localize.setCurrentLanguage(LocalizeLanguage.Nigeria.rawValue)
             }
             break
+
+        case CountryList.Lao.rawValue:
             
+            if languageButton.titleLabel?.text == LocalizeLabel.Lao.rawValue {
+                
+                languageButton.setTitle("🇬🇧", for: .normal)
+                Localize.resetCurrentLanguageToDefault()
+            } else {
+                
+                languageButton.setTitle(LocalizeLabel.Lao.rawValue, for: .normal)
+                Localize.setCurrentLanguage(LocalizeLanguage.Laos.rawValue)
+            }
+            break
+
         default:
             break
         }
@@ -761,10 +774,12 @@ class HomeViewController: UIViewController {
                 
                 countryIDs.insert(id, at: 0)
                 countryList.insert(name, at: 0)
-            } else if name != "Cambodian" && name != "Lao"{
+            } else if name != "Cambodian" { // }&& name != "Lao"{
                 countryIDs.append(id)
                 countryList.append(name)
             }
+            
+            print(name)
         }
         
         if countryList.isEmpty {
@@ -1019,6 +1034,16 @@ extension HomeViewController: UIPickerViewDelegate {
             UserInfo.branch = BranchList.Philippines.rawValue
             break
             
+        case CountryList.Lao.rawValue:
+            
+            languageButton.setTitle("🇱🇦", for: .normal)
+            Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
+            cashAmmountList = [200000, 300000, 500000, 620000, 800000, 920000, 1200000, 2000000]
+            
+            UserInfo.branch = BranchList.Lao.rawValue
+            break
+
+            
         default:
             languageButton.setTitle("🇬🇧", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.English.rawValue)
@@ -1065,7 +1090,7 @@ enum BranchList: String {
     case Philippines = "Philippine"
     case Myanmar = "Myanmar"
     case SriLankan = "Sri Lankan"
-    case Lao = "Lao"
+    case Lao = "Laos"
 }
 
 extension HomeViewController: UIPickerViewDataSource {

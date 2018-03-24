@@ -1,0 +1,375 @@
+
+/* Class = "UILabel"; text = "Document Scan"; ObjectID = "16p-C2-Z8P"; */
+"16p-C2-Z8P.text" = "Document Scan";
+
+/* Class = "UITextField"; placeholder = "Myanmar"; ObjectID = "1Bz-6h-9EC"; */
+"1Bz-6h-9EC.placeholder" = "Myanmar";
+
+/* Class = "UILabel"; text = "Step 1"; ObjectID = "1F1-eH-XUh"; */
+"1F1-eH-XUh.text" = "Step 1";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "1sq-3M-usx"; */
+"1sq-3M-usx.placeholder" = "City";
+
+/* Class = "UILabel"; text = "30000"; ObjectID = "2Ev-48-ase"; */
+"2Ev-48-ase.text" = "30000";
+
+/* Class = "UILabel"; text = "Your Co-worker phone number"; ObjectID = "2J3-gc-C5C"; */
+"2J3-gc-C5C.text" = "Your Co-worker phone number";
+
+/* Class = "UILabel"; text = "300000"; ObjectID = "2Yc-kP-Hng"; */
+"2Yc-kP-Hng.text" = "300000";
+
+/* Class = "UILabel"; text = "Line or What's up or Viber Number"; ObjectID = "2t8-xX-VIe"; */
+"2t8-xX-VIe.text" = "Line or What's up or Viber Number";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "3Hf-ar-ZkQ"; */
+"3Hf-ar-ZkQ.normalTitle" = "Back";
+
+/* Class = "UITextField"; placeholder = "Enter Your Number"; ObjectID = "3IY-dm-idB"; */
+"3IY-dm-idB.placeholder" = "Enter Your Number";
+
+/* Class = "UITextField"; placeholder = "yourmail@example.com"; ObjectID = "3M4-lr-lwB"; */
+"3M4-lr-lwB.placeholder" = "yourmail@example.com";
+
+/* Class = "UITextField"; placeholder = "Co-worker name"; ObjectID = "3Yk-Dw-2W9"; */
+"3Yk-Dw-2W9.placeholder" = "Co-worker name";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "3sK-92-aiS"; */
+"3sK-92-aiS.normalTitle" = "Next";
+
+/* Class = "UITextField"; placeholder = "Your Company Name"; ObjectID = "4Ba-Mb-Rtm"; */
+"4Ba-Mb-Rtm.placeholder" = "Your Company Name";
+
+/* Class = "UILabel"; text = "This amount is available to repeat borrowers only"; ObjectID = "4Lr-pO-ktO"; */
+"4Lr-pO-ktO.text" = "This amount is available to repeat borrowers only";
+
+/* Class = "UILabel"; text = "21"; ObjectID = "5Xq-Is-Ref"; */
+"5Xq-Is-Ref.text" = "21";
+
+/* Class = "UILabel"; text = "Fill your bank account number here"; ObjectID = "5aJ-eY-GWx"; */
+"5aJ-eY-GWx.text" = "Fill your bank account number here";
+
+/* Class = "UILabel"; text = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory "; ObjectID = "5cP-rr-plJ"; */
+"5cP-rr-plJ.text" = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory ";
+
+/* Class = "UILabel"; text = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory "; ObjectID = "6Bj-mk-7dA"; */
+"6Bj-mk-7dA.text" = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory ";
+
+/* Class = "UILabel"; text = "21 Oct 2017"; ObjectID = "7eP-gm-Q75"; */
+"7eP-gm-Q75.text" = "21 Oct 2017";
+
+/* Class = "UITextField"; placeholder = "Type Your Name"; ObjectID = "8GP-Kx-N8y"; */
+"8GP-Kx-N8y.placeholder" = "Type Your Name";
+
+/* Class = "UILabel"; text = "1000 THB"; ObjectID = "8eb-T1-rKW"; */
+"8eb-T1-rKW.text" = "1000 THB";
+
+/* Class = "UITextField"; placeholder = "Your Employee Status"; ObjectID = "8oz-Oa-8MD"; */
+"8oz-Oa-8MD.placeholder" = "Your Employee Status";
+
+/* Class = "UITextField"; placeholder = "09774567890"; ObjectID = "92V-km-H0b"; */
+"92V-km-H0b.placeholder" = "09774567890";
+
+/* Class = "UILabel"; text = "if you do not receive any message from us within 24 hours, PLEASE CONTACT US"; ObjectID = "95c-7m-2qa"; */
+"95c-7m-2qa.text" = "if you do not receive any message from us within 24 hours, PLEASE CONTACT US";
+
+/* Class = "UILabel"; text = "Step 3"; ObjectID = "96E-lE-WQr"; */
+"96E-lE-WQr.text" = "Step 3";
+
+/* Class = "UITextField"; placeholder = "Type Your Name"; ObjectID = "9aT-3h-1sl"; */
+"9aT-3h-1sl.placeholder" = "Type Your Name";
+
+/* Class = "UILabel"; text = "Full Name"; ObjectID = "9l7-Vi-WYi"; */
+"9l7-Vi-WYi.text" = "Full Name";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "AVw-2p-m1c"; */
+"AVw-2p-m1c.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Personal information"; ObjectID = "AWA-CM-LTV"; */
+"AWA-CM-LTV.text" = "Personal information";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "BJe-gR-EkB"; */
+"BJe-gR-EkB.normalTitle" = "Next";
+
+/* Class = "UITextField"; placeholder = "Jan"; ObjectID = "BQs-9k-gNB"; */
+"BQs-9k-gNB.placeholder" = "Jan";
+
+/* Class = "UILabel"; text = "1000 THB"; ObjectID = "CU2-iZ-7zb"; */
+"CU2-iZ-7zb.text" = "1000 THB";
+
+/* Class = "UITextField"; placeholder = "12/TaKaTa(N)000000"; ObjectID = "D9Z-W9-5H6"; */
+"D9Z-W9-5H6.placeholder" = "12/TaKaTa(N)000000";
+
+/* Class = "UITextField"; placeholder = "300000"; ObjectID = "DIV-IS-CNU"; */
+"DIV-IS-CNU.placeholder" = "300000";
+
+/* Class = "UILabel"; text = "I'm in "; ObjectID = "Ddb-Mp-6Sv"; */
+"Ddb-Mp-6Sv.text" = "I'm in ";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "F6e-LU-6B1"; */
+"F6e-LU-6B1.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "G84-ym-edG"; */
+"G84-ym-edG.text" = "Gender";
+
+/* Class = "UILabel"; text = "⦿ Call us on mobile hotline:"; ObjectID = "GGi-8B-Goo"; */
+"GGi-8B-Goo.text" = "⦿ Call us on mobile hotline:";
+
+/* Class = "UILabel"; text = "⦿ Send us message or call to viber hotline:"; ObjectID = "Goc-06-FUV"; */
+"Goc-06-FUV.text" = "⦿ Send us message or call to viber hotline:";
+
+/* Class = "UIButton"; normalTitle = "APPLY TO GET LOAN NOW! "; ObjectID = "HaQ-FM-jdu"; */
+"HaQ-FM-jdu.normalTitle" = "APPLY TO GET LOAN NOW! ";
+
+/* Class = "UITextField"; placeholder = "1985"; ObjectID = "HrU-I3-31D"; */
+"HrU-I3-31D.placeholder" = "1985";
+
+/* Class = "UILabel"; text = "1000 THB"; ObjectID = "HyC-dT-2gg"; */
+"HyC-dT-2gg.text" = "1000 THB";
+
+/* Class = "UILabel"; text = "14"; ObjectID = "JXE-gJ-JQi"; */
+"JXE-gJ-JQi.text" = "14";
+
+/* Class = "UITextField"; placeholder = "Not Selected"; ObjectID = "K01-Zf-IsI"; */
+"K01-Zf-IsI.placeholder" = "Not Selected";
+
+/* Class = "UITextField"; placeholder = "KBZ"; ObjectID = "Kur-ND-dkg"; */
+"Kur-ND-dkg.placeholder" = "KBZ";
+
+/* Class = "UILabel"; text = "Getting Money"; ObjectID = "Lmh-WI-jkp"; */
+"Lmh-WI-jkp.text" = "Getting Money";
+
+/* Class = "UILabel"; text = "Employment information"; ObjectID = "M0B-lE-W9H"; */
+"M0B-lE-W9H.text" = "Employment information";
+
+/* Class = "UILabel"; text = "50000"; ObjectID = "N4g-Iq-EyF"; */
+"N4g-Iq-EyF.text" = "50000";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "NLj-7F-YkV"; */
+"NLj-7F-YkV.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "NNB-hm-hB8"; */
+"NNB-hm-hB8.text" = "Phone";
+
+/* Class = "UILabel"; text = "120000 MMK"; ObjectID = "OMW-LS-V1k"; */
+"OMW-LS-V1k.text" = "120000 MMK";
+
+/* Class = "UITextField"; placeholder = "09774567890"; ObjectID = "Oxd-J4-4HS"; */
+"Oxd-J4-4HS.placeholder" = "09774567890";
+
+/* Class = "UILabel"; text = "100000"; ObjectID = "PGV-1w-tUq"; */
+"PGV-1w-tUq.text" = "100000";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "RKO-ad-TRd"; */
+"RKO-ad-TRd.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Your ID / Passport Number"; ObjectID = "SgV-kE-fPN"; */
+"SgV-kE-fPN.text" = "Your ID / Passport Number";
+
+/* Class = "UILabel"; text = "0.0078 BITCOIN"; ObjectID = "SwL-Da-Snj"; */
+"SwL-Da-Snj.text" = "0.0078 BITCOIN";
+
+/* Class = "UILabel"; text = "Total Repayment Ammount"; ObjectID = "TaU-4A-f59"; */
+"TaU-4A-f59.text" = "Total Repayment Ammount";
+
+/* Class = "UILabel"; text = "Nationality "; ObjectID = "TbW-dZ-K5Y"; */
+"TbW-dZ-K5Y.text" = "Nationality ";
+
+/* Class = "UILabel"; text = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory "; ObjectID = "UPc-zv-txv"; */
+"UPc-zv-txv.text" = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory ";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "UhA-9U-jkF"; */
+"UhA-9U-jkF.normalTitle" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "UkL-Ov-hp6"; */
+"UkL-Ov-hp6.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "1200 THB"; ObjectID = "Uzb-7S-p9h"; */
+"Uzb-7S-p9h.text" = "1200 THB";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "V3j-RJ-dCv"; */
+"V3j-RJ-dCv.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "VQq-25-uyD"; */
+"VQq-25-uyD.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Step 1"; ObjectID = "VS6-HX-Zjt"; */
+"VS6-HX-Zjt.text" = "Step 1";
+
+/* Class = "UILabel"; text = "Step 2"; ObjectID = "VZR-D5-dhx"; */
+"VZR-D5-dhx.text" = "Step 2";
+
+/* Class = "UILabel"; text = "150000"; ObjectID = "Vie-tt-Hg1"; */
+"Vie-tt-Hg1.text" = "150000";
+
+/* Class = "UILabel"; text = "Company Name"; ObjectID = "Vo5-Uu-524"; */
+"Vo5-Uu-524.text" = "Company Name";
+
+/* Class = "UILabel"; text = "Your Mail"; ObjectID = "Wme-3Y-2UO"; */
+"Wme-3Y-2UO.text" = "Your Mail";
+
+/* Class = "UILabel"; text = "I'm in "; ObjectID = "XbF-NL-mP4"; */
+"XbF-NL-mP4.text" = "I'm in ";
+
+/* Class = "UILabel"; text = "Birthday"; ObjectID = "YE0-wV-85p"; */
+"YE0-wV-85p.text" = "Birthday";
+
+/* Class = "UITextField"; placeholder = "Thailand"; ObjectID = "YY9-dY-7Do"; */
+"YY9-dY-7Do.placeholder" = "Thailand";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "Ydx-cZ-Pks"; */
+"Ydx-cZ-Pks.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "City"; ObjectID = "Yge-kv-sIf"; */
+"Yge-kv-sIf.text" = "City";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "Z2B-T2-Njy"; */
+"Z2B-T2-Njy.normalTitle" = "Back";
+
+/* Class = "UITextField"; placeholder = "Enter Your Number"; ObjectID = "ZW7-Ah-Q9h"; */
+"ZW7-Ah-Q9h.placeholder" = "Enter Your Number";
+
+/* Class = "UILabel"; text = "Montly Gross Incom (MMK)"; ObjectID = "ZkZ-cg-HA1"; */
+"ZkZ-cg-HA1.text" = "Montly Gross Incom (MMK)";
+
+/* Class = "UILabel"; text = "About Micromoney"; ObjectID = "aGd-p1-1z8"; */
+"aGd-p1-1z8.text" = "About Micromoney";
+
+/* Class = "UIButton"; normalTitle = "APPLY TO GET LOAN NOW! "; ObjectID = "bCF-jp-esX"; */
+"bCF-jp-esX.normalTitle" = "APPLY TO GET LOAN NOW! ";
+
+/* Class = "UILabel"; text = "4 EASY STEP TO GET A CASH LOAN"; ObjectID = "bcw-Kr-ZCf"; */
+"bcw-Kr-ZCf.text" = "4 EASY STEP TO GET A CASH LOAN";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "eF9-BZ-cey"; */
+"eF9-BZ-cey.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Your application is under process of verification "; ObjectID = "eUC-Le-Abt"; */
+"eUC-Le-Abt.text" = "Your application is under process of verification ";
+
+/* Class = "UILabel"; text = "Total Repayment Ammount"; ObjectID = "eYU-mE-mBQ"; */
+"eYU-mE-mBQ.text" = "Total Repayment Ammount";
+
+/* Class = "UILabel"; text = "0.0078 BITCOIN"; ObjectID = "eaU-AC-dKd"; */
+"eaU-AC-dKd.text" = "0.0078 BITCOIN";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "egA-Cw-RPd"; */
+"egA-Cw-RPd.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Cash Advance Ammount"; ObjectID = "gQ8-4U-XRO"; */
+"gQ8-4U-XRO.text" = "Cash Advance Ammount";
+
+/* Class = "UILabel"; text = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory "; ObjectID = "gUK-XE-z5t"; */
+"gUK-XE-z5t.text" = "Please fill up the following fields. It is easy. We will appreciate if you fill in English. Fields indicated with * are mendatory ";
+
+/* Class = "UILabel"; text = "11 Jan 2018 (28 days)"; ObjectID = "i9y-G7-ftP"; */
+"i9y-G7-ftP.text" = "11 Jan 2018 (28 days)";
+
+/* Class = "UILabel"; text = "Cash Advance Ammount"; ObjectID = "iDV-cm-E22"; */
+"iDV-cm-E22.text" = "Cash Advance Ammount";
+
+/* Class = "UILabel"; text = "Total Repayment Ammount"; ObjectID = "iJU-NG-UWH"; */
+"iJU-NG-UWH.text" = "Total Repayment Ammount";
+
+/* Class = "UILabel"; text = "Step 2"; ObjectID = "iLC-IT-rXQ"; */
+"iLC-IT-rXQ.text" = "Step 2";
+
+/* Class = "UILabel"; text = "80000"; ObjectID = "iN7-Er-aym"; */
+"iN7-Er-aym.text" = "80000";
+
+/* Class = "UITextField"; placeholder = "Thailand"; ObjectID = "ixb-sg-bXv"; */
+"ixb-sg-bXv.placeholder" = "Thailand";
+
+/* Class = "UILabel"; text = "Step 2"; ObjectID = "j4l-zB-9R4"; */
+"j4l-zB-9R4.text" = "Step 2";
+
+/* Class = "UITextField"; placeholder = "1"; ObjectID = "jee-4G-lFg"; */
+"jee-4G-lFg.placeholder" = "1";
+
+/* Class = "UILabel"; text = "Step 4"; ObjectID = "jyz-yM-vtF"; */
+"jyz-yM-vtF.text" = "Step 4";
+
+/* Class = "UILabel"; text = "IF YOUR APPLICATION WILL BE APPROVED, we will contact you within 24 hour."; ObjectID = "kFf-Pb-mwh"; */
+"kFf-Pb-mwh.text" = "IF YOUR APPLICATION WILL BE APPROVED, we will contact you within 24 hour.";
+
+/* Class = "UILabel"; text = "Repayment Date"; ObjectID = "kV7-Ne-Nhe"; */
+"kV7-Ne-Nhe.text" = "Repayment Date";
+
+/* Class = "UILabel"; text = "1000 THB"; ObjectID = "lWF-oX-14v"; */
+"lWF-oX-14v.text" = "1000 THB";
+
+/* Class = "UILabel"; text = "Step 1"; ObjectID = "lg3-vi-IUE"; */
+"lg3-vi-IUE.text" = "Step 1";
+
+/* Class = "UITextField"; placeholder = "AAB 3112020499503"; ObjectID = "lnN-k3-XEd"; */
+"lnN-k3-XEd.placeholder" = "AAB 3112020499503";
+
+/* Class = "UILabel"; text = "Step 1"; ObjectID = "mBN-hA-SPz"; */
+"mBN-hA-SPz.text" = "Step 1";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "n3H-iq-v9c"; */
+"n3H-iq-v9c.normalTitle" = "Back";
+
+/* Class = "UITextField"; placeholder = "09774567890"; ObjectID = "nIz-9D-vbk"; */
+"nIz-9D-vbk.placeholder" = "09774567890";
+
+/* Class = "UILabel"; text = "Full Name"; ObjectID = "nYO-RT-OTJ"; */
+"nYO-RT-OTJ.text" = "Full Name";
+
+/* Class = "UILabel"; text = "Repayment Date"; ObjectID = "oFn-sr-Lbv"; */
+"oFn-sr-Lbv.text" = "Repayment Date";
+
+/* Class = "UILabel"; text = "28"; ObjectID = "okG-ia-GAA"; */
+"okG-ia-GAA.text" = "28";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "p7F-gv-TGF"; */
+"p7F-gv-TGF.text" = "Phone";
+
+/* Class = "UILabel"; text = "Step 3"; ObjectID = "peB-mT-J21"; */
+"peB-mT-J21.text" = "Step 3";
+
+/* Class = "UILabel"; text = "Company's Phone Number"; ObjectID = "qYB-VU-xHc"; */
+"qYB-VU-xHc.text" = "Company's Phone Number";
+
+/* Class = "UIButton"; normalTitle = "🇲🇲"; ObjectID = "r7b-zJ-Q45"; */
+"r7b-zJ-Q45.normalTitle" = "🇲🇲";
+
+/* Class = "UILabel"; text = "Chose your bank account or payment state here"; ObjectID = "sQ8-lv-9PT"; */
+"sQ8-lv-9PT.text" = "Chose your bank account or payment state here";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "tVJ-bN-OHw"; */
+"tVJ-bN-OHw.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Total Repayment Ammount"; ObjectID = "uOO-W5-tNn"; */
+"uOO-W5-tNn.text" = "Total Repayment Ammount";
+
+/* Class = "UILabel"; text = "Success"; ObjectID = "uTY-Vm-KM6"; */
+"uTY-Vm-KM6.text" = "Success";
+
+/* Class = "UILabel"; text = "⦿ Send us message or call to Line hotline:"; ObjectID = "vNw-fH-DI7"; */
+"vNw-fH-DI7.text" = "⦿ Send us message or call to Line hotline:";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "vn1-T8-f1m"; */
+"vn1-T8-f1m.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Social Status"; ObjectID = "vnz-Zt-NgB"; */
+"vnz-Zt-NgB.text" = "Social Status";
+
+/* Class = "UILabel"; text = "Photo of your ID / Passport"; ObjectID = "wle-EG-JlE"; */
+"wle-EG-JlE.text" = "Photo of your ID / Passport";
+
+/* Class = "UILabel"; text = "Co-worker name"; ObjectID = "xBM-Qw-82Q"; */
+"xBM-Qw-82Q.text" = "Co-worker name";
+
+/* Class = "UILabel"; text = "130000"; ObjectID = "xQl-Iq-OBE"; */
+"xQl-Iq-OBE.text" = "130000";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "yhN-qT-Rw7"; */
+"yhN-qT-Rw7.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "200000"; ObjectID = "z59-4O-9TF"; */
+"z59-4O-9TF.text" = "200000";
+
+/* Class = "UILabel"; text = "Photo of your bank account nubmer here"; ObjectID = "zJh-xO-xL0"; */
+"zJh-xO-xL0.text" = "Photo of your bank account nubmer here";
