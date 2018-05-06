@@ -532,7 +532,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="aU0-eb-WcB" customClass="DesignableSlider" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="109" width="299" height="30"/>
+                                                <rect key="frame" x="38" y="109" width="299" height="31"/>
                                                 <color key="minimumTrackTintColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="maximumTrackTintColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -545,7 +545,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="4s7-Az-4Zg" customClass="DesignableSlider" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="188" width="299" height="30"/>
+                                                <rect key="frame" x="38" y="189" width="299" height="31"/>
                                                 <color key="minimumTrackTintColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="maximumTrackTintColor" red="0.0" green="0.46270006899999999" blue="0.77975255249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -557,7 +557,7 @@
                                                 </connections>
                                             </slider>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43H-n9-ulv">
-                                                <rect key="frame" x="40" y="273" width="99" height="99"/>
+                                                <rect key="frame" x="40" y="275" width="99" height="99"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash Advance Ammount" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-4U-XRO">
                                                         <rect key="frame" x="8" y="0.0" width="83" height="50"/>
@@ -609,7 +609,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObJ-BJ-SbF">
-                                                <rect key="frame" x="141" y="273" width="99" height="99"/>
+                                                <rect key="frame" x="141" y="275" width="99" height="99"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200 THB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzb-7S-p9h">
                                                         <rect key="frame" x="8" y="50" width="83" height="49"/>
@@ -637,7 +637,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaW-MV-wvI">
-                                                <rect key="frame" x="242" y="273" width="99" height="99"/>
+                                                <rect key="frame" x="242" y="275" width="99" height="99"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Oct 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7eP-gm-Q75">
                                                         <rect key="frame" x="8" y="50" width="83" height="49"/>
@@ -665,7 +665,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-A6-zAD" customClass="DesignableView" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="422" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="424" width="335" height="42"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Thailand" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-sg-bXv">
                                                         <rect key="frame" x="8" y="8" width="319" height="26"/>
@@ -690,7 +690,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhS-87-f95" customClass="DesignableView" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="512" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="514" width="335" height="42"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8GP-Kx-N8y">
                                                         <rect key="frame" x="8" y="8" width="319" height="26"/>
@@ -715,7 +715,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQB-Y2-lOf" customClass="DesignableView" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="602" width="335" height="41.5"/>
+                                                <rect key="frame" x="20" y="604" width="335" height="41.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IY-dm-idB">
                                                         <rect key="frame" x="8" y="8" width="319" height="26"/>
@@ -740,7 +740,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCF-jp-esX" customClass="DesignableButton" customModule="MicroMoney" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="663.5" width="335" height="42"/>
+                                                <rect key="frame" x="20" y="665.5" width="335" height="42"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.54117647059999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bCF-jp-esX" secondAttribute="height" multiplier="8" id="NQh-gI-nUv"/>
@@ -759,10 +759,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSd-7D-CYG" userLabel="Cash Ammount Indicatior">
-                                                <rect key="frame" x="30" y="146" width="315" height="29"/>
+                                                <rect key="frame" x="30" y="147" width="315" height="30"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WeE-CO-9SX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-48-ase">
                                                                 <rect key="frame" x="0.0" y="0.0" width="39.5" height="9"/>
@@ -824,7 +824,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BtS-o8-uRb">
-                                                <rect key="frame" x="40" y="225" width="295" height="29"/>
+                                                <rect key="frame" x="40" y="227" width="295" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXE-gJ-JQi" userLabel="14">
                                                         <rect key="frame" x="0.0" y="0.0" width="98.5" height="9"/>
@@ -847,7 +847,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="I'm in " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddb-Mp-6Sv">
-                                                <rect key="frame" x="20" y="392" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="394" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="pTL-gM-tZg"/>
                                                 </constraints>
@@ -856,7 +856,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Full Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9l7-Vi-WYi">
-                                                <rect key="frame" x="20" y="484" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="486" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="B2K-20-IkK"/>
                                                 </constraints>
@@ -865,7 +865,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Phone" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNB-hm-hB8">
-                                                <rect key="frame" x="20" y="574" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="576" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="zXj-we-ucR"/>
                                                 </constraints>
@@ -3036,7 +3036,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-wz-6ss">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="bwt-HU-4Kj">
                                         <rect key="frame" x="30" y="31" width="187.5" height="26.5"/>
@@ -3070,7 +3070,7 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-5E-sxj">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="60" id="W0Q-1q-KiK" customClass="MenuCell" customModule="MicroMoney" customModuleProvider="target">
@@ -3109,7 +3109,7 @@
                             <constraint firstItem="WFf-5E-sxj" firstAttribute="leading" secondItem="GFR-XJ-utf" secondAttribute="leading" id="GqK-BS-sSS"/>
                             <constraint firstItem="WFf-5E-sxj" firstAttribute="top" secondItem="gB9-wz-6ss" secondAttribute="bottom" id="S4q-OD-MIa"/>
                             <constraint firstItem="gB9-wz-6ss" firstAttribute="leading" secondItem="7ss-gZ-cRL" secondAttribute="leading" id="Vp0-ZN-6m8"/>
-                            <constraint firstItem="gB9-wz-6ss" firstAttribute="top" secondItem="7ss-gZ-cRL" secondAttribute="top" constant="20" symbolic="YES" id="e4b-Pr-OJJ"/>
+                            <constraint firstItem="gB9-wz-6ss" firstAttribute="top" secondItem="7ss-gZ-cRL" secondAttribute="top" id="e4b-Pr-OJJ"/>
                             <constraint firstItem="gB9-wz-6ss" firstAttribute="width" secondItem="gB9-wz-6ss" secondAttribute="height" multiplier="375:61" priority="999" id="qhs-wO-w11"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GFR-XJ-utf"/>
