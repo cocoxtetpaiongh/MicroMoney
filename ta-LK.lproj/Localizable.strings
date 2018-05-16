@@ -15,12 +15,12 @@
 // LOAN STEP HOME
 
 "I NEED " = "මට අවශ්යයි ";
-" MMK " = " LKR ";
+" MMK " = " Rs ";
 " FOR " = " සදහා ";
 " DAYS" = " දින";
-"MMK" = "LKR";
-" MMK" = " LKR";
-"MMK " = "LKR ";
+"MMK" = "Rs";
+" MMK" = " Rs";
+"MMK " = "Rs ";
 
 "30000" = "30000";
 "50000" = "50000";
@@ -61,7 +61,7 @@
 "Social Status" = "Social Status";
 "* Company Name" = "* සමාගම් නාමය";
 "* Company`s Phone Number" = "* සමාගමේ දුරකථන අංකය";
-"* Monthly Gross Income (MMK)" = "* මාසික දළ ආදායම (LKR)";
+"* Monthly Gross Income (MMK)" = "* මාසික දළ ආදායම (Rs)";
 "Your coworker phone number" = "Your coworker phone number";
 "coworker name" = "coworker name";
 "Employment information" = "Employment information";

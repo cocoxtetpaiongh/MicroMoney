@@ -16,6 +16,8 @@ enum ContactsFilter {
     case message
 }
 
+typealias ContactLists = [[String: String]]
+
 class PhoneContacts {
     
     class func getContacts(filter: ContactsFilter = .none) -> [CNContact] {

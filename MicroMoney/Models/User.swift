@@ -32,6 +32,8 @@ struct UserDefaultsKeys {
 
 class UserInfo: NSObject {
     
+    static var isUserSelectMenu = false 
+    
     static func getBranch() {
         
         switch Localize.currentLanguage() {
@@ -61,7 +63,7 @@ class UserInfo: NSObject {
             return "PHP"
 
         case CountryList.SriLankan.rawValue:
-            return "LKR"
+            return "Rs"
 
         default:
             return "USD"

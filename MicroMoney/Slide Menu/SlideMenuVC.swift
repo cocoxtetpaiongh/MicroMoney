@@ -53,8 +53,30 @@ class SlideMenuVC: UIViewController {
         dismissAction()
     }
     
-    @objc func handleGesture(_ recognizer: UITapGestureRecognizer) {
+    func handleMenu(with tag: Int) {
         
+//        if let view = recognizer.view {
+        
+            if tag == lastIndex {
+                
+                language = .English
+                isLanguageChange = true
+            } else if tag == lastIndex - 1 {
+                
+                language = .Myanmar
+                isLanguageChange = true
+            } else {
+                
+                language = .English
+                isLanguageChange = false
+            }
+            
+            menuSelected(with: tag)
+//        }
+    }
+    
+    @objc func handleGesture(_ recognizer: UITapGestureRecognizer) {
+
         if let view = recognizer.view {
             
             if view.tag == lastIndex {
@@ -171,9 +193,10 @@ extension SlideMenuVC: UITableViewDataSource {
         cell.label.text = titles[indexPath.row]
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
-        cell.label.addGestureRecognizer(gesture)
+//        cell.label.addGestureRecognizer(gesture)
         cell.label.isUserInteractionEnabled = true
         cell.label.tag = indexPath.row
+        cell.tag = indexPath.row
         return cell
     }
 }
@@ -182,9 +205,15 @@ extension SlideMenuVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+//        guard !UserInfo.isUserSelectMenu else {
+//            return
+//        }
+        
+        UserInfo.isUserSelectMenu = true
+        
 //        print("Select \(indexPath.row)", "TableView Select")
 //        menuSelected(with: indexPath.row)
-        
+        menuSelected(with: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

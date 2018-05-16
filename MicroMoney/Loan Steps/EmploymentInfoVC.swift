@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class EmploymentInfoVC: UIViewController {
     
@@ -53,6 +54,55 @@ class EmploymentInfoVC: UIViewController {
         coworkerDesc.localize(with: "coworker name")
         
         nextButton.localize(with: "Next")
+        
+        validateCurrency()
+    }
+    
+    func validateCurrency() {
+        
+        guard Localize.currentLanguage() == LocalizeLanguage.English.rawValue else {
+            return
+        }
+        
+        switch UserInfo.branch {
+            
+        case BranchList.Myanmar.rawValue:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income (MMK)")
+            
+            break
+            
+        case BranchList.Thailand.rawValue:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income (THB)")
+            
+            break
+        case BranchList.Indonesia.rawValue:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income (IDR)")
+            
+            break
+        case BranchList.Nigeria.rawValue:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income (NGN)")
+
+            break
+        case BranchList.SriLankan.rawValue:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income (Rs)")
+            
+            break
+        case BranchList.Philippines.rawValue:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income (PHP)")
+            
+            break
+        default:
+            
+            incomeDesc.localize(with: "* Monthly Gross Income")
+            
+            break
+        }
     }
     
     let employStatus = ["Business Owner",

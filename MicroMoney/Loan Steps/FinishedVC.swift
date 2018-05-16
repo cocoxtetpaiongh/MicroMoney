@@ -44,6 +44,7 @@ class FinishedVC: UIViewController {
         super.viewDidLoad()
 
         setText()
+        setNumbers()
         addGestures()
     }
 
@@ -60,6 +61,92 @@ class FinishedVC: UIViewController {
         hotLineDesc.localize(with: "Call Us on mobile hotline:")
         
         doneButton.localize(with: "Next")
+    }
+    
+    func setNumbers() {
+        
+        switch UserInfo.branch {
+        case BranchList.Myanmar.rawValue:
+
+            break
+            
+        case BranchList.Thailand.rawValue:
+            
+            lineHotline1Label.text = "+66 63207 4103"
+            lineHotline2Label.text = ""
+            mobileHotline2Label.text = ""
+            mobileHotline1Label.text = "+660 972 942 410\n+660 972 943 576\n+660 807 661 576\n+660 972 986 607"
+            viberDesc.text = ""
+            viberHotline1Label.text = ""
+            viberHotline2Label.text = ""
+            
+            break
+        case BranchList.Indonesia.rawValue:
+            
+            lineDesc.text = ""
+            lineHotline1Label.text = ""
+            lineHotline2Label.text = ""
+
+            mobileHotline2Label.text = ""
+            mobileHotline1Label.text = "+6281908600070"
+            viberDesc.text = "Whatsapp"
+            viberHotline1Label.text = "+6287888826434"
+            viberHotline2Label.text = ""
+            
+            break
+        case BranchList.Nigeria.rawValue:
+            
+            lineDesc.text = ""
+            lineHotline1Label.text = ""
+            lineHotline2Label.text = ""
+            
+            mobileHotline2Label.text = "contactus@micromoney.africa"
+            mobileHotline1Label.text = "09082919700"
+            viberDesc.text = ""
+            viberHotline1Label.text = ""
+            viberHotline2Label.text = ""
+
+            break
+        case BranchList.SriLankan.rawValue:
+            
+            lineDesc.text = ""
+            lineHotline1Label.text = ""
+            lineHotline2Label.text = ""
+            
+            mobileHotline2Label.text = ""
+            mobileHotline1Label.text = "+947 127 409 53\n+947 127 403 51\n+947 127 414 69\n+947 128 041 06"
+            viberDesc.text = ""
+            viberHotline1Label.text = ""
+            viberHotline2Label.text = ""
+            
+            break
+        case BranchList.Philippines.rawValue:
+            
+            lineDesc.text = ""
+            lineHotline1Label.text = ""
+            lineHotline2Label.text = ""
+            
+            mobileHotline2Label.text = "9457917051"
+            mobileHotline1Label.text = "9457917050"
+            viberDesc.text = ""
+            viberHotline1Label.text = ""
+            viberHotline2Label.text = ""
+
+            break
+        default:
+            
+            lineDesc.text = ""
+            lineHotline1Label.text = ""
+            lineHotline2Label.text = ""
+            
+            mobileHotline2Label.text = ""
+            mobileHotline1Label.text = ""
+            viberDesc.text = ""
+            viberHotline1Label.text = ""
+            viberHotline2Label.text = ""
+            
+            break
+        }
     }
     
     func addGestures() {

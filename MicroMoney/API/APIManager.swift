@@ -143,6 +143,35 @@ class APIManager {
 
     }
     
+    // MARK: Create Contacts
+    
+    func addContacts(with contacts: [String: Any], completion: @escaping (JSON, NetworkStatus) -> Void) {
+        
+        guard let url = URL(string: "\(APIConstants.contacts)") else {
+            return
+        }
+        
+        let headers: [String: String] = ["Content-Type": "application/json;odata=verbose",
+                                         "Authorization": "Basic RWFydGg6SGVsbDBJWm1lT0JDem9vbDIwMTg",
+                                         "Accept": "application/json;odata=verbose"]
+        
+        Alamofire.request(url, method: .post, parameters: contacts, encoding: JSONEncoding.prettyPrinted, headers: APIConstants.headers).responseSwiftyJSON { (dataRsponse) in
+            
+            print(dataRsponse.response)
+            print(dataRsponse.result.description)
+            
+            if let json = dataRsponse.value {
+                
+                completion(json, .Success)
+                
+            } else {
+                
+                completion(JSON.null, .Error)
+            }
+        }
+        
+    }
+    
     // MARK: Company Relation ID
     
     func getCompanyRelationID(completion: @escaping (JSON, NetworkStatus) -> Void) {

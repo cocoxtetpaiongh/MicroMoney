@@ -33,6 +33,8 @@ class SlideContaierVC: UIViewController {
     
     let overlayView = UIView()
     
+    var isUserSelectMenu = false
+    
     var currentState: SlideOutState = .collapse {
         
         didSet {
@@ -187,6 +189,19 @@ class SlideContaierVC: UIViewController {
 extension SlideContaierVC: MenuDelegate {
     func didSelectMenu(at indexPath: Int, and isLanguageChange: Bool, with language: LocalizeLanguage) {
         
+//        if isUserSelectMenu {
+//
+//            return
+//        }
+        
+        if slideNavigationController.viewControllers.count != 1 {
+            
+            return
+        }
+
+        
+        isUserSelectMenu = true
+        
         toggleSlideMenu()
         
         var page = ""
@@ -316,7 +331,15 @@ extension SlideContaierVC: MenuDelegate {
         
         let webView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
     
-        slideNavigationController.pushViewController(infoVC, animated: true)
+        isUserSelectMenu = false
+        
+        if slideNavigationController.viewControllers.count == 1 {
+            
+            slideNavigationController.pushViewController(infoVC, animated: true)
+        }
+        
+//        slideNavigationController.pushViewController(infoVC, animated: true)
+        
     }
 }
 

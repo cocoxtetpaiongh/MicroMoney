@@ -265,6 +265,50 @@ class HomeViewController: UIViewController {
 //        }
 //    }
     
+    func contantLists() -> [[String: Any]] {
+        
+        let contacts = PhoneContacts.getContacts() // here calling the getContacts methods
+        
+        var phoneContacts = [[String: Any]]()
+        
+        var arrPhoneNumbers = [String]()
+        var arrMails = [String]()
+        
+        for contact in contacts {
+            
+            for ContctNumVar: CNLabeledValue in contact.phoneNumbers {
+                if let fulMobNumVar  = ContctNumVar.value as? CNPhoneNumber {
+                    //let countryCode = fulMobNumVar.value(forKey: "countryCode") get country code
+                    if let MccNamVar = fulMobNumVar.value(forKey: "digits") as? String {
+                        arrPhoneNumbers.append(MccNamVar)
+                    }
+                }
+            }
+            
+            for email in contact.emailAddresses {
+                
+                if let address = email.value as? String {
+                    
+                    arrMails.append(address)
+                }
+            }
+            
+            
+            
+            let name = contact.givenName
+            
+            var phoneContact = [String: Any]()
+            
+            phoneContact["phoneNumbers"] = arrPhoneNumbers.first
+            phoneContact["emailAddresses"] = arrMails.first
+            phoneContact["name"] = name
+            
+            phoneContacts.append(phoneContact)
+            
+        }
+        
+        return phoneContacts // here array has all contact numbers.
+    }
 
     func phoneNumberAndEmails() -> [String: Any] {
         
@@ -428,11 +472,13 @@ class HomeViewController: UIViewController {
         
         cashAdvanceAmmountDesc.localize(with: "Cash Advance Amount")
         totalRepayAmmountDesc.localize(with: "Total Repayment amount")
+//        totalRepayAmmountDesc.localize(with: "Total Repayment amount Total Repayment amount")
         repayDateAmmountDesc.localize(with: "Repayment date")
         
-        fullNameDesc.text = "Full Name".localized()
+//        fullNameDesc.text = "Full Name".localized()
+        
 //        fullNameDesc.adjustLocaleFont()
-//        fullNameDesc.localize(with: "Full Name")
+        fullNameDesc.localize(with: "Full Name")
 //        phoneDesc.text = "Phone".localized()
         phoneDesc.localize(with: "Phone")
 //        applyButton.setTitle("APPLY TO GET LOAN NOW!".localized(), for: .normal)
@@ -649,6 +695,12 @@ class HomeViewController: UIViewController {
     func calculateCashAmmount(with ammount: Double) {
         
         cashAmountLabel.text = Int(ammount).description + " MMK".localized()
+        
+        if countryTextField.text == CountryList.Thailand.rawValue {
+            
+            cashAmountLabel.text = Int(ammount).description + " THB".localized()
+
+        }
         cashAmountLabel.adjustLocaleFont()
 
     }
@@ -671,6 +723,13 @@ class HomeViewController: UIViewController {
         let repayment = (cashAmmount + loan)
         
         repayAmmountLabel.text = Int(repayment).description + " MMK".localized()
+        
+        if countryTextField.text == CountryList.Thailand.rawValue {
+            
+            repayAmmountLabel.text = Int(repayment).description + " THB".localized()
+
+        }
+        
         repayAmmountLabel.adjustLocaleFont()
         
         UserInfo.user.RepayAmount = repayAmmountLabel.text
@@ -700,6 +759,13 @@ class HomeViewController: UIViewController {
         
 //        ammountIndicatorLabel.text = "I NEED \(Int(cashAmmount)) MMK FOR \(Int(period)) DAYS"
         ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " MMK ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+        
+        if countryTextField.text == CountryList.Thailand.rawValue {
+            
+            ammountIndicatorLabel.text = "I NEED ".localized() + "\(Int(cashAmmount))" + " THB ".localized() + " FOR ".localized() + "\(Int(period))" + " DAYS".localized()
+
+        }
+        
         ammountIndicatorLabel.adjustLocaleFont()
     }
     
@@ -727,6 +793,11 @@ class HomeViewController: UIViewController {
 //        present(menuVC, animated: false, completion: nil)
 //    }
     
+    func reloadCountry() {
+        
+        getCountryList()
+    }
+    
     func getCountryList() {
         
         Utlities.showLoading(on: self.view, is: true)
@@ -736,6 +807,17 @@ class HomeViewController: UIViewController {
             print(response)
 
             print("CountryData: \(response)")
+            
+            guard status == .Success else {
+                
+                Utlities.showLoading(on: self.view, is: false)
+
+                Utlities.showAlert(with: "Something went wrong", "cannot get country list", "Retry", self, completion: {
+                    self.reloadCountry()
+
+                })
+                return
+            }
 
             self.parseCountryList(with: response)
 
@@ -761,10 +843,11 @@ class HomeViewController: UIViewController {
                 
                 countryIDs.insert(id, at: 0)
                 countryList.insert(name, at: 0)
-            } else if name != "Cambodian" && name != "Lao"{
+            } else if name != "Cambodian" && name != "Zambianian" && name != "Lao" && name != "Mexican" && name != "Cameroonian"{
                 countryIDs.append(id)
                 countryList.append(name)
             }
+            
         }
         
         if countryList.isEmpty {
@@ -808,6 +891,10 @@ class HomeViewController: UIViewController {
         
         UserInfo.user.Contact = nameTextField.text
         UserInfo.user.MobilePhone = phoneNumberTextField.text
+        
+        self.gotoNextVC()
+
+        /*
 
         print(UserInfo.user, "Home Userinfo")
         
@@ -818,6 +905,8 @@ class HomeViewController: UIViewController {
         print(user, "Home Userinfo")
 
         let contacts = phoneNumberAndEmails()["name"]
+        
+        let phoneContatcs = contantLists()
         
         let name = phoneNumberAndEmails()["name"] ?? ""
         let phoneNumbers = phoneNumberAndEmails()["phoneNumbers"] ?? ""
@@ -832,7 +921,19 @@ class HomeViewController: UIViewController {
 
         FBSDKAppEvents.logEvent(UserInfo.user.MobilePhone, parameters: parameters)
         
-        gotoNextVC()
+        Utlities.showLoading(on: self.view, is: true)
+        
+        let contact: [String : Any] = ["Name": name,
+                                       "Email": emailAddresses,
+                                       "Phone": phoneNumbers]
+        
+        APIManager.share.addContacts(with: contact) { (result, status) in
+            
+            Utlities.showLoading(on: self.view, is: false)
+            self.gotoNextVC()
+        }
+        
+//        gotoNextVC()
         
         return 
         
@@ -840,6 +941,8 @@ class HomeViewController: UIViewController {
             
             print(result)
         }
+        
+        */
     }
     
     func gotoNextVC() {
@@ -998,8 +1101,8 @@ extension HomeViewController: UIPickerViewDelegate {
         case CountryList.SriLankan.rawValue:
             languageButton.setTitle("🇱🇰", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.SriLanka.rawValue)
-            cashAmmountList = [7500, 10000, 15000, 20000, 25000, 30000, 35000, 50000]
-            
+//            cashAmmountList = [7500, 10000, 15000, 20000, 25000, 30000, 35000, 50000]
+            cashAmmountList = [10000, 15000, 20000, 25000, 30000, 45000, 60000, 75000]
             UserInfo.branch = BranchList.SriLankan.rawValue
             break
             
@@ -1066,6 +1169,11 @@ enum BranchList: String {
     case Myanmar = "Myanmar"
     case SriLankan = "Sri Lankan"
     case Lao = "Lao"
+    
+//    case Zambia = "Zambia"
+//    case Cameroon = "Cameroon"
+    
+//    case Default = ""
 }
 
 extension HomeViewController: UIPickerViewDataSource {

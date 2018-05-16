@@ -150,9 +150,11 @@ extension UILabel {
 
         } else {
             
-            self.font = UIFont(name: "Arial_Bold", size: size)
+//            self.font.pointSize = size
+//            self.font = UIFont(name: "Arial_Bold", size: size)
         }
         
+//        self.layoutIfNeeded()
         
     }
     
