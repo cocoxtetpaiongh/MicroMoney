@@ -371,83 +371,88 @@ class HomeViewController: UIViewController {
 ////        }
 //    }
 
-//    func loginToFacebook() {
-//
-//        let loginManager = FBSDKLoginManager()
-//
-//        loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self, handler: {
-//            result, error in
-//
-//            guard error == nil else { return }
-//
-//            guard let result = result else { return }
-//
-//            if result.isCancelled {
-//
-//                print("Cancelled")
-//            } else {
-//
-//                print(result)
-//
-//                self.getFBUserInfo()
-//
-//            }
-//        })
-//
-//    }
+    func loginToFacebook() {
+
+        let loginManager = FBSDKLoginManager()
+
+        loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self, handler: {
+            result, error in
+
+            guard error == nil else { return }
+
+            guard let result = result else { return }
+
+            if result.isCancelled {
+
+                print("Cancelled")
+            } else {
+
+                print(result)
+
+                self.getFBUserInfo()
+
+            }
+        })
+
+    }
     
-//    func getFBUserInfo() {
+    func getFBUserInfo() {
 //        let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"first_name,email,birthday,gender,name"]) // ,picture.type(large)"])
-//        
-//        Utlities.showLoading(on: self.view, is: true)
-//        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
-//            
-//            if ((error) != nil)
-//            {
-//                print("Error: \(String(describing: error))")
-//                Utlities.showLoading(on: self.view, is: false)
-//            }
-//            else
-//            {
-//                let data:[String: AnyObject] = result as! [String : AnyObject]
-//                print(data)
-//                
-//                if let name = data["name"] as? String {
-//                    
-//                    self.nameTextField.text = name
-//                }
-//                
-//                if let gender = data["gender"] as? String {
-//                    
-//                    self.genderTextField.text = gender.capitalized
-//                }
-//                
-//                if let birthday = data["birthday"] as? String {
-//                    
-//                    self.birthdayTextField.text = birthday.replacingOccurrences(of: "/", with: "-")
-//                }
-//                
-//                if let email = data["email"] as? String {
-//                    
-//                    self.emailTextField.text = email
-//                }
-//                
-//                self.userInfo.name = self.nameTextField.text ?? ""
-//                self.userInfo.gender = self.genderTextField.text ?? ""
-//                self.userInfo.birthday = self.birthdayTextField.text ?? ""
-//                self.userInfo.email = self.emailTextField.text
-//                
-//                self.gotoDetail()
-//                
-//                Utlities.showLoading(on: self.view, is: false)
-//            }
-//        })
-//    }
+
+        let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "publicProfile"]) // ,picture.type(large)"])
+
+        Utlities.showLoading(on: self.view, is: true)
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                print("Error: \(String(describing: error))")
+                Utlities.showLoading(on: self.view, is: false)
+            }
+            else
+            {
+                let data:[String: AnyObject] = result as! [String : AnyObject]
+                print(data)
+                
+                if let name = data["name"] as? String {
+                    
+                    self.nameTextField.text = name
+                }
+                /*
+                if let gender = data["gender"] as? String {
+                    
+                    self.genderTextField.text = gender.capitalized
+                }
+                
+                if let birthday = data["birthday"] as? String {
+                    
+                    self.birthdayTextField.text = birthday.replacingOccurrences(of: "/", with: "-")
+                }
+                
+                if let email = data["email"] as? String {
+                    
+                    self.emailTextField.text = email
+                }
+                
+                self.userInfo.name = self.nameTextField.text ?? ""
+                self.userInfo.gender = self.genderTextField.text ?? ""
+                self.userInfo.birthday = self.birthdayTextField.text ?? ""
+                self.userInfo.email = self.emailTextField.text
+                
+                self.gotoDetail()
+                
+                Utlities.showLoading(on: self.view, is: false)
+            */
+            }
+        })
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        
+        getFBUserInfo()
 
     }
     
@@ -1093,8 +1098,9 @@ extension HomeViewController: UIPickerViewDelegate {
         case CountryList.Indonesia.rawValue:
             languageButton.setTitle("🇮🇩", for: .normal)
             Localize.setCurrentLanguage(LocalizeLanguage.Indonesia.rawValue)
-            cashAmmountList = [1000, 2000, 3000, 4000, 5000, 7000, 9000, 120000]
-            
+//            cashAmmountList = [1000, 2000, 3000, 4000, 5000, 7000, 9000, 120000]
+            cashAmmountList = [50000, 80000, 100000, 150000, 200000, 250000, 300000, 350000]
+
             UserInfo.branch = BranchList.Indonesia.rawValue
             break
             
